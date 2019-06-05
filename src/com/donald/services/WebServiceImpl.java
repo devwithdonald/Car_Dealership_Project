@@ -15,14 +15,16 @@ public class WebServiceImpl implements WebServiceInt{
 		
 		boolean validInput = false;
 		String input = "";
-		Scanner scanner = new Scanner(System.in);
+		
 
 		// greeting message
 		System.out.println("Hello and welcome.");
 
 		// checking for correct input
 		do {
-			System.out.println("Please enter the correct identifier. Employee (E) or Customer (C)");
+			Scanner scanner = new Scanner(System.in);
+			
+			System.out.println("Please enter the correct identifier. Employee (e) or Customer (c)");
 
 			input = scanner.nextLine();
 
@@ -36,7 +38,6 @@ public class WebServiceImpl implements WebServiceInt{
 
 		} while (!validInput);
 
-		scanner.close();
 		
 		return input;
 	}

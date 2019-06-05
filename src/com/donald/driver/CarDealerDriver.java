@@ -13,7 +13,7 @@ public class CarDealerDriver {
 		// whether it returns make a customer screen or a employee screen (handles all
 		// of employee stuff)
 
-		boolean keepGoing = false;
+		boolean keepGoing = true;
 
 		do {
 			String screen = web.initialScreen();

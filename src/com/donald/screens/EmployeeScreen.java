@@ -11,17 +11,35 @@ public class EmployeeScreen extends Screen {
 	public boolean employeeOption() {
 
 		// need to pass the login verification (if they dont return false)
-		//if false kick them out back to intial screen
+		// if false kick them out back to intial screen
 		if (!loginVerification()) {
 			return false;
 		}
 		
+		//if they get passed the login verification
+		//show them the option they have as an employee
+		boolean validInput = true;
+		String input = "";
+		
+		do {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Welcome! What would you like to do today?");
+			
+			System.out.println("Enter '1': To add a car to the car lot. ");
+			System.out.println("Enter '2': To accept or reject offers.");
+			
+			
+			switch (input)
+			
+		} while (!validInput);
+	
+		
+		
+
 		return false;
 	}
 
 	public boolean loginVerification() {
-
-		Scanner scanner = new Scanner(System.in);
 
 		int counter = 0;
 
@@ -31,10 +49,12 @@ public class EmployeeScreen extends Screen {
 		boolean verifiedPassword = false;
 
 		do {
+
+			Scanner scanner = new Scanner(System.in);
 			counter = 0;
 
 			// username validation
-			System.out.println("Enter (b) to return to the initial screen. \n");
+			System.out.println("Enter (b) to return to the initial screen.");
 
 			System.out.println("enter username --> ");
 			username = scanner.nextLine();
@@ -58,8 +78,6 @@ public class EmployeeScreen extends Screen {
 			}
 
 		} while (!verifiedUsername && !verifiedPassword);
-
-		scanner.close();
 
 		if (counter == 2) {
 			// verified let them in!
