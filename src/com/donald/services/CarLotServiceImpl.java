@@ -82,6 +82,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 				
 				for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 					//TODO FIX THIS
+					// Get the car's id from the car lot 
 					if(CarLot.getCarlot().get(i).getCarID() == intInput) {
 						//remove functionality goes here
 						

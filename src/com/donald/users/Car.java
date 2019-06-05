@@ -2,16 +2,18 @@ package com.donald.users;
 
 public class Car {
 
-	private static int carID = 0; 
+	public static int carIDCounter = 1; 
 	private String ownerUsername;
 	private String price;
 	private String carType;
 	private Boolean forSale;
+	private int carID;
 
 	public Car() {
 		super();
 		// TODO Auto-generated constructor stub
-		Car.carID++;
+		this.carID = Car.carIDCounter;
+		Car.carIDCounter++;
 	}
 
 	// TODO NEED LOGIC
@@ -21,7 +23,8 @@ public class Car {
 		this.price = price;
 		this.carType = carType;
 		this.forSale = forSale;
-		Car.carID++;
+		this.carID = Car.carIDCounter;
+		Car.carIDCounter++;
 	}
 
 	public String getOwnerUsername() {
@@ -55,15 +58,12 @@ public class Car {
 	public void setForSale(Boolean forSale) {
 		this.forSale = forSale;
 	}
-
-	public static int getCarID() {
+	
+	public int getCarID() {
 		return carID;
 	}
 
 
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Car [ownerUsername=" + ownerUsername + ", price=" + price + ", carType=" + carType + ", forSale="
