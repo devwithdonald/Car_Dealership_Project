@@ -44,12 +44,13 @@ public class EmployeeScreen extends Screen {
 			case "2":
 				break;
 			case "3":
+				
 				break;
 			case "4":
 				break;
 			case "0":
 				exitInput = true;
-				System.out.println("Thank you!");
+				System.out.println("Thank you, have a good day!\n");
 				break;
 			}
 

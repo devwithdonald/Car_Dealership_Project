@@ -8,6 +8,6 @@ public interface CarLotServiceInt {
 	
 	public void addCar();
 	
-	public void removeCar(Car car);
+	public void removeCar();
 	
 }

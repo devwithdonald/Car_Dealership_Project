@@ -2,20 +2,18 @@ package com.donald.services;
 
 import java.util.Scanner;
 
-
-public class WebServiceImpl implements WebServiceInt{
+public class WebServiceImpl implements WebServiceInt {
 
 	@Override
 	public String initialScreen() {
 		/*
-		 *  TODO This should show the initial screen 
-		 *   & send the User to either the login or register screen
-		 *   return the String they need to be at (main should handle this)
+		 * TODO This should show the initial screen & send the User to either the login
+		 * or register screen return the String they need to be at (main should handle
+		 * this)
 		 */
-		
+
 		boolean validInput = false;
 		String input = "";
-		
 
 		// greeting message
 		System.out.println("Hello and welcome.");
@@ -23,8 +21,9 @@ public class WebServiceImpl implements WebServiceInt{
 		// checking for correct input
 		do {
 			Scanner scanner = new Scanner(System.in);
-			
+
 			System.out.println("Please enter the correct identifier. Employee (e) or Customer (c)");
+			System.out.println("--> or enter '0' to exit.");
 
 			input = scanner.nextLine();
 
@@ -34,15 +33,19 @@ public class WebServiceImpl implements WebServiceInt{
 			} else if (input.equals("C") || input.equals("c")) {
 				input = "customer";
 				validInput = true;
+			} else if (input.equals("0")){
+				input = "0";
+				validInput = true;
 			}
 
 		} while (!validInput);
 
+		if (input.equals("0")) {
+			System.exit(0);
+		}
 		
 		return input;
 	}
-	
-	
 
 	@Override
 	public boolean loginVerification() {
@@ -53,7 +56,7 @@ public class WebServiceImpl implements WebServiceInt{
 	@Override
 	public void viewAllPayments() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

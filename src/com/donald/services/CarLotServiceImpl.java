@@ -29,10 +29,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		// TODO will need logic
 		// ownerUsername & forSale are default set
-		System.out.println("Please enter the type: ");
+		System.out.println("Please enter the car type: ");
 		price = scanner.nextLine();
 
-		System.out.println("Please enter the price: ");
+		System.out.println("Please enter the car price: ");
 		carType = scanner.nextLine();
 
 		// adding car
@@ -46,15 +46,57 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	}
 
 	@Override
-	public void removeCar(Car car) {
+	public void removeCar() {
 		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void removeCar(Car car) {
-		// TODO Auto-generated method stub
-
+		
+		//give option to see car list OR just input the car
+		
+		boolean exitInput = false;
+		String input = "";
+	
+		do {
+			Scanner scanner = new Scanner(System.in);
+			
+			System.out.println("Enter '1': To view the car the list");
+			System.out.println("Enter '2': To input the carID you would like to remove");
+			System.out.println("Enter '0': Exit!");
+			
+			input = scanner.nextLine();
+			
+			//loop until exit (to remove more than 1 car)
+			if(input.equals("1")) {
+				//show car list
+				viewCarLot();
+				//reset input
+				input = "";
+			} else if (input.equals("2")) {
+				// allow them to input the car id to remove!
+				
+				//get the car list and remove item depending on the id!
+				//TODO should be its own method
+				System.out.println("Enter Car ID -->");
+				input = scanner.nextLine();
+				
+				//parse to int
+				int intInput = Integer.parseInt(input);
+				
+				for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+					//TODO FIX THIS
+					if(CarLot.getCarlot().get(i).getCarID() == intInput) {
+						//remove functionality goes here
+						
+					}
+				}
+				
+				
+				//reset input
+				input = "";
+			} else if (input.equals("0")) {
+				exitInput = true;
+			} 
+			
+		}while (!exitInput);
+	
 	}
 
 }
