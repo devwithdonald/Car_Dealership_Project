@@ -4,8 +4,9 @@ import com.donald.screens.Screen;
 
 public interface WebServiceInt {
 	
-	// return the string screen 
+	// return the screen
 	public String initialScreen();
+
 	
 	public boolean loginVerification();
 
