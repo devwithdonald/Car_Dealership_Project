@@ -6,7 +6,21 @@ public class Car {
 	private String price;
 	private String carType;
 	private Boolean forSale;
-	
+
+	public Car() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	// TODO NEED LOGIC
+	public Car(String ownerUsername, String price, String carType, Boolean forSale) {
+		super();
+		this.ownerUsername = ownerUsername;
+		this.price = price;
+		this.carType = carType;
+		this.forSale = forSale;
+	}
+
 	public String getOwnerUsername() {
 		return ownerUsername;
 	}
@@ -14,31 +28,37 @@ public class Car {
 	public void setOwnerUsername(String ownerUsername) {
 		this.ownerUsername = ownerUsername;
 	}
+
 	public String getPrice() {
 		return price;
 	}
+
 	public void setPrice(String price) {
 		this.price = price;
 	}
+
 	public String getCarType() {
 		return carType;
 	}
+
 	public void setCarType(String carType) {
 		this.carType = carType;
 	}
+
 	public Boolean getForSale() {
 		return forSale;
 	}
+
 	public void setForSale(Boolean forSale) {
 		this.forSale = forSale;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Car [ownerUsername=" + ownerUsername + ", price=" + price + ", carType=" + carType + ", forSale="
 				+ forSale + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -49,7 +69,7 @@ public class Car {
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -81,5 +101,5 @@ public class Car {
 			return false;
 		return true;
 	}
-	
+
 }

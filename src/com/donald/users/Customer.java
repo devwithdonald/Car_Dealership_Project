@@ -7,7 +7,7 @@ public class Customer {
 	private String username;
 	private String password;
 	private List<Car> carsOwned;
-	private int balance;
+	private Integer balance;
 	//
 	private List<Offer> pendingOffers;
 	
@@ -29,10 +29,10 @@ public class Customer {
 	public void setCarsOwned(List<Car> carsOwned) {
 		this.carsOwned = carsOwned;
 	}
-	public int getBalance() {
+	public Integer getBalance() {
 		return balance;
 	}
-	public void setBalance(int balance) {
+	public void setBalance(Integer balance) {
 		this.balance = balance;
 	}
 	public List<Offer> getPendingOffers() {

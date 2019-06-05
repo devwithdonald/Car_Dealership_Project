@@ -2,6 +2,7 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
+import com.donald.services.CarLotServiceImpl;
 import com.donald.users.Employee;
 
 public class EmployeeScreen extends Screen {
@@ -15,26 +16,44 @@ public class EmployeeScreen extends Screen {
 		if (!loginVerification()) {
 			return false;
 		}
-		
-		//if they get passed the login verification
-		//show them the option they have as an employee
-		boolean validInput = true;
+
+		// if they get passed the login verification
+		// show them the option they have as an employee
+		boolean exitInput = true;
 		String input = "";
-		
+
 		do {
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("Welcome! What would you like to do today?");
-			
+			System.out.println("\nWelcome! What would you like to do today?");
+
 			System.out.println("Enter '1': To add a car to the car lot. ");
 			System.out.println("Enter '2': To accept or reject offers.");
-			
-			
-			switch (input)
-			
-		} while (!validInput);
-	
-		
-		
+			System.out.println("Enter '3': To remove a car from the car lot");
+			System.out.println("Enter '4': View all payments");
+			System.out.println("Enter '0': Exit!");
+
+			input = scanner.nextLine();
+
+			// call stuff
+			switch (input) {
+			case "1":
+				CarLotServiceImpl cls = new CarLotServiceImpl();
+				cls.addCar();
+				exitInput = false;
+				break;
+			case "2":
+				break;
+			case "3":
+				break;
+			case "4":
+				break;
+			case "0":
+				exitInput = true;
+				System.out.println("Thank you!");
+				break;
+			}
+
+		} while (!exitInput);
 
 		return false;
 	}

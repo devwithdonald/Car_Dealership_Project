@@ -6,7 +6,6 @@ public interface WebServiceInt {
 	
 	// return the screen
 	public String initialScreen();
-
 	
 	public boolean loginVerification();
 
