@@ -2,6 +2,8 @@ package com.donald.user;
 
 public class Employee implements EmployeeAction {
 
+	//NEED TO ENSURE ONLY ONE OF THE OBJECTS CAN BE CREATED 
+	
 	//consistent for the employees
 	final String USERNAME = "admin";
 	final String PASSWORD = "admin";
