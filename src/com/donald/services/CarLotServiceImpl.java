@@ -48,56 +48,72 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void removeCar() {
 		// TODO Auto-generated method stub
-		
-		//give option to see car list OR just input the car
-		
+
+		// give option to see car list OR just input the car
+
 		boolean exitInput = false;
+		boolean carRemove = false;
 		String input = "";
-	
+
 		do {
 			Scanner scanner = new Scanner(System.in);
-			
+
 			System.out.println("Enter '1': To view the car the list");
 			System.out.println("Enter '2': To input the carID you would like to remove");
 			System.out.println("Enter '0': Exit!");
-			
+
 			input = scanner.nextLine();
-			
-			//loop until exit (to remove more than 1 car)
-			if(input.equals("1")) {
-				//show car list
-				viewCarLot();
-				//reset input
+
+			// loop until exit (to remove more than 1 car)
+			if (input.equals("1")) {
+				// show car list if not empty
+				if (CarLot.getCarlot().size() == 0) {
+					System.out.println("Car list is empty!");
+				} else {
+					viewCarLot();
+				}
+
+				// reset input
 				input = "";
 			} else if (input.equals("2")) {
 				// allow them to input the car id to remove!
-				
-				//get the car list and remove item depending on the id!
-				//TODO should be its own method
+
+				// get the car list and remove item depending on the id!
+				// TODO should be its own method
 				System.out.println("Enter Car ID -->");
 				input = scanner.nextLine();
-				
-				//parse to int
+
+				// parse to int
+				//TODO need to ensure int
 				int intInput = Integer.parseInt(input);
-				
-				for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-					//TODO FIX THIS
-					// Get the car's id from the car lot 
-					if(CarLot.getCarlot().get(i).getCarID() == intInput) {
-						//remove functionality goes here
-						
+
+				if (CarLot.getCarlot().size() == 0) {
+					System.out.println("Car list is empty!");
+				} else {
+					for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+						// Get the car's id from the car lot
+						if (CarLot.getCarlot().get(i).getCarID() == intInput) {
+							// remove functionality goes here
+							System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
+							CarLot.getCarlot().remove(i);
+							carRemove = true;
+						}
 					}
 				}
-				
-				
-				//reset input
+
+				if (!carRemove) {
+					System.out.println("carId not found. No car removed.");
+				}
+
+				// reset input
 				input = "";
+				carRemove = false;
 			} else if (input.equals("0")) {
 				exitInput = true;
-			} 
-			
-		}while (!exitInput);
-	
+			}
+
+		} while (!exitInput);
+
 	}
 
 }

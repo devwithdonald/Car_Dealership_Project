@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.donald.services.CarLotServiceImpl;
 import com.donald.users.Employee;
 
-public class EmployeeScreen extends Screen {
+public class EmployeeScreen{
 
 	// this method should call other methods that employee can do?
 	// boolean should return whether the program keeps runnning
@@ -33,18 +33,22 @@ public class EmployeeScreen extends Screen {
 			System.out.println("Enter '0': Exit!");
 
 			input = scanner.nextLine();
+			
+			
+			CarLotServiceImpl cls = new CarLotServiceImpl();
 
 			// call stuff
 			switch (input) {
 			case "1":
-				CarLotServiceImpl cls = new CarLotServiceImpl();
+			
 				cls.addCar();
 				exitInput = false;
 				break;
 			case "2":
 				break;
 			case "3":
-				
+				cls.removeCar();
+				exitInput = false;
 				break;
 			case "4":
 				break;

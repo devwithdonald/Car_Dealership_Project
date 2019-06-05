@@ -1,6 +1,6 @@
 package com.donald.services;
 
-import com.donald.screens.Screen;
+import com.donald.screens.UserScreen;
 
 public interface WebServiceInt {
 	
