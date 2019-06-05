@@ -12,4 +12,6 @@ public interface CustomerServiceInt {
 	
 	public void viewRemainingPayments();
 	
+	public void viewLocalPaymentsMade();
+	
 }

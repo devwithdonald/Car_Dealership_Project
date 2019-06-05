@@ -1,14 +1,18 @@
 package com.donald.users;
 
+import java.util.List;
+
 public class Car {
 
 	public static int carIDCounter = 1; 
 	private String ownerUsername;
-	private String price;
+	private String price; //balance
 	private String carType;
 	private Boolean forSale;
 	private int carID;
-
+	private List<Offer> carOfferList;
+	
+	
 	public Car() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -24,6 +28,7 @@ public class Car {
 		this.carType = carType;
 		this.forSale = forSale;
 		this.carID = Car.carIDCounter;
+		this.carOfferList = null;
 		Car.carIDCounter++;
 	}
 
@@ -67,7 +72,7 @@ public class Car {
 	@Override
 	public String toString() {
 		return "Car [ownerUsername=" + ownerUsername + ", price=" + price + ", carType=" + carType + ", forSale="
-				+ forSale + ", carID=" + carID + "]";
+				+ forSale + ", carID=" + carID + ", carOfferList=" + carOfferList + "]";
 	}
 
 	@Override

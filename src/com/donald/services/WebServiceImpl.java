@@ -2,6 +2,8 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.users.MasterPaymentList;
+
 public class WebServiceImpl implements WebServiceInt {
 
 	@Override
@@ -55,8 +57,17 @@ public class WebServiceImpl implements WebServiceInt {
 
 	@Override
 	public void viewAllPayments() {
+		System.out.println("-- View all payments --");
 		// TODO Auto-generated method stub
-
+		// view every payment in the system
+		MasterPaymentList mpl = new MasterPaymentList();
+		
+		for (int i = 0; i < mpl.getMasterPaymentList().size(); i++) {
+			//print out ALL payments
+			System.out.println(mpl.getMasterPaymentList().get(i));
+		}
+		
+	
 	}
 
 	@Override

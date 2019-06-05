@@ -4,6 +4,8 @@ import java.util.List;
 
 public class Customer {
 	
+	private List<Payment> localPaymentList;
+	private boolean makingPayments = false;
 	private String username;
 	private String password;
 	private List<Car> carsOwned;
@@ -11,6 +13,19 @@ public class Customer {
 	//
 	private List<Offer> pendingOffers;
 	
+	
+	public boolean isMakingPayments() {
+		return makingPayments;
+	}
+	public void setMakingPayments(boolean makingPayments) {
+		this.makingPayments = makingPayments;
+	}
+	public List<Payment> getLocalPaymentList() {
+		return localPaymentList;
+	}
+	public void setLocalPaymentList(List<Payment> localPaymentList) {
+		this.localPaymentList = localPaymentList;
+	}
 	public String getUsername() {
 		return username;
 	}
