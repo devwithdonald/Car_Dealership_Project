@@ -5,10 +5,16 @@ import java.util.Scanner;
 import com.donald.services.CarLotServiceImpl;
 import com.donald.services.EmployeeServiceImpl;
 import com.donald.services.WebServiceImpl;
+import com.donald.users.CarLot;
+import com.donald.users.Customer;
+import com.donald.users.CustomerBase;
 import com.donald.users.Employee;
 import com.donald.users.MasterCustomerLoginList;
 
 public class CustomerScreen implements UserScreen {
+	
+	
+	Customer loggedInCustomer;
 
 	@Override
 	public boolean display() {
@@ -20,7 +26,7 @@ public class CustomerScreen implements UserScreen {
 
 		boolean exitInput = true;
 		String input = "";
-			
+
 		do {
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome! What would you like to do today?");
@@ -32,9 +38,9 @@ public class CustomerScreen implements UserScreen {
 			System.out.println("Enter '0': Exit!");
 
 			input = scanner.nextLine();
-			
+
 			CarLotServiceImpl clsi = new CarLotServiceImpl();
-		
+
 			// call stuff
 			switch (input) {
 			case "1":
@@ -42,7 +48,7 @@ public class CustomerScreen implements UserScreen {
 				exitInput = false;
 				break;
 			case "2":
-
+				
 				exitInput = false;
 				break;
 			case "3":
@@ -58,7 +64,7 @@ public class CustomerScreen implements UserScreen {
 				System.out.println("Thank you, have a good day!\n");
 				break;
 			}
-		}while (!exitInput);
+		} while (!exitInput);
 
 		return false;
 	}
@@ -118,6 +124,21 @@ public class CustomerScreen implements UserScreen {
 		// if not register to the map then ask again!
 		if (counter == 2) {
 			// verified let them in!
+			
+			// match the customer to get that customer!
+			//all usernames are unique
+			
+			for(int i = 0; i < CustomerBase.getCustomerlist().size(); i++) {
+				if (CustomerBase.getCustomerlist().get(i).getUsername().equals(username)) {
+					loggedInCustomer = CustomerBase.getCustomerlist().get(i);
+				}
+			}
+			
+			
+			
+			
+			
+			// TODO should track id and return id back
 			return true;
 		} else {
 			// not verified kick them out!
@@ -147,20 +168,27 @@ public class CustomerScreen implements UserScreen {
 				System.out.println("enter new password-->");
 				password = scanner.nextLine();
 
-				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				System.out.println("Success! '" + username + "' is now a registered user!");
+
+				// TODO create new customer object and add them to the list of master customer
+				// list
+				CustomerBase.getCustomerlist().add(new Customer(username, password));
+
+				// might b okay, this is just to keep track of all logins!
+				// only accessing this when need to verify username/passwords
+				// match username and password to get customer!
+				// ^
+				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				
-				//TODO create new customer object and add them to the list of master customer list
 				
-				
+
 				exitInput = true;
 			}
 
 		} while (!exitInput);
-
-
 		
-		
+		//if they dont return a customer then go false
+
 		return true;
 	}
 
@@ -181,6 +209,12 @@ public class CustomerScreen implements UserScreen {
 
 			if (input.equals("1")) {
 				// call login
+				
+				
+				//TODO if loginVerification returns a customer than turn exitInput true, & return that customer 
+				//because they are who is logged in. 
+				
+				
 				exitInput = loginVerification();
 			} else if (input.equals("2")) {
 				// call register

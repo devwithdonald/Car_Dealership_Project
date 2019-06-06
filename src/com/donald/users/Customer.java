@@ -1,5 +1,6 @@
 package com.donald.users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
@@ -17,16 +18,16 @@ public class Customer {
 	
 
 	
-	public Customer(int customerID, List<Payment> localPaymentList, boolean makingPayments, String username,
-			String password, List<Car> carsOwned, Integer balance, List<Offer> pendingOffers) {
+	public Customer(String username,
+			String password) {
 		super();
-		this.localPaymentList = localPaymentList;
-		this.makingPayments = makingPayments;
+		this.localPaymentList = new ArrayList<>();
+		this.makingPayments = false;
 		this.username = username;
 		this.password = password;
-		this.carsOwned = carsOwned;
-		this.balance = balance;
-		this.pendingOffers = pendingOffers;
+		this.carsOwned = new ArrayList<>();
+		this.balance = 0;
+		this.pendingOffers = new ArrayList<>();
 		this.customerID = customerIDCounter;
 		customerIDCounter++;
 	}
