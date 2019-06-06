@@ -5,7 +5,7 @@ import com.donald.users.Customer;
 
 public interface CustomerServiceInt {
 
-	public void makeOffer(Car car);
+	public void makeOffer(Customer loggedInCustomer);
 		
 	public void viewOwnedCars(Customer loggedInCustomer);
 	

@@ -52,6 +52,7 @@ public class CustomerScreen implements UserScreen {
 				exitInput = false;
 				break;
 			case "2":
+				//TODO
 				
 				exitInput = false;
 				break;
@@ -60,7 +61,8 @@ public class CustomerScreen implements UserScreen {
 				exitInput = false;
 				break;
 			case "4":
-
+				//TODO
+				
 				exitInput = false;
 				break;
 			case "0":

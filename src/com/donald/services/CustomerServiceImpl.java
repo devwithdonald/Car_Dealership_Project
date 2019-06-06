@@ -1,13 +1,30 @@
 package com.donald.services;
 
-import com.donald.users.Car;
+import java.util.Scanner;
+
 import com.donald.users.Customer;
 
 public class CustomerServiceImpl implements CustomerServiceInt {
 
 	@Override
-	public void makeOffer(Car car) {
+	public void makeOffer(Customer loggedInCustomer) {
 		// TODO Auto-generated method stub
+		
+		//create new offer based on carID
+		String input = "";
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Please enter the car ID you would like to make an offer on -->");
+		
+		input = scanner.nextLine();
+		
+		
+		
+		
+		
+		//view car list!
+		
 
 	}
 

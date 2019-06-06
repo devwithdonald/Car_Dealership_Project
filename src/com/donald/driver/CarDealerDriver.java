@@ -17,22 +17,22 @@ public class CarDealerDriver {
 
 		do {
 			String screen = web.initialScreen();
-			
+
 			if (screen.equals("employee")) {
 				EmployeeScreen es = new EmployeeScreen();
-				
-				//if employee didn't pass verification go to top of screen
-				if(!es.display()) {
-					//go to top of loop
+
+				// if employee didn't pass verification go to top of screen
+				if (!es.display()) {
+					// go to top of loop
 					continue;
 				}
-					
+
 			} else if (screen.equals("customer")) {
 				CustomerScreen cs = new CustomerScreen();
-				
-				//if customer didn't pass verification go to top of screen
-				if(!cs.display()) {
-					//go to top of loop
+
+				// if customer didn't pass verification go to top of screen
+				if (!cs.display()) {
+					// go to top of loop
 					continue;
 				}
 			}
