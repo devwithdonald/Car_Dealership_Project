@@ -11,9 +11,7 @@ import com.donald.users.Offer;
 public class CustomerServiceImpl implements CustomerServiceInt {
 
 	@Override
-	public void makeOffer(Customer loggedInCustomer) {
-		// TODO Auto-generated method stub
-		
+	public void makeOffer(Customer loggedInCustomer) {		
 		//create new offer based on carID
 		String carIDInput = "";
 		String offerPrice = "";
@@ -87,15 +85,17 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 	}
 
 	@Override
-	public void viewRemainingPayments() {
+	public void viewRemainingPayments(Customer loggedInCustomer) {
 		// TODO Auto-generated method stub
+		System.out.println(loggedInCustomer.getUsername() + " has a balance of " + loggedInCustomer.getBalance());
 
+	
 	}
 
 	@Override
-	public void viewLocalPaymentsMade() {
+	public void viewLocalPaymentsMade(Customer loggedInCustomer) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

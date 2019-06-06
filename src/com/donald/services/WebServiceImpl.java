@@ -62,12 +62,20 @@ public class WebServiceImpl implements WebServiceInt {
 		System.out.println("-- View All Payments --");
 		// TODO Auto-generated method stub
 		// view every payment in the system
-		MasterPaymentList mpl = new MasterPaymentList();
 		
-		for (int i = 0; i < mpl.getMasterPaymentList().size(); i++) {
-			//print out ALL payments
-			System.out.println(mpl.getMasterPaymentList().get(i));
+		
+		
+		if(MasterPaymentList.getMasterPaymentList().size() == 0) {
+			System.out.println("Master payment list is empty!");
+		} else {
+			for (int i = 0; i < MasterPaymentList.getMasterPaymentList().size(); i++) {
+				//print out ALL payments
+				System.out.println(MasterPaymentList.getMasterPaymentList().get(i));
+			}
 		}
+		
+		
+		
 		
 	
 	}

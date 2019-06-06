@@ -9,8 +9,8 @@ public interface CustomerServiceInt {
 		
 	public void viewOwnedCars(Customer loggedInCustomer);
 	
-	public void viewRemainingPayments();
+	public void viewRemainingPayments(Customer loggedInCustomer);
 	
-	public void viewLocalPaymentsMade();
+	public void viewLocalPaymentsMade(Customer loggedInCustomer);
 	
 }

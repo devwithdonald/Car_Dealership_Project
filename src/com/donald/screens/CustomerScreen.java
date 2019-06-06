@@ -52,7 +52,7 @@ public class CustomerScreen implements UserScreen {
 				exitInput = false;
 				break;
 			case "2":
-				//TODO
+				//TODO NOT COMPLETE
 				csi.makeOffer(loggedInCustomer);
 				exitInput = false;
 				break;
@@ -62,7 +62,7 @@ public class CustomerScreen implements UserScreen {
 				break;
 			case "4":
 				//TODO
-				
+				csi.viewRemainingPayments(loggedInCustomer);
 				exitInput = false;
 				break;
 			case "0":
