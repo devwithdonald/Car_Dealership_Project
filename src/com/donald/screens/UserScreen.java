@@ -2,8 +2,8 @@ package com.donald.screens;
 
 public interface UserScreen {
 
-	public void display();
+	public boolean display();
 	
-	public void loginVerification();
+	public boolean loginVerification();
 	
 }

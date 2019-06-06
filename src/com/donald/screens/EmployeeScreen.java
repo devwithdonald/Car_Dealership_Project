@@ -7,11 +7,12 @@ import com.donald.services.EmployeeServiceImpl;
 import com.donald.services.WebServiceImpl;
 import com.donald.users.Employee;
 
-public class EmployeeScreen{
+public class EmployeeScreen implements UserScreen{
 
 	// this method should call other methods that employee can do?
 	// boolean should return whether the program keeps runnning
-	public boolean employeeOption() {
+	@Override
+	public boolean display() {
 
 		// need to pass the login verification (if they dont return false)
 		// if false kick them out back to intial screen
@@ -70,6 +71,7 @@ public class EmployeeScreen{
 		return false;
 	}
 
+	@Override
 	public boolean loginVerification() {
 
 		int counter = 0;

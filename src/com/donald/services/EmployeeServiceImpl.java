@@ -105,17 +105,15 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 						rejectCustomer.getPendingOffers().remove(i);
 					}
 				}
-				
+
 				// removing from the master list as well by ID
-				// keep other offers 
+				// keep other offers
 				for (int j = 0; j < MasterOfferList.getOfferlist().size(); j++) {
 					if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
 						MasterOfferList.getOfferlist().remove(i);
 					}
 				}
-				
-				
-				
+
 			}
 		}
 

@@ -29,6 +29,12 @@ public class CarDealerDriver {
 					
 			} else if (screen.equals("customer")) {
 				CustomerScreen cs = new CustomerScreen();
+				
+				//if customer didn't pass verification go to top of screen
+				if(!cs.customerOption()) {
+					//go to top of loop
+					continue;
+				}
 			}
 
 		} while (keepGoing);
