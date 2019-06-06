@@ -3,6 +3,7 @@ package com.donald.screens;
 import java.util.Scanner;
 
 import com.donald.services.CarLotServiceImpl;
+import com.donald.services.CustomerServiceImpl;
 import com.donald.services.EmployeeServiceImpl;
 import com.donald.services.WebServiceImpl;
 import com.donald.users.CarLot;
@@ -29,8 +30,9 @@ public class CustomerScreen implements UserScreen {
 
 		do {
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("\nWelcome! What would you like to do today?");
-
+			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
+			
+			
 			System.out.println("Enter '1': View all cars on the lot");
 			System.out.println("Enter '2': To make an offer on a car");
 			System.out.println("Enter '3': View cars that you own");
@@ -40,7 +42,9 @@ public class CustomerScreen implements UserScreen {
 			input = scanner.nextLine();
 
 			CarLotServiceImpl clsi = new CarLotServiceImpl();
-
+			CustomerServiceImpl csi = new CustomerServiceImpl();
+			
+			
 			// call stuff
 			switch (input) {
 			case "1":
@@ -52,7 +56,7 @@ public class CustomerScreen implements UserScreen {
 				exitInput = false;
 				break;
 			case "3":
-
+				csi.viewOwnedCars(loggedInCustomer);
 				exitInput = false;
 				break;
 			case "4":
@@ -72,7 +76,9 @@ public class CustomerScreen implements UserScreen {
 	@Override
 	public boolean loginVerification() {
 		System.out.println("-- Login Verification -- ");
-
+		
+		//
+		
 		int counter = 0;
 		String username = "";
 		boolean verifiedUsername = false;
