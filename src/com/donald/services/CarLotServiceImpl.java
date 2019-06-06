@@ -30,10 +30,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		// TODO will need logic
 		// ownerUsername & forSale are default set
 		System.out.println("Please enter the car type: ");
-		price = scanner.nextLine();
+		carType = scanner.nextLine();
 
 		System.out.println("Please enter the car price: ");
-		carType = scanner.nextLine();
+		price = scanner.nextLine();
 
 		// adding car
 		CarLot.getCarlot().add(new Car("dealer", price, carType, true));

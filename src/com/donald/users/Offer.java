@@ -54,9 +54,11 @@ public class Offer {
 
 	@Override
 	public String toString() {
-		return "Offer [offerID=" + offerID + ", offerCar=" + offerCar + ", offerer=" + offerer + ", offerPrice="
+		return "Offer [offerID=" + offerID + ", offerCar=" + offerCar.getCarType() + ", offerer=" + offerer.getUsername() + ", offerPrice="
 				+ offerPrice + "]";
 	}
+
+
 	
 
 

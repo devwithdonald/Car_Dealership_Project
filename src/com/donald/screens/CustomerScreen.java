@@ -53,7 +53,7 @@ public class CustomerScreen implements UserScreen {
 				break;
 			case "2":
 				//TODO
-				
+				csi.makeOffer(loggedInCustomer);
 				exitInput = false;
 				break;
 			case "3":

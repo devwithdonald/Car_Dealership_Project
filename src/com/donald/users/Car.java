@@ -1,5 +1,6 @@
 package com.donald.users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Car {
@@ -29,7 +30,7 @@ public class Car {
 		this.carType = carType;
 		this.forSale = forSale;
 		this.carID = Car.carIDCounter;
-		this.carOfferList = null;
+		this.carOfferList = new ArrayList<>();
 		Car.carIDCounter++;
 	}
 
@@ -78,10 +79,12 @@ public class Car {
 	}
 
 
+
+
 	@Override
 	public String toString() {
-		return "Car [ownerUsername=" + ownerUsername + ", price=" + price + ", carType=" + carType + ", forSale="
-				+ forSale + ", carID=" + carID + ", carOfferList=" + carOfferList + "]";
+		return "Car [carID=" + carID + ", ownerUsername=" + ownerUsername + ", price=" + price + ", carType=" + carType
+				+ ", forSale=" + forSale + ", carOfferList=" + carOfferList + "]";
 	}
 
 	@Override
