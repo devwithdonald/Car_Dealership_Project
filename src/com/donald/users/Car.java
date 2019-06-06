@@ -5,11 +5,12 @@ import java.util.List;
 public class Car {
 
 	public static int carIDCounter = 1; 
+	private int carID;
+	
 	private String ownerUsername;
 	private String price; //balance
 	private String carType;
 	private Boolean forSale;
-	private int carID;
 	private List<Offer> carOfferList;
 	
 	
@@ -30,6 +31,14 @@ public class Car {
 		this.carID = Car.carIDCounter;
 		this.carOfferList = null;
 		Car.carIDCounter++;
+	}
+
+	public List<Offer> getCarOfferList() {
+		return carOfferList;
+	}
+
+	public void setCarOfferList(List<Offer> carOfferList) {
+		this.carOfferList = carOfferList;
 	}
 
 	public String getOwnerUsername() {

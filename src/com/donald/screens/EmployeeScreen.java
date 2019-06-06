@@ -3,6 +3,7 @@ package com.donald.screens;
 import java.util.Scanner;
 
 import com.donald.services.CarLotServiceImpl;
+import com.donald.services.EmployeeServiceImpl;
 import com.donald.services.WebServiceImpl;
 import com.donald.users.Employee;
 
@@ -38,6 +39,7 @@ public class EmployeeScreen{
 			
 			CarLotServiceImpl cls = new CarLotServiceImpl();
 			WebServiceImpl wsi = new WebServiceImpl();
+			EmployeeServiceImpl esi = new EmployeeServiceImpl();
 			
 			// call stuff
 			switch (input) {
@@ -46,7 +48,8 @@ public class EmployeeScreen{
 				exitInput = false;
 				break;
 			case "2":
-				
+				esi.offerDecision();
+				exitInput = false;
 				break;
 			case "3":
 				cls.removeCar();

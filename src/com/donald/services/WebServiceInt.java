@@ -13,6 +13,9 @@ public interface WebServiceInt {
 	
 	public int calculateMonthlyPayment();
 	
+	public void viewCarOfferList();
+	
+	
 	
 	
 	

@@ -2,6 +2,8 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.users.CarLot;
+import com.donald.users.MasterOfferList;
 import com.donald.users.MasterPaymentList;
 
 public class WebServiceImpl implements WebServiceInt {
@@ -57,7 +59,7 @@ public class WebServiceImpl implements WebServiceInt {
 
 	@Override
 	public void viewAllPayments() {
-		System.out.println("-- View all payments --");
+		System.out.println("-- View All Payments --");
 		// TODO Auto-generated method stub
 		// view every payment in the system
 		MasterPaymentList mpl = new MasterPaymentList();
@@ -74,6 +76,16 @@ public class WebServiceImpl implements WebServiceInt {
 	public int calculateMonthlyPayment() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	@Override
+	public void viewCarOfferList()	{
+		System.out.println("-- View All Car Offers For Each Car --");
+		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
+			System.out.println(MasterOfferList.getOfferlist().get(i));
+		}
+		
+		
 	}
 
 }
