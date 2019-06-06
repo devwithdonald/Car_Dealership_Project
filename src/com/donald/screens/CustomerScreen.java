@@ -2,6 +2,9 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
+import com.donald.users.Employee;
+import com.donald.users.MasterCustomerLoginList;
+
 public class CustomerScreen implements UserScreen{
 
 	@Override
@@ -26,24 +29,86 @@ public class CustomerScreen implements UserScreen{
 	public boolean loginVerification() {
 		System.out.println("-- Login Verification -- ");
 		
+		int counter = 0;
+		String username = "";
+		boolean verifiedUsername = false;
+		String password = "";
+		boolean verifiedPassword = true;
+		boolean exitInput = false;
+		
+		do {
+			Scanner scanner = new Scanner(System.in);
+			counter = 0;
+			
+			// username validation
+			System.out.println("Enter (b) to return to the initial screen.");
+			
+			
+			System.out.println("enter username --> ");
+			username = scanner.nextLine();
+
+			if (username.equals("b")) {
+				break;
+			}
+			
+			if(MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
+				verifiedUsername = true;
+				counter++;
+			}
+			
+			
+			// password validation
+			System.out.println("enter password --> ");
+			password = scanner.nextLine();
+			
+			if (counter == 1) {
+				if (MasterCustomerLoginList.getCustomerloginmap().get(username).equals(password)) {
+					verifiedPassword = true;
+					counter++;
+				}
+			} else {
+				System.out.println("username not found!");
+			}
+
+			
+			
+		}while (!verifiedUsername && !verifiedPassword);
+		
+		
 		//will need to ensure the username password have a match
 		//best is probably a master list with MAP
 		// if not register to the map then ask again!
-		return true;
+		if (counter == 2) {
+			// verified let them in!
+			return true;
+		} else {
+			// not verified kick them out!
+			return false;
+		}
 	}
 	
+	//do loop
 	public boolean register() {
 		System.out.println("-- Customer Registration -- ");
 		
-		//should check if its already in there
-		
+	
 		String username = "";
 		String password = "";
 		
-		System.out.println("new username-->");
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("enter new username-->");
+		username = scanner.nextLine();
+		
+		System.out.println("enter new password-->");
+		password = scanner.nextLine();
+		
+		//TODO will need to check if user name is already here
+		//add to master customer login map 
+		MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 		
 		
-		System.out.println();
+		System.out.println("Success! '" + username + "' is now a registered user!");
 		
 		return true;
 	}
