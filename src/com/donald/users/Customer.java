@@ -3,6 +3,9 @@ package com.donald.users;
 import java.util.List;
 
 public class Customer {
+
+	private static int customerIDCounter = 1;
+	private int customerID;
 	
 	private List<Payment> localPaymentList;
 	private boolean makingPayments = false;
@@ -12,8 +15,10 @@ public class Customer {
 	private Integer balance;
 	private List<Offer> pendingOffers;
 	
-	public Customer(List<Payment> localPaymentList, boolean makingPayments, String username, String password,
-			List<Car> carsOwned, Integer balance, List<Offer> pendingOffers) {
+
+	
+	public Customer(int customerID, List<Payment> localPaymentList, boolean makingPayments, String username,
+			String password, List<Car> carsOwned, Integer balance, List<Offer> pendingOffers) {
 		super();
 		this.localPaymentList = localPaymentList;
 		this.makingPayments = makingPayments;
@@ -22,7 +27,14 @@ public class Customer {
 		this.carsOwned = carsOwned;
 		this.balance = balance;
 		this.pendingOffers = pendingOffers;
+		this.customerID = customerIDCounter;
+		customerIDCounter++;
 	}
+
+	public int getCustomerID() {
+		return customerID;
+	}
+
 	public boolean isMakingPayments() {
 		return makingPayments;
 	}
