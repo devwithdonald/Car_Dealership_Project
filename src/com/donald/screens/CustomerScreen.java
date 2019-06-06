@@ -20,7 +20,7 @@ public class CustomerScreen implements UserScreen{
 //			return false;
 //		}
 		
-		//TODO;
+		//TODO here 
 		
 		return false;
 	}
@@ -70,6 +70,10 @@ public class CustomerScreen implements UserScreen{
 				System.out.println("username not found!");
 			}
 
+			//after failed password attempt
+			if(counter == 1) {
+				System.out.println("wrong password");
+			}
 			
 			
 		}while (!verifiedUsername && !verifiedPassword);
@@ -133,7 +137,7 @@ public class CustomerScreen implements UserScreen{
 				exitInput = loginVerification();
 			} else if (input.equals("2")) {
 				//call register
-				exitInput = register();
+				register();
 			} else if (input.equals("0")){
 				exitInput = true;
 				returnBool = false;
