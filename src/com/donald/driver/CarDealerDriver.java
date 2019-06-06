@@ -22,7 +22,7 @@ public class CarDealerDriver {
 				EmployeeScreen es = new EmployeeScreen();
 				
 				//if employee didn't pass verification go to top of screen
-				if(!es.employeeOption()) {
+				if(!es.display()) {
 					//go to top of loop
 					continue;
 				}
@@ -31,7 +31,7 @@ public class CarDealerDriver {
 				CustomerScreen cs = new CustomerScreen();
 				
 				//if customer didn't pass verification go to top of screen
-				if(!cs.customerOption()) {
+				if(!cs.display()) {
 					//go to top of loop
 					continue;
 				}
