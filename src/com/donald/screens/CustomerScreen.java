@@ -2,6 +2,9 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
+import com.donald.services.CarLotServiceImpl;
+import com.donald.services.EmployeeServiceImpl;
+import com.donald.services.WebServiceImpl;
 import com.donald.users.Employee;
 import com.donald.users.MasterCustomerLoginList;
 
@@ -11,16 +14,51 @@ public class CustomerScreen implements UserScreen {
 	public boolean display() {
 		// TODO Auto-generated method stub
 
-		// ask if they need to sign up or login
 		if (!customerAccess()) {
 			return false;
 		}
 
-//		if(!loginVerification()) {
-//			return false;
-//		}
+		boolean exitInput = true;
+		String input = "";
+			
+		do {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("\nWelcome! What would you like to do today?");
 
-		// TODO here
+			System.out.println("Enter '1': View all cars on the lot");
+			System.out.println("Enter '2': To make an offer on a car");
+			System.out.println("Enter '3': View cars that you own");
+			System.out.println("Enter '4': View remaining payments on an owned car");
+			System.out.println("Enter '0': Exit!");
+
+			input = scanner.nextLine();
+			
+			CarLotServiceImpl clsi = new CarLotServiceImpl();
+		
+			// call stuff
+			switch (input) {
+			case "1":
+				clsi.viewCarLot();
+				exitInput = false;
+				break;
+			case "2":
+
+				exitInput = false;
+				break;
+			case "3":
+
+				exitInput = false;
+				break;
+			case "4":
+
+				exitInput = false;
+				break;
+			case "0":
+				exitInput = true;
+				System.out.println("Thank you, have a good day!\n");
+				break;
+			}
+		}while (!exitInput);
 
 		return false;
 	}
@@ -111,11 +149,18 @@ public class CustomerScreen implements UserScreen {
 
 				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				System.out.println("Success! '" + username + "' is now a registered user!");
+				
+				//TODO create new customer object and add them to the list of master customer list
+				
+				
 				exitInput = true;
 			}
 
 		} while (!exitInput);
 
+
+		
+		
 		return true;
 	}
 

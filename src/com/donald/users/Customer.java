@@ -10,10 +10,19 @@ public class Customer {
 	private String password;
 	private List<Car> carsOwned;
 	private Integer balance;
-	//
 	private List<Offer> pendingOffers;
 	
-	
+	public Customer(List<Payment> localPaymentList, boolean makingPayments, String username, String password,
+			List<Car> carsOwned, Integer balance, List<Offer> pendingOffers) {
+		super();
+		this.localPaymentList = localPaymentList;
+		this.makingPayments = makingPayments;
+		this.username = username;
+		this.password = password;
+		this.carsOwned = carsOwned;
+		this.balance = balance;
+		this.pendingOffers = pendingOffers;
+	}
 	public boolean isMakingPayments() {
 		return makingPayments;
 	}
