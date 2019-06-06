@@ -4,7 +4,7 @@ public class Offer {
 
 
 	//these offerIDs need to unique
-	public static int offerCounter = 1;
+	public static int offerCounterID = 1;
 	private int offerID;
 	
 	private Car offerCar;
@@ -20,8 +20,8 @@ public class Offer {
 		this.offerCar = offerCar;
 		this.offerer = offerer;
 		this.offerPrice = offerPrice;
-		this.offerID = offerCounter;
-		offerCounter++;
+		this.offerID = offerCounterID;
+		offerCounterID++;
 	}
 
 	public int getOfferID() {

@@ -17,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 		String input = "";
 
-		System.out.println("Enter Offer ID-->");
+		System.out.println("Enter Offer ID to accept-->");
 
 		input = scanner.nextLine();
 		int intInput = Integer.parseInt(input);
@@ -82,6 +82,42 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 	@Override
 	public void rejectOffer() {
 		System.out.println("-- Reject Offer Screen --");
+		Scanner scanner = new Scanner(System.in);
+
+		String input = "";
+
+		System.out.println("Enter Offer ID to reject-->");
+
+		input = scanner.nextLine();
+		int intInput = Integer.parseInt(input);
+
+		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
+			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
+				// reject logic
+
+				// getting the customer (reject)
+				Customer rejectCustomer = MasterOfferList.getOfferlist().get(i).getOfferer();
+
+				// take offer out
+				// remove pending offer from buyer where the unique id match
+				for (int j = 0; j < rejectCustomer.getPendingOffers().size(); j++) {
+					if (rejectCustomer.getPendingOffers().get(i).getOfferID() == intInput) {
+						rejectCustomer.getPendingOffers().remove(i);
+					}
+				}
+				
+				// removing from the master list as well by ID
+				// keep other offers 
+				for (int j = 0; j < MasterOfferList.getOfferlist().size(); j++) {
+					if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
+						MasterOfferList.getOfferlist().remove(i);
+					}
+				}
+				
+				
+				
+			}
+		}
 
 	}
 
