@@ -47,7 +47,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 	@Override
 	public void removeCar() {
-		// TODO Auto-generated method stub
+		System.out.println("-- Remove a car screen --");
 
 		// give option to see car list OR just input the car
 

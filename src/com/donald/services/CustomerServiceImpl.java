@@ -86,10 +86,15 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 
 	@Override
 	public void viewRemainingPayments(Customer loggedInCustomer) {
-		// TODO Auto-generated method stub
+		System.out.println("-- Viewing Remaining Payments --");
+		
 		System.out.println(loggedInCustomer.getUsername() + " has a balance of " + loggedInCustomer.getBalance());
 
-	
+		System.out.println("and a current monthly payment of " + Math.round(loggedInCustomer.getMonthlyPayment()));
+		
+		Double remainingPayments = loggedInCustomer.getBalance() / loggedInCustomer.getMonthlyPayment();
+		
+		System.out.println("Remaining payments left at the current monthly payment ->" + Math.round(remainingPayments));
 	}
 
 	@Override

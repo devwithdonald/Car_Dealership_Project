@@ -15,6 +15,7 @@ public class Customer {
 	private List<Car> carsOwned;
 	private Integer balance;
 	private List<Offer> pendingOffers;
+	private Double monthlyPayment;
 	
 
 	
@@ -28,8 +29,17 @@ public class Customer {
 		this.carsOwned = new ArrayList<>();
 		this.balance = 0;
 		this.pendingOffers = new ArrayList<>();
+		this.monthlyPayment = 0.0;
 		this.customerID = customerIDCounter;
 		customerIDCounter++;
+	}
+
+	public Double getMonthlyPayment() {
+		return monthlyPayment;
+	}
+
+	public void setMonthlyPayment(Double monthlyPayment) {
+		this.monthlyPayment = monthlyPayment;
 	}
 
 	public int getCustomerID() {

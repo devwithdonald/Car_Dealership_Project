@@ -2,12 +2,16 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.users.Car;
 import com.donald.users.CarLot;
+import com.donald.users.Customer;
 import com.donald.users.MasterOfferList;
 import com.donald.users.MasterPaymentList;
 
 public class WebServiceImpl implements WebServiceInt {
 
+	
+	
 	@Override
 	public String initialScreen() {
 		/*
@@ -51,11 +55,6 @@ public class WebServiceImpl implements WebServiceInt {
 		return input;
 	}
 
-	@Override
-	public boolean loginVerification() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public void viewAllPayments() {
@@ -81,17 +80,27 @@ public class WebServiceImpl implements WebServiceInt {
 	}
 
 	@Override
-	public int calculateMonthlyPayment() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void calculateMonthlyPayment(Customer loggedInCustomer) {
+		
+		System.out.println("Current Customer Monthly Payment -->" + Math.round(loggedInCustomer.getMonthlyPayment()));
+		
+		loggedInCustomer.setMonthlyPayment(loggedInCustomer.getBalance() / 12.0);
+		
+		System.out.println("New Monthly Customer Monthly Payment -->" + Math.round(loggedInCustomer.getMonthlyPayment()));
 	}
 	
 	@Override
 	public void viewCarOfferList()	{
 		System.out.println("-- View All Car Offers For Each Car --");
-		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
-			System.out.println(MasterOfferList.getOfferlist().get(i));
+		
+		if(MasterOfferList.getOfferlist().size() == 0) {
+			System.out.println("car offer list is empty");
+		}else {
+			for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
+				System.out.println(MasterOfferList.getOfferlist().get(i));
+			}
 		}
+		
 		
 		
 	}

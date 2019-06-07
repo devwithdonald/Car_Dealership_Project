@@ -1,17 +1,16 @@
 package com.donald.services;
 
-import com.donald.screens.UserScreen;
+import com.donald.users.Car;
+import com.donald.users.Customer;
 
 public interface WebServiceInt {
 	
 	// return the screen
 	public String initialScreen();
 	
-	public boolean loginVerification();
-
 	public void viewAllPayments();
 	
-	public int calculateMonthlyPayment();
+	public void calculateMonthlyPayment(Customer loggedInCustomer);
 	
 	public void viewCarOfferList();
 	
