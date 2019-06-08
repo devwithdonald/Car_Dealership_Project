@@ -13,8 +13,10 @@ import com.donald.users.Offer;
 
 public class CustomerServiceImpl implements CustomerServiceInt {
 
-	CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
-	OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	/*
+	 * CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
+	 * OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	 */
 	
 	@Override
 	public void makeOffer(Customer loggedInCustomer) {		
@@ -22,11 +24,12 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		//TODO load offer list - make own method
 		
 		
-		MasterOfferList.getOfferlist().clear();
-
-		if (offerListData.loadOfferList() != null) {
-			 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
-		}
+		/*
+		 * MasterOfferList.getOfferlist().clear();
+		 * 
+		 * if (offerListData.loadOfferList() != null) {
+		 * MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList()); }
+		 */
 		
 		
 		//create new offer based on carID
@@ -71,10 +74,11 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		//get the offer just made and put it in the car list!
 		offerCar.getCarOfferList().add(newOffer);
 		
-		//save offer list
-		offerListData.saveOfferList(MasterOfferList.getOfferlist());
-		//save customer list
-		customerListData.saveCustomerList(CustomerBase.getCustomerlist());
+		/*
+		 * //save offer list
+		 * offerListData.saveOfferList(MasterOfferList.getOfferlist()); //save customer
+		 * list customerListData.saveCustomerList(CustomerBase.getCustomerlist());
+		 */
 
 		
 

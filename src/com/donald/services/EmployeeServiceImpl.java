@@ -13,9 +13,11 @@ import com.donald.users.MasterOfferList;
 
 public class EmployeeServiceImpl implements EmployeeServiceInt {
 
-	CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
-	CarLotSerializeDAO carLotData = new CarLotSerializeDAO();
-	OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	/*
+	 * CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
+	 * CarLotSerializeDAO carLotData = new CarLotSerializeDAO(); OfferSerializeDAO
+	 * offerListData = new OfferSerializeDAO();
+	 */
 	
 	@Override
 	public void acceptOffer() {
@@ -23,26 +25,22 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		
 		
 		
-		//load
-		MasterOfferList.getOfferlist().clear();
-
-		if (offerListData.loadOfferList() != null) {
-			 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
-		}
-		
-		//load
-		CustomerBase.getCustomerlist().clear();
-
-		if (customerListData.loadCustomerList() != null) {
-			 CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList());
-		}
-		
-		//load
-		CarLot.getCarlot().clear();
-
-		if (carLotData.loadCarLot() != null) {
-			 CarLot.getCarlot().addAll(carLotData.loadCarLot());
-		}
+		/*
+		 * //load MasterOfferList.getOfferlist().clear();
+		 * 
+		 * if (offerListData.loadOfferList() != null) {
+		 * MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList()); }
+		 * 
+		 * //load CustomerBase.getCustomerlist().clear();
+		 * 
+		 * if (customerListData.loadCustomerList() != null) {
+		 * CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList()); }
+		 * 
+		 * //load CarLot.getCarlot().clear();
+		 * 
+		 * if (carLotData.loadCarLot() != null) {
+		 * CarLot.getCarlot().addAll(carLotData.loadCarLot()); }
+		 */
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -137,9 +135,11 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				
 				
 				//save
-				customerListData.saveCustomerList(CustomerBase.getCustomerlist());
-				carLotData.saveCarLot(CarLot.getCarlot());
-				offerListData.saveOfferList(MasterOfferList.getOfferlist());
+				/*
+				 * customerListData.saveCustomerList(CustomerBase.getCustomerlist());
+				 * carLotData.saveCarLot(CarLot.getCarlot());
+				 * offerListData.saveOfferList(MasterOfferList.getOfferlist());
+				 */
 				
 				System.out.println("buyer->" + buyer.getUsername());
 				System.out.println("buyers owned cars->" + buyer.getCarsOwned());

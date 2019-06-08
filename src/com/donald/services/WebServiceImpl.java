@@ -11,7 +11,7 @@ import com.donald.users.MasterPaymentList;
 
 public class WebServiceImpl implements WebServiceInt {
 
-	OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	/* OfferSerializeDAO offerListData = new OfferSerializeDAO(); */
 	
 	@Override
 	public String initialScreen() {
@@ -101,11 +101,12 @@ public class WebServiceImpl implements WebServiceInt {
 		
 		//load
 		//load
-		MasterOfferList.getOfferlist().clear();
-
-		if (offerListData.loadOfferList() != null) {
-			 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
-		}
+		/*
+		 * MasterOfferList.getOfferlist().clear();
+		 * 
+		 * if (offerListData.loadOfferList() != null) {
+		 * MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList()); }
+		 */
 		
 		if(MasterOfferList.getOfferlist().size() == 0) {
 			System.out.println("car offer list is empty");

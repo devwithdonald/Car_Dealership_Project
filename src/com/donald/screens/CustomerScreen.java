@@ -22,16 +22,18 @@ public class CustomerScreen implements UserScreen {
 	
 	Customer loggedInCustomer;
 	//SAVE FILE
-	LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
-	CustomerListSerializeDAO customerListdata = new CustomerListSerializeDAO();
-	OfferSerializeDAO offerListData = new OfferSerializeDAO();
-	CarLotSerializeDAO carLotData = new CarLotSerializeDAO();
+	/*
+	 * LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
+	 * CustomerListSerializeDAO customerListdata = new CustomerListSerializeDAO();
+	 * OfferSerializeDAO offerListData = new OfferSerializeDAO(); CarLotSerializeDAO
+	 * carLotData = new CarLotSerializeDAO();
+	 */
 
 	@Override
 	public boolean display() {
 		// TODO Auto-generated method stub
 
-		//LOAD all here?
+
 		
 
 		
@@ -46,25 +48,24 @@ public class CustomerScreen implements UserScreen {
 			//might need to load here?
 			
 			//load
-			MasterOfferList.getOfferlist().clear();
-
-			if (offerListData.loadOfferList() != null) {
-				 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
-			}
+			/*
+			 * MasterOfferList.getOfferlist().clear();
+			 * 
+			 * if (offerListData.loadOfferList() != null) {
+			 * MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList()); }
+			 */
 			
-			//load
-			CustomerBase.getCustomerlist().clear();
-
-			if (customerListdata.loadCustomerList() != null) {
-				 CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
-			}
-			
-			//load
-			CarLot.getCarlot().clear();
-
-			if (carLotData.loadCarLot() != null) {
-				 CarLot.getCarlot().addAll(carLotData.loadCarLot());
-			}
+			/*
+			 * //load CustomerBase.getCustomerlist().clear();
+			 * 
+			 * if (customerListdata.loadCustomerList() != null) {
+			 * CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList()); }
+			 * 
+			 * //load CarLot.getCarlot().clear();
+			 * 
+			 * if (carLotData.loadCarLot() != null) {
+			 * CarLot.getCarlot().addAll(carLotData.loadCarLot()); }
+			 */
 			
 			
 			
@@ -143,11 +144,14 @@ public class CustomerScreen implements UserScreen {
 	//	if(CustomerBase.getCustomerlist().size() != 0) {
 //		CustomerBase.getCustomerlist().clear();
 		
-		if(customerListdata.loadCustomerList() != null && loginListData.loadLoginList() != null) {
-			CustomerBase.getCustomerlist().clear();
-			CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
-			MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
-		}
+		/*
+		 * if(customerListdata.loadCustomerList() != null &&
+		 * loginListData.loadLoginList() != null) {
+		 * CustomerBase.getCustomerlist().clear();
+		 * CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+		 * MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.
+		 * loadLoginList()); }
+		 */
 		
 		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
 		
@@ -244,11 +248,14 @@ public class CustomerScreen implements UserScreen {
 		//if(CustomerBase.getCustomerlist().size() != 0) {
 		
 		
-		if(customerListdata.loadCustomerList() != null && loginListData.loadLoginList() != null) {
-			CustomerBase.getCustomerlist().clear();
-			CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
-			MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
-		}
+		/*
+		 * if(customerListdata.loadCustomerList() != null &&
+		 * loginListData.loadLoginList() != null) {
+		 * CustomerBase.getCustomerlist().clear();
+		 * CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+		 * MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.
+		 * loadLoginList()); }
+		 */
 		
 
 		
@@ -284,8 +291,10 @@ public class CustomerScreen implements UserScreen {
 				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				
 				
-				customerListdata.saveCustomerList(CustomerBase.getCustomerlist());
-				loginListData.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
+				/*
+				 * customerListdata.saveCustomerList(CustomerBase.getCustomerlist());
+				 * loginListData.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
+				 */
 				
 
 				exitInput = true;
