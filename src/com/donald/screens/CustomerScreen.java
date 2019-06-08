@@ -2,6 +2,7 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
+import com.donald.dao.LoginListSerializeDAO;
 import com.donald.services.CarLotServiceImpl;
 import com.donald.services.CustomerServiceImpl;
 import com.donald.services.EmployeeServiceImpl;
@@ -188,6 +189,10 @@ public class CustomerScreen implements UserScreen {
 				// ^
 				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				
+				//SAVE FILE
+				LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
+				
+				loginListData.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
 				
 
 				exitInput = true;
@@ -195,7 +200,9 @@ public class CustomerScreen implements UserScreen {
 
 		} while (!exitInput);
 		
-		//if they dont return a customer then go false
+		//CALL THE METHOD SAVE FILE ON MASTERCUSTOMERLOGINLIST SO IT SAVES THE MASTERCUSTOMERLOGINLIST CLASS
+		// saveLoginList(MasterCustomerLoginList);
+		//should load 
 
 		return true;
 	}

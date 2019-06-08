@@ -1,11 +1,13 @@
 package com.donald.dao;
 
+import java.util.Map;
+
 import com.donald.users.MasterCustomerLoginList;
 
 public interface LoginListDAO {
 
-	public void saveLoginList(MasterCustomerLoginList masterCustomerLoginList);
+	public void saveLoginList(Map<String,String> CustomerLoginMap);
 	
-	public MasterCustomerLoginList loadFile();
+	public Map<String,String> loadFile();
 	
 }
