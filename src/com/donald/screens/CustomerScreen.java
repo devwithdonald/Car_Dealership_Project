@@ -2,6 +2,7 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
+import com.donald.dao.CustomerListSerializeDAO;
 import com.donald.dao.LoginListSerializeDAO;
 import com.donald.services.CarLotServiceImpl;
 import com.donald.services.CustomerServiceImpl;
@@ -19,6 +20,7 @@ public class CustomerScreen implements UserScreen {
 	Customer loggedInCustomer;
 	//SAVE FILE
 	LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
+	CustomerListSerializeDAO customerListdata = new CustomerListSerializeDAO();
 
 	@Override
 	public boolean display() {
@@ -82,8 +84,13 @@ public class CustomerScreen implements UserScreen {
 	public boolean loginVerification() {
 		System.out.println("-- Login Verification -- ");
 		
+		//CustomerBase
+		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+		
 		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
 		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+		
+		
 		
 		
 		int counter = 0;
@@ -194,7 +201,7 @@ public class CustomerScreen implements UserScreen {
 				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				
 				
-				
+				customerListdata.saveCustomerList(CustomerBase.getCustomerlist());
 				loginListData.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
 				
 
