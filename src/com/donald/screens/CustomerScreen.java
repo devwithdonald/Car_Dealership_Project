@@ -2,8 +2,10 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
+import com.donald.dao.CarLotSerializeDAO;
 import com.donald.dao.CustomerListSerializeDAO;
 import com.donald.dao.LoginListSerializeDAO;
+import com.donald.dao.OfferSerializeDAO;
 import com.donald.services.CarLotServiceImpl;
 import com.donald.services.CustomerServiceImpl;
 import com.donald.services.EmployeeServiceImpl;
@@ -13,6 +15,7 @@ import com.donald.users.Customer;
 import com.donald.users.CustomerBase;
 import com.donald.users.Employee;
 import com.donald.users.MasterCustomerLoginList;
+import com.donald.users.MasterOfferList;
 
 public class CustomerScreen implements UserScreen {
 	
@@ -21,14 +24,16 @@ public class CustomerScreen implements UserScreen {
 	//SAVE FILE
 	LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
 	CustomerListSerializeDAO customerListdata = new CustomerListSerializeDAO();
+	OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	CarLotSerializeDAO carLotData = new CarLotSerializeDAO();
 
 	@Override
 	public boolean display() {
 		// TODO Auto-generated method stub
 
-		//LOAD
+		//LOAD all here?
 		
-//		if(customerList)
+
 		
 		if (!customerAccess()) {
 			return false;
@@ -38,6 +43,38 @@ public class CustomerScreen implements UserScreen {
 		String input = "";
 
 		do {
+			//might need to load here?
+			
+			//load
+			MasterOfferList.getOfferlist().clear();
+
+			if (offerListData.loadOfferList() != null) {
+				 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
+			}
+			
+			//load
+			CustomerBase.getCustomerlist().clear();
+
+			if (customerListdata.loadCustomerList() != null) {
+				 CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+			}
+			
+			//load
+			CarLot.getCarlot().clear();
+
+			if (carLotData.loadCarLot() != null) {
+				 CarLot.getCarlot().addAll(carLotData.loadCarLot());
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			System.out.println("In login screen -> car list" + loggedInCustomer.getCarsOwned());
+			
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
 			
@@ -52,6 +89,8 @@ public class CustomerScreen implements UserScreen {
 
 			CarLotServiceImpl clsi = new CarLotServiceImpl();
 			CustomerServiceImpl csi = new CustomerServiceImpl();
+			
+			
 			
 			
 			// call stuff

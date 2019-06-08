@@ -87,11 +87,13 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 		
 		//load
-		CustomerBase.getCustomerlist().clear();
-		
-		if(customerListData.loadCustomerList() != null) {
-			CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList());
-		}
+//		CustomerBase.getCustomerlist().clear();
+//		
+//		if(customerListData.loadCustomerList() != null) {
+//			CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList());
+//		}
+		System.out.println("customerusername=" + loggedInCustomer.getUsername());
+		System.out.println("customercarowned=" + loggedInCustomer.getCarsOwned());
 		
 		if (loggedInCustomer.getCarsOwned().size() == 0) {
 			System.out.println("You have no cars in your lot!");

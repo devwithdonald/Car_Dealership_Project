@@ -141,6 +141,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				carLotData.saveCarLot(CarLot.getCarlot());
 				offerListData.saveOfferList(MasterOfferList.getOfferlist());
 				
+				System.out.println("buyer->" + buyer.getUsername());
+				System.out.println("buyers owned cars->" + buyer.getCarsOwned());
 				
 				//CarLot.getCarlot().remove(offerCar.getCarID());
 
