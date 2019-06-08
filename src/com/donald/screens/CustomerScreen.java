@@ -17,6 +17,8 @@ public class CustomerScreen implements UserScreen {
 	
 	
 	Customer loggedInCustomer;
+	//SAVE FILE
+	LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
 
 	@Override
 	public boolean display() {
@@ -80,7 +82,9 @@ public class CustomerScreen implements UserScreen {
 	public boolean loginVerification() {
 		System.out.println("-- Login Verification -- ");
 		
-		//
+		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
+		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+		
 		
 		int counter = 0;
 		String username = "";
@@ -189,8 +193,7 @@ public class CustomerScreen implements UserScreen {
 				// ^
 				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
 				
-				//SAVE FILE
-				LoginListSerializeDAO loginListData = new LoginListSerializeDAO();
+				
 				
 				loginListData.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
 				

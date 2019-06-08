@@ -8,6 +8,6 @@ public interface LoginListDAO {
 
 	public void saveLoginList(Map<String,String> CustomerLoginMap);
 	
-	public Map<String,String> loadFile();
+	public Map<String,String> loadLoginList();
 	
 }

@@ -1,11 +1,12 @@
 package com.donald.dao;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.HashMap;
 import java.util.Map;
-
-import com.donald.users.MasterCustomerLoginList;
 
 public class LoginListSerializeDAO implements LoginListDAO {
 
@@ -20,7 +21,6 @@ public class LoginListSerializeDAO implements LoginListDAO {
 	public void saveLoginList(Map<String,String> CustomerLoginMap) {
 
 		
-		//wrong!!
 		try {
 			FileOutputStream fos = new FileOutputStream("LoginListData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -34,9 +34,31 @@ public class LoginListSerializeDAO implements LoginListDAO {
 	}
 
 	@Override
-	public Map<String,String> loadFile() {
-		// TODO Auto-generated method stub
-		return null;
+	public Map<String,String> loadLoginList() {
+		
+		Map<String,String> CustomerLoginMap = null;
+		
+		try {
+			FileInputStream fis = new FileInputStream("LoginListData");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			//loads list
+			CustomerLoginMap = (HashMap) ois.readObject();
+			
+			ois.close();
+			fis.close();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (ClassNotFoundException c) {
+			System.out.println("Class not found");
+			c.printStackTrace();
+		}
+		
+//		for(Map.Entry<String, String> entry: CustomerLoginMap.entrySet()) {
+//			CustomerLoginMap.put(entry.getKey(), entry.getValue());
+//		}
+		
+		return CustomerLoginMap;
 	}
 
 }
