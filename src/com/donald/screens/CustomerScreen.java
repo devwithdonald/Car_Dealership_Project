@@ -26,6 +26,10 @@ public class CustomerScreen implements UserScreen {
 	public boolean display() {
 		// TODO Auto-generated method stub
 
+		//LOAD
+		
+//		if(customerList)
+		
 		if (!customerAccess()) {
 			return false;
 		}

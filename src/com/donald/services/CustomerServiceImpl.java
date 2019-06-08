@@ -2,16 +2,33 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.dao.CustomerListSerializeDAO;
+import com.donald.dao.OfferSerializeDAO;
 import com.donald.users.Car;
 import com.donald.users.CarLot;
 import com.donald.users.Customer;
+import com.donald.users.CustomerBase;
 import com.donald.users.MasterOfferList;
 import com.donald.users.Offer;
 
 public class CustomerServiceImpl implements CustomerServiceInt {
 
+	CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
+	OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	
 	@Override
 	public void makeOffer(Customer loggedInCustomer) {		
+		
+		//TODO load offer list - make own method
+		
+		
+		MasterOfferList.getOfferlist().clear();
+
+		if (offerListData.loadOfferList() != null) {
+			 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
+		}
+		
+		
 		//create new offer based on carID
 		String carIDInput = "";
 		String offerPrice = "";
@@ -54,17 +71,11 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		//get the offer just made and put it in the car list!
 		offerCar.getCarOfferList().add(newOffer);
 		
-		//add an offer to that car lot offerList
-		
-		
-		
-		
-		//add that car to the person offer list
-		
-	
-		
-		
-		//view car list!
+		//save offer list
+		offerListData.saveOfferList(MasterOfferList.getOfferlist());
+		//save customer list
+		customerListData.saveCustomerList(CustomerBase.getCustomerlist());
+
 		
 
 	}
@@ -73,7 +84,15 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 	public void viewOwnedCars(Customer loggedInCustomer) {
 		// TODO Auto-generated method stub
 		// have to their own car
-
+		
+		
+		//load
+		CustomerBase.getCustomerlist().clear();
+		
+		if(customerListData.loadCustomerList() != null) {
+			CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList());
+		}
+		
 		if (loggedInCustomer.getCarsOwned().size() == 0) {
 			System.out.println("You have no cars in your lot!");
 		} else {

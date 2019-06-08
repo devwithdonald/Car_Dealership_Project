@@ -35,7 +35,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	public void addCar() {
 		System.out.println("-- Enter a new car screen --");
 
-		// TODO ADDING THIS
+		
 		CarLot.getCarlot().clear();
 
 		if (carLotData.loadCarLot() != null) {

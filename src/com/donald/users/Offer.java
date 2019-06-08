@@ -1,6 +1,8 @@
 package com.donald.users;
 
-public class Offer {
+import java.io.Serializable;
+
+public class Offer implements Serializable{
 
 
 	//these offerIDs need to unique

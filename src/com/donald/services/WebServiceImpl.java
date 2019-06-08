@@ -2,6 +2,7 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.dao.OfferSerializeDAO;
 import com.donald.users.Car;
 import com.donald.users.CarLot;
 import com.donald.users.Customer;
@@ -10,7 +11,7 @@ import com.donald.users.MasterPaymentList;
 
 public class WebServiceImpl implements WebServiceInt {
 
-	
+	OfferSerializeDAO offerListData = new OfferSerializeDAO();
 	
 	@Override
 	public String initialScreen() {
@@ -89,9 +90,22 @@ public class WebServiceImpl implements WebServiceInt {
 		System.out.println("New Monthly Customer Monthly Payment -->" + Math.round(loggedInCustomer.getMonthlyPayment()));
 	}
 	
+	
+	
+	
+	
 	@Override
 	public void viewCarOfferList()	{
 		System.out.println("-- View All Car Offers For Each Car --");
+		
+		
+		//load
+		//load
+		MasterOfferList.getOfferlist().clear();
+
+		if (offerListData.loadOfferList() != null) {
+			 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
+		}
 		
 		if(MasterOfferList.getOfferlist().size() == 0) {
 			System.out.println("car offer list is empty");

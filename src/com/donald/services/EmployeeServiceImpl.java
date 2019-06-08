@@ -2,6 +2,9 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.dao.CarLotSerializeDAO;
+import com.donald.dao.CustomerListSerializeDAO;
+import com.donald.dao.OfferSerializeDAO;
 import com.donald.users.Car;
 import com.donald.users.CarLot;
 import com.donald.users.Customer;
@@ -10,9 +13,36 @@ import com.donald.users.MasterOfferList;
 
 public class EmployeeServiceImpl implements EmployeeServiceInt {
 
+	CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
+	CarLotSerializeDAO carLotData = new CarLotSerializeDAO();
+	OfferSerializeDAO offerListData = new OfferSerializeDAO();
+	
 	@Override
 	public void acceptOffer() {
 		System.out.println("-- Accept Offer Screen --");
+		
+		
+		
+		//load
+		MasterOfferList.getOfferlist().clear();
+
+		if (offerListData.loadOfferList() != null) {
+			 MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList());
+		}
+		
+		//load
+		CustomerBase.getCustomerlist().clear();
+
+		if (customerListData.loadCustomerList() != null) {
+			 CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList());
+		}
+		
+		//load
+		CarLot.getCarlot().clear();
+
+		if (carLotData.loadCarLot() != null) {
+			 CarLot.getCarlot().addAll(carLotData.loadCarLot());
+		}
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -25,7 +55,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 		input = scanner.nextLine();
 		int intInput = Integer.parseInt(input);
-
+		
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 
 			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
@@ -42,7 +72,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 				// setting buyer new overall balance to past balance + offer balance
 				buyer.setBalance(buyer.getBalance() + MasterOfferList.getOfferlist().get(i).getOfferPrice());
-
+					
+				
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < buyer.getPendingOffers().size(); j++) {
 					if (buyer.getPendingOffers().get(j).getOfferID() == intInput) {
@@ -76,6 +107,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				
 				System.out.println("MASTEROFFERLISTSIZE ->" + MasterOfferList.getOfferlist().size());
 
+				
 				// set forSale false
 				offerCar.setForSale(false);
 
@@ -94,9 +126,20 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					}
 				}
 				
+				
+				
 				WebServiceImpl wsi = new WebServiceImpl();
 				
 				wsi.calculateMonthlyPayment(buyer);
+				
+				System.out.println("buyer->" + buyer.getUsername());
+				System.out.println("buyers owned cars->" + buyer.getCarsOwned());
+				
+				
+				//save
+				customerListData.saveCustomerList(CustomerBase.getCustomerlist());
+				carLotData.saveCarLot(CarLot.getCarlot());
+				offerListData.saveOfferList(MasterOfferList.getOfferlist());
 				
 				
 				//CarLot.getCarlot().remove(offerCar.getCarID());
@@ -107,6 +150,10 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 //					if(CustomerBase.getCustomerlist().get(j).getPendingOffers().get(j))
 //				}
 				
+				//TODO MIGHT HAVE TO SAVE CUSTOMER LIST DATA AGAIN!!!
+				
+				//???????
+				//CarLot.getCarlot().remove(offerCar);
 				
 				
 			}
