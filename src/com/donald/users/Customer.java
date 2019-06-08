@@ -33,6 +33,7 @@ public class Customer implements Serializable {
 		this.monthlyPayment = 0.0;
 		//size - 1
 		this.customerID = CustomerBase.getCustomerlist().size();
+//		this.customerID =
 		//customerIDCounter++;
 	}
 

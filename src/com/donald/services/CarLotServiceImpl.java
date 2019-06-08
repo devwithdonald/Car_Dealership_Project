@@ -2,27 +2,28 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.dao.CarIdSerializeDAO;
 import com.donald.dao.CarLotSerializeDAO;
 import com.donald.users.Car;
+import com.donald.users.CarId;
+import com.donald.users.CarIdCounter;
 import com.donald.users.CarLot;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
 
 	// load/save car lot
 	CarLotSerializeDAO carLotData = new CarLotSerializeDAO();
-	
-	
-	
+
 	@Override
 	public void viewCarLot() {
 		System.out.println("-- in view car lot --");
-		
-		//remove data so no duplicates
+
+		// remove data so no duplicates
 		CarLot.getCarlot().clear();
-		//load data
-		CarLot.getCarlot().addAll(carLotData.loadCarLot());
-		
-		
+		// load data
+		if (carLotData.loadCarLot() != null) {
+			CarLot.getCarlot().addAll(carLotData.loadCarLot());
+		}
 
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 			System.out.println("Car " + i + ": " + CarLot.getCarlot().get(i));
@@ -34,20 +35,13 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	public void addCar() {
 		System.out.println("-- Enter a new car screen --");
 
-		
-		//TODO ADDING THIS
+		// TODO ADDING THIS
 		CarLot.getCarlot().clear();
-		
-		
-		if(carLotData.loadCarLot() != null) {
+
+		if (carLotData.loadCarLot() != null) {
 			CarLot.getCarlot().addAll(carLotData.loadCarLot());
 		}
-	
-		
 
-		
-		
-		
 		// TODO CREATE A CREATECAR METHOD
 		String price = "";
 		String carType = "";
@@ -62,13 +56,30 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		System.out.println("Please enter the car price: ");
 		price = scanner.nextLine();
 
-		// adding car
-		CarLot.getCarlot().add(new Car("dealer", price, carType, true));
+		// TODO MAKE OWN METHOD
+		CarIdSerializeDAO cis = new CarIdSerializeDAO();
 
-		
-		//saving carLot data
+		// clear id list
+		CarIdCounter.getCaridcounter().clear();
+
+		// load id list
+		if (cis.loadCarId() != null) {
+			CarIdCounter.getCaridcounter().addAll(cis.loadCarId());
+		}
+
+		// add new couny
+		CarId carId = new CarId(1);
+		CarIdCounter.getCaridcounter().add(carId);
+
+		// adding car
+		CarLot.getCarlot().add(new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size()));
+
+		// save
+		cis.saveCarId(CarIdCounter.getCaridcounter());
+
+		// saving carLot data
 		carLotData.saveCarLot(CarLot.getCarlot());
-		
+
 		// success message
 		// prints out last car in the list
 		// last car in list == last car added
@@ -79,11 +90,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void removeCar() {
 		System.out.println("-- Remove a car screen --");
-		
 
-		
-		
-		
 		// give option to see car list OR just input the car
 
 		boolean exitInput = false;
@@ -91,13 +98,12 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		String input = "";
 
 		do {
-			
-			//remove data so no duplicates
+
+			// remove data so no duplicates
 			CarLot.getCarlot().clear();
-			//load data
+			// load data
 			CarLot.getCarlot().addAll(carLotData.loadCarLot());
-			
-			
+
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.println("Enter '1': To view the car the list");
@@ -126,7 +132,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 				input = scanner.nextLine();
 
 				// parse to int
-				//TODO need to ensure int
+				// TODO need to ensure int
 				int intInput = Integer.parseInt(input);
 
 				if (CarLot.getCarlot().size() == 0) {
@@ -139,9 +145,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 							System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
 							CarLot.getCarlot().remove(i);
 							carRemove = true;
-							
-							
-							//saving carLot data with
+
+							// saving carLot data with
 							carLotData.saveCarLot(CarLot.getCarlot());
 						}
 					}
@@ -159,8 +164,6 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 			}
 
 		} while (!exitInput);
-		
-		
 
 	}
 

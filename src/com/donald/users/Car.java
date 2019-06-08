@@ -7,7 +7,7 @@ import java.util.List;
 public class Car implements Serializable{
 
 	//public static int carIDCounter = 1; 
-	private int carID;
+	private Integer carID;
 	
 	private String ownerUsername;
 	private String price; //balance
@@ -24,14 +24,14 @@ public class Car implements Serializable{
 //	}
 
 	// TODO NEED LOGIC
-	public Car(String ownerUsername, String price, String carType, Boolean forSale) {
+	public Car(String ownerUsername, String price, String carType, Boolean forSale, Integer carID) {
 		super();
 		this.ownerUsername = ownerUsername;
 		this.price = price;
 		this.carType = carType;
 		this.forSale = forSale;
-		this.carID = CarLot.getCarlot().size();
-		//this.carID = Car.carIDCounter;
+		//this.carID = CarLot.getCarlot().size();
+		this.carID = carID;
 		this.carOfferList = new ArrayList<>();
 		//Car.carIDCounter++;
 	}
