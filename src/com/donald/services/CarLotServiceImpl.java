@@ -34,6 +34,20 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	public void addCar() {
 		System.out.println("-- Enter a new car screen --");
 
+		
+		//TODO ADDING THIS
+		CarLot.getCarlot().clear();
+		
+		
+		if(carLotData.loadCarLot() != null) {
+			CarLot.getCarlot().addAll(carLotData.loadCarLot());
+		}
+	
+		
+
+		
+		
+		
 		// TODO CREATE A CREATECAR METHOD
 		String price = "";
 		String carType = "";
@@ -66,10 +80,9 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	public void removeCar() {
 		System.out.println("-- Remove a car screen --");
 		
-		//remove data so no duplicates
-		CarLot.getCarlot().clear();
-		//load data
-		CarLot.getCarlot().addAll(carLotData.loadCarLot());
+
+		
+		
 		
 		// give option to see car list OR just input the car
 
@@ -78,6 +91,13 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		String input = "";
 
 		do {
+			
+			//remove data so no duplicates
+			CarLot.getCarlot().clear();
+			//load data
+			CarLot.getCarlot().addAll(carLotData.loadCarLot());
+			
+			
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.println("Enter '1': To view the car the list");
@@ -119,6 +139,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 							System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
 							CarLot.getCarlot().remove(i);
 							carRemove = true;
+							
+							
+							//saving carLot data with
+							carLotData.saveCarLot(CarLot.getCarlot());
 						}
 					}
 				}
@@ -136,8 +160,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		} while (!exitInput);
 		
-		//saving carLot data with
-		carLotData.saveCarLot(CarLot.getCarlot());
+		
 
 	}
 

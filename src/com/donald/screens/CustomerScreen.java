@@ -85,14 +85,25 @@ public class CustomerScreen implements UserScreen {
 		System.out.println("-- Login Verification -- ");
 		
 		
-		//TODO??
-		//CustomerBase.getCustomerlist().clear();
-		//CustomerBase
-		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+//		//TODO??
+//		//CustomerBase.getCustomerlist().clear();
+//		//CustomerBase
+//		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+//		
+//		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
+//		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+//		
+		//TODO gives exception when list is empty but tried to load list
 		
+
+		
+	//	if(CustomerBase.getCustomerlist().size() != 0) {
+		CustomerBase.getCustomerlist().clear();
+		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
 		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
 		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
 		
+		//}
 		
 		
 		
@@ -181,13 +192,13 @@ public class CustomerScreen implements UserScreen {
 		// TODO
 		//TODO
 		// TODO
-		if(CustomerBase.getCustomerlist().size() != 0) {
+		//if(CustomerBase.getCustomerlist().size() != 0) {
 		CustomerBase.getCustomerlist().clear();
 		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
 		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
 		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
 		
-		}
+		//}
 		
 
 		
@@ -208,8 +219,12 @@ public class CustomerScreen implements UserScreen {
 
 				System.out.println("Success! '" + username + "' is now a registered user!");
 
-				// TODO create new customer object and add them to the list of master customer
+
 				// list
+				//TODO need to update id
+//				if(CustomerBase.getCustomerlist().size == 0) {
+//					
+//				}
 				CustomerBase.getCustomerlist().add(new Customer(username, password));
 
 				// might b okay, this is just to keep track of all logins!

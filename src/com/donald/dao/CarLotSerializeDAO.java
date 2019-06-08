@@ -1,6 +1,7 @@
 package com.donald.dao;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -43,6 +44,8 @@ public class CarLotSerializeDAO implements CarLotDAO{
 			
 			ois.close();
 			fis.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} catch (ClassNotFoundException c) {
@@ -50,9 +53,9 @@ public class CarLotSerializeDAO implements CarLotDAO{
 			c.printStackTrace();
 		}
 		
-		for(Car car : carLot) {
-			System.out.println(car);
-		}
+//		for(Car car : carLot) {
+//			System.out.println(car);
+//		}
 		
 		return carLot;
 	}

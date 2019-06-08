@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Car implements Serializable{
 
-	public static int carIDCounter = 1; 
+	//public static int carIDCounter = 1; 
 	private int carID;
 	
 	private String ownerUsername;
@@ -30,9 +30,10 @@ public class Car implements Serializable{
 		this.price = price;
 		this.carType = carType;
 		this.forSale = forSale;
-		this.carID = Car.carIDCounter;
+		this.carID = CarLot.getCarlot().size();
+		//this.carID = Car.carIDCounter;
 		this.carOfferList = new ArrayList<>();
-		Car.carIDCounter++;
+		//Car.carIDCounter++;
 	}
 
 	public List<Offer> getCarOfferList() {
