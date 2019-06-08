@@ -2,14 +2,27 @@ package com.donald.services;
 
 import java.util.Scanner;
 
+import com.donald.dao.CarLotSerializeDAO;
 import com.donald.users.Car;
 import com.donald.users.CarLot;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
 
+	// load/save car lot
+	CarLotSerializeDAO carLotData = new CarLotSerializeDAO();
+	
+	
+	
 	@Override
 	public void viewCarLot() {
 		System.out.println("-- in view car lot --");
+		
+		//remove data so no duplicates
+		CarLot.getCarlot().clear();
+		//load data
+		CarLot.getCarlot().addAll(carLotData.loadCarLot());
+		
+		
 
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 			System.out.println("Car " + i + ": " + CarLot.getCarlot().get(i));
@@ -38,6 +51,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		// adding car
 		CarLot.getCarlot().add(new Car("dealer", price, carType, true));
 
+		
+		//saving carLot data
+		carLotData.saveCarLot(CarLot.getCarlot());
+		
 		// success message
 		// prints out last car in the list
 		// last car in list == last car added
@@ -48,7 +65,12 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void removeCar() {
 		System.out.println("-- Remove a car screen --");
-
+		
+		//remove data so no duplicates
+		CarLot.getCarlot().clear();
+		//load data
+		CarLot.getCarlot().addAll(carLotData.loadCarLot());
+		
 		// give option to see car list OR just input the car
 
 		boolean exitInput = false;
@@ -113,6 +135,9 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 			}
 
 		} while (!exitInput);
+		
+		//saving carLot data with
+		carLotData.saveCarLot(CarLot.getCarlot());
 
 	}
 

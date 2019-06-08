@@ -84,6 +84,9 @@ public class CustomerScreen implements UserScreen {
 	public boolean loginVerification() {
 		System.out.println("-- Login Verification -- ");
 		
+		
+		//TODO??
+		//CustomerBase.getCustomerlist().clear();
 		//CustomerBase
 		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
 		
@@ -173,6 +176,21 @@ public class CustomerScreen implements UserScreen {
 		String username = "";
 		String password = "";
 		boolean exitInput = false;
+		
+		//TODO TODO TODO will need to load here instead!
+		// TODO
+		//TODO
+		// TODO
+		if(CustomerBase.getCustomerlist().size() != 0) {
+		CustomerBase.getCustomerlist().clear();
+		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
+		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+		
+		}
+		
+
+		
 
 		do {
 

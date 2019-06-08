@@ -1,9 +1,10 @@
 package com.donald.users;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Car {
+public class Car implements Serializable{
 
 	public static int carIDCounter = 1; 
 	private int carID;
@@ -15,12 +16,12 @@ public class Car {
 	private List<Offer> carOfferList;
 	
 	
-	public Car() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.carID = Car.carIDCounter;
-		Car.carIDCounter++;
-	}
+//	public Car() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//		this.carID = Car.carIDCounter;
+//		Car.carIDCounter++;
+//	}
 
 	// TODO NEED LOGIC
 	public Car(String ownerUsername, String price, String carType, Boolean forSale) {

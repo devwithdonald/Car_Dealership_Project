@@ -7,38 +7,39 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
+import com.donald.users.Car;
 import com.donald.users.Customer;
 
-public class CustomerListSerializeDAO implements CustomerListDAO {
+
+public class CarLotSerializeDAO implements CarLotDAO{
 
 	@Override
-	public void saveCustomerList(List<Customer> customerList) {
+	public void saveCarLot(List<Car> carLot) {
 		
 		try {
-			FileOutputStream fos = new FileOutputStream("CustomerListData");
+			FileOutputStream fos = new FileOutputStream("CarLotData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			
-			oos.writeObject(customerList);
+			oos.writeObject(carLot);
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-
+		
 	}
 
 	@Override
-	public List<Customer> loadCustomerList() {
-		List<Customer> customerList = null;
+	public List<Car> loadCarLot() {
+		List<Car> carLot = null;
 		
 		try {
-			FileInputStream fis = new FileInputStream("CustomerListData");
+			FileInputStream fis = new FileInputStream("CarLotData");
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
 			//loads list
-			customerList = (ArrayList) ois.readObject();
+			carLot = (ArrayList) ois.readObject();
 			
 			ois.close();
 			fis.close();
@@ -49,11 +50,13 @@ public class CustomerListSerializeDAO implements CustomerListDAO {
 			c.printStackTrace();
 		}
 		
-		for(Customer customer : customerList) {
-			System.out.println("username" + customer.getUsername() + "password" + customer.getPassword() + "ID" + customer.getCustomerID());
+		for(Car car : carLot) {
+			System.out.println(car);
 		}
 		
-		return customerList;
+		return carLot;
 	}
+	
+	
 
 }

@@ -54,9 +54,9 @@ public class LoginListSerializeDAO implements LoginListDAO {
 			c.printStackTrace();
 		}
 		
-//		for(Map.Entry<String, String> entry: CustomerLoginMap.entrySet()) {
-//			CustomerLoginMap.put(entry.getKey(), entry.getValue());
-//		}
+		for(Map.Entry<String, String> entry: CustomerLoginMap.entrySet()) {
+			System.out.println("Key= " + entry.getKey() + " Value= "+ entry.getValue());
+		}
 		
 		return CustomerLoginMap;
 	}
