@@ -1,6 +1,7 @@
 package com.donald.dao;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -47,6 +48,9 @@ public class LoginListSerializeDAO implements LoginListDAO {
 			
 			ois.close();
 			fis.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return null;
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} catch (ClassNotFoundException c) {

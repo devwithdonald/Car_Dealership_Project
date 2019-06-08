@@ -46,6 +46,7 @@ public class CarLotSerializeDAO implements CarLotDAO{
 			fis.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return null;
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} catch (ClassNotFoundException c) {

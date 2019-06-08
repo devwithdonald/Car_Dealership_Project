@@ -98,10 +98,16 @@ public class CustomerScreen implements UserScreen {
 
 		
 	//	if(CustomerBase.getCustomerlist().size() != 0) {
-		CustomerBase.getCustomerlist().clear();
-		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+//		CustomerBase.getCustomerlist().clear();
+		
+		if(customerListdata.loadCustomerList() != null && loginListData.loadLoginList() != null) {
+			CustomerBase.getCustomerlist().clear();
+			CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+			MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+		}
+		
 		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
-		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+		
 		
 		//}
 		
@@ -193,12 +199,13 @@ public class CustomerScreen implements UserScreen {
 		//TODO
 		// TODO
 		//if(CustomerBase.getCustomerlist().size() != 0) {
-		CustomerBase.getCustomerlist().clear();
-		CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
-		//MasterCustomerLoginList.getCustomerloginmap().keySet().removeAll()
-		MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
 		
-		//}
+		
+		if(customerListdata.loadCustomerList() != null && loginListData.loadLoginList() != null) {
+			CustomerBase.getCustomerlist().clear();
+			CustomerBase.getCustomerlist().addAll(customerListdata.loadCustomerList());
+			MasterCustomerLoginList.getCustomerloginmap().putAll(loginListData.loadLoginList());
+		}
 		
 
 		
