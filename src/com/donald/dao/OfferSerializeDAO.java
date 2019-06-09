@@ -11,53 +11,50 @@ import java.util.List;
 
 import com.donald.users.Car;
 import com.donald.users.Offer;
+import com.donald.util.LoggingUtil;
 
 public class OfferSerializeDAO implements OfferDAO {
 
 	@Override
 	public void saveOfferList(List<Offer> offerList) {
-		
+
 		try {
 			FileOutputStream fos = new FileOutputStream("OfferListData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			oos.writeObject(offerList);
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by OfferSerializeDAO saveOfferList();");
 		}
 
 	}
 
 	@Override
 	public List<Offer> loadOfferList() {
-		
+
 		List<Offer> offerList = null;
-		
+
 		try {
 			FileInputStream fis = new FileInputStream("OfferListData");
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			
-			//loads list
+
+			// loads list
 			offerList = (ArrayList) ois.readObject();
-			
+
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LoggingUtil.warn("FileNotFoundException called by OfferSerializeDAO loadOfferList();");
 			return null;
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by OfferSerializeDAO loadOfferList();");
 		} catch (ClassNotFoundException c) {
-			System.out.println("Class not found");
+			LoggingUtil.warn("ClassNotFoundException called by OfferSerializeDAO loadOfferList();");
 			c.printStackTrace();
 		}
-		
-		for(Offer offer : offerList) {
-			System.out.println(offer);
-		}
-		
+
 		return offerList;
 	}
 

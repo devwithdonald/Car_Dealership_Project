@@ -11,21 +11,22 @@ import java.util.List;
 
 import com.donald.users.CarId;
 import com.donald.users.UniqueOrderID;
+import com.donald.util.LoggingUtil;
 
 public class UniqueOrderIDSerializeDAO implements UniqueOrderIdDAO {
 
 	@Override
 	public void saveOrderId(List<UniqueOrderID> uniqueOrderID) {
-		
+
 		try {
 			FileOutputStream fos = new FileOutputStream("OrderIDData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			oos.writeObject(uniqueOrderID);
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by UniqueOrderIdSerializeDAO saveOrderId();");
 		}
 
 	}
@@ -44,16 +45,14 @@ public class UniqueOrderIDSerializeDAO implements UniqueOrderIdDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LoggingUtil.warn("FileNotFoundException called by UniqueOrderIdSerializeDAO loadOrderID();");
 			return null;
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by UniqueOrderIdSerializeDAO loadOrderID();");
 		} catch (ClassNotFoundException c) {
-			System.out.println("Class not found");
-			c.printStackTrace();
+			LoggingUtil.warn("ClassNotFoundException called by UniqueOrderIdSerializeDAO loadOrderID();");
+
 		}
-
-
 
 		return uniqueIdList;
 	}
