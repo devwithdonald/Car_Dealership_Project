@@ -20,25 +20,31 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		System.out.println("-- Accept Offer Screen --");
 
 		Scanner scanner = new Scanner(System.in);
-		String input = "";
+		Integer acceptId;
+		boolean accepted = false;
 
 		System.out.println("Enter Offer ID to Accept --> ");
-		input = scanner.nextLine();
-
-		// TODO FIX
-		int intInput = Integer.parseInt(input);
+		while(!scanner.hasNextInt()) {
+			System.out.println("Please Enter a Valid Number.");
+		    scanner.next();
+		}
+		acceptId = scanner.nextInt();
+		scanner.nextLine();
+		
 
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 
-			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
+			if (MasterOfferList.getOfferlist().get(i).getOfferID() == acceptId) {
 				LoggingUtil.trace("acceptOffer(); - found matching ID");
+				
+				accepted = true;
 
 				Car offerCar = MasterOfferList.getOfferlist().get(i).getOfferCar();
 
 				Customer buyer = null;
 
 				for (Customer c : CustomerBase.getCustomerlist()) {
-					if (c.equals(MasterOfferList.getOfferlist().get(i).getOfferer())) {
+					if (c.getUsername().equals(MasterOfferList.getOfferlist().get(i).getOfferer().getUsername())) {
 						buyer = c;
 					}
 				}
@@ -51,7 +57,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < buyer.getPendingOffers().size(); j++) {
-					if (buyer.getPendingOffers().get(j).getOfferID() == intInput) {
+					if (buyer.getPendingOffers().get(j).getOfferID() == acceptId) {
 						buyer.getPendingOffers().remove(j);
 					}
 				}
@@ -94,6 +100,10 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 			}
 
 		}
+		
+		if(!accepted) {
+			System.out.println("ID Not Found. Please Try Again.");
+		}
 
 	}
 
@@ -103,22 +113,27 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		System.out.println("-- Reject Offer Screen --");
 
 		Scanner scanner = new Scanner(System.in);
-		String input = "";
+		Integer rejectId;
+		boolean rejected = false;
 
 		System.out.println("Enter Offer ID to reject-->");
-		input = scanner.nextLine();
-		// TODO FIX
-		int intInput = Integer.parseInt(input);
+		while(!scanner.hasNextInt()) {
+			System.out.println("Please Enter a Valid Number.");
+		    scanner.next();
+		}
+		rejectId = scanner.nextInt();
+		scanner.nextLine();
+		
 
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
-			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
-
+			if (MasterOfferList.getOfferlist().get(i).getOfferID() == rejectId) {
+				rejected = true;
 				// getting the customer (reject)
 				Customer rejectCustomer = MasterOfferList.getOfferlist().get(i).getOfferer();
 
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < rejectCustomer.getPendingOffers().size(); j++) {
-					if (rejectCustomer.getPendingOffers().get(j).getOfferID() == intInput) {
+					if (rejectCustomer.getPendingOffers().get(j).getOfferID() == rejectId) {
 						rejectCustomer.getPendingOffers().remove(j);
 					}
 				}
@@ -127,6 +142,10 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				MasterOfferList.getOfferlist().remove(i);
 
 			}
+		}
+		
+		if(!rejected) {
+			System.out.println("ID Not Found. Please Try Again.");
 		}
 
 	}

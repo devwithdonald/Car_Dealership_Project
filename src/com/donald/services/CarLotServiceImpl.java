@@ -133,21 +133,23 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void removeCar() {
 		LoggingUtil.trace("CarLotServiceImpl - removeCar(); - start");
-
-		System.out.println("Enter Car ID -->");
+		
+		Integer carID;
+		Boolean carRemoveCheck = false;
 
 		Scanner scanner = new Scanner(System.in);
-		String carID = "";
-		Boolean carRemoveCheck = false;
 		
-		carID = scanner.nextLine();
-		// TODO FIX
-		int intCarID = Integer.parseInt(carID);
+		System.out.println("Enter Car ID -->");
+		while(!scanner.hasNextInt()) {
+			System.out.println("Please Enter a Valid Number.");
+		    scanner.next();
+		}
+		carID = scanner.nextInt();
+		scanner.nextLine();
 
-		
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 
-			if (CarLot.getCarlot().get(i).getCarID() == intCarID) {
+			if (CarLot.getCarlot().get(i).getCarID() == carID) {
 				
 				System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
 				CarLot.getCarlot().remove(i);

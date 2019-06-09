@@ -102,11 +102,11 @@ public class CustomerScreen implements UserScreen {
 			counter = 0;
 
 			// username validation
-			System.out.println("Enter (b) to return to the initial screen.");
+			System.out.println("Enter (0) to return to the initial screen.");
 			System.out.println("enter username --> ");
 			username = scanner.nextLine();
 
-			if (username.equals("b")) {
+			if (username.equals("0")) {
 				break;
 			}
 			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
