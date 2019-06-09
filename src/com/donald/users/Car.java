@@ -14,16 +14,10 @@ public class Car implements Serializable{
 	private String carType;
 	private Boolean forSale;
 	private List<Offer> carOfferList;
+	private String purchasedPrice;
 	
-	
-//	public Car() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//		this.carID = Car.carIDCounter;
-//		Car.carIDCounter++;
-//	}
 
-	// TODO NEED LOGIC
+
 	public Car(String ownerUsername, String price, String carType, Boolean forSale, Integer carID) {
 		super();
 		this.ownerUsername = ownerUsername;
@@ -33,7 +27,16 @@ public class Car implements Serializable{
 		//this.carID = CarLot.getCarlot().size();
 		this.carID = carID;
 		this.carOfferList = new ArrayList<>();
+		this.purchasedPrice = price;
 		//Car.carIDCounter++;
+	}
+
+	public String getPurchasedPrice() {
+		return purchasedPrice;
+	}
+
+	public void setPurchasedPrice(String purchasedPrice) {
+		this.purchasedPrice = purchasedPrice;
 	}
 
 	public List<Offer> getCarOfferList() {
@@ -85,7 +88,7 @@ public class Car implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Car [carID=" + carID + ", ownerUsername=" + ownerUsername + ", price=" + price + ", carType=" + carType
+		return "Car [carID=" + carID + ", ownerUsername=" + ownerUsername + ", dealerPrice=" + price + ", purchasedPrice" + purchasedPrice + ", carType=" + carType
 				+ ", forSale=" + forSale + ", carOfferList=" + carOfferList + "]";
 	}
 

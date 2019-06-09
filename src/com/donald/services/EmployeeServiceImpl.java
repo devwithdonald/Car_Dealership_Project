@@ -71,6 +71,10 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				// remove car with that unique offer id from the offer list - matching by carID
 				for (int j = 0; j < MasterOfferList.getOfferlist().size(); j++) {
 					if (MasterOfferList.getOfferlist().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
+						
+						String purchasePrice = MasterOfferList.getOfferlist().get(j).getOfferPrice().toString();
+						offerCar.setPurchasedPrice(purchasePrice);
+						
 						MasterOfferList.getOfferlist().remove(j);
 					}
 				}
@@ -84,6 +88,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 				// setting username to care
 				offerCar.setOwnerUsername(buyer.getUsername());
+				
+
 
 				// TODO MAKE OWN METHOD
 				// remove car from lot

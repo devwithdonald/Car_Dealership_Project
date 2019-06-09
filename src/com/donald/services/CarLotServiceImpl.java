@@ -41,8 +41,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		} else {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
 			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-				System.out.println("Car ID: " + CarLot.getCarlot().get(i).getCarID() + " Car Type: " + CarLot.getCarlot().get(i).getCarType() +
-						" Car Price: "+ CarLot.getCarlot().get(i).getPrice());
+				System.out.println("ID: " + CarLot.getCarlot().get(i).getCarID() + " Type: " + CarLot.getCarlot().get(i).getCarType() +
+						" Price: "+ CarLot.getCarlot().get(i).getPrice());
 			}
 
 		}
