@@ -8,24 +8,19 @@ import com.donald.users.CarLot;
 import com.donald.users.Customer;
 import com.donald.users.MasterOfferList;
 import com.donald.users.MasterPaymentList;
+import com.donald.util.LoggingUtil;
 
 public class WebServiceImpl implements WebServiceInt {
 
-	/* OfferSerializeDAO offerListData = new OfferSerializeDAO(); */
-	
+
+	// TODO JUNIT TEST
 	@Override
 	public String initialScreen() {
-		/*
-		 * TODO This should show the initial screen & send the User to either the login
-		 * or register screen return the String they need to be at (main should handle
-		 * this)
-		 */
+		LoggingUtil.trace("WebServiceImpl - initialScreen(); - start");
+		System.out.println("Hello and welcome.");
 
 		boolean validInput = false;
 		String input = "";
-
-		// greeting message
-		System.out.println("Hello and welcome.");
 
 		// checking for correct input
 		do {
@@ -37,12 +32,15 @@ public class WebServiceImpl implements WebServiceInt {
 			input = scanner.nextLine();
 
 			if (input.equals("E") || input.equals("e")) {
+				LoggingUtil.trace("WebServiceImpl - input = 'employee'");
 				input = "employee";
 				validInput = true;
 			} else if (input.equals("C") || input.equals("c")) {
+				LoggingUtil.trace("WebServiceImpl - input = 'customer'");
 				input = "customer";
 				validInput = true;
-			} else if (input.equals("0")){
+			} else if (input.equals("0")) {
+				LoggingUtil.trace("WebServiceImpl - input = '0'");
 				input = "0";
 				validInput = true;
 			}
@@ -52,72 +50,53 @@ public class WebServiceImpl implements WebServiceInt {
 		if (input.equals("0")) {
 			System.exit(0);
 		}
-		
+
 		return input;
 	}
 
-
+	
 	@Override
 	public void viewAllPayments() {
+		LoggingUtil.trace("WebServiceImpl - viewAllPayments(); - start");
 		System.out.println("-- View All Payments --");
-		// TODO Auto-generated method stub
-		// view every payment in the system
-		
-		
-		
-		if(MasterPaymentList.getMasterPaymentList().size() == 0) {
-			System.out.println("Master payment list is empty!");
+
+		if (MasterPaymentList.getMasterPaymentList().size() == 0) {
+			System.out.println("Master Payment List is Empty!");
 		} else {
 			for (int i = 0; i < MasterPaymentList.getMasterPaymentList().size(); i++) {
-				//print out ALL payments
 				System.out.println(MasterPaymentList.getMasterPaymentList().get(i));
 			}
 		}
-		
-		
-		
-		
-	
+
 	}
 
 	@Override
 	public void calculateMonthlyPayment(Customer loggedInCustomer) {
-		
+
 		System.out.println("Current Customer Monthly Payment -->" + Math.round(loggedInCustomer.getMonthlyPayment()));
-		
+
 		loggedInCustomer.setMonthlyPayment(loggedInCustomer.getBalance() / 12.0);
-		
-		System.out.println("New Monthly Customer Monthly Payment -->" + Math.round(loggedInCustomer.getMonthlyPayment()));
+
+		System.out
+				.println("New Monthly Customer Monthly Payment -->" + Math.round(loggedInCustomer.getMonthlyPayment()));
 	}
-	
-	
-	
-	
-	
+
 	@Override
-	public void viewCarOfferList()	{
+	public void viewCarOfferList() {
+		LoggingUtil.trace("WebServiceImpl - viewCarOfferList(); - start");
+		
 		System.out.println("-- View All Car Offers For Each Car --");
-		
-		
-		//load
-		//load
-		/*
-		 * MasterOfferList.getOfferlist().clear();
-		 * 
-		 * if (offerListData.loadOfferList() != null) {
-		 * MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList()); }
-		 */
-		
-		if(MasterOfferList.getOfferlist().size() == 0) {
-			System.out.println("car offer list is empty");
-		}else {
+
+		if (MasterOfferList.getOfferlist().size() == 0) {
+			LoggingUtil.debug("viewCarOfferList -> Car Offer List is Empty");
+			System.out.println("Car Offer List is Empty");
+		} else {
+			LoggingUtil.debug("viewCarOfferList -> Car Offer List is NOT Empty");
 			for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 				System.out.println(MasterOfferList.getOfferlist().get(i));
 			}
 		}
-		
-		
-		
+
 	}
 
 }

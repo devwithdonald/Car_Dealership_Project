@@ -8,101 +8,77 @@ import com.donald.users.Car;
 import com.donald.users.CarId;
 import com.donald.users.CarIdCounter;
 import com.donald.users.CarLot;
+import com.donald.util.LoggingUtil;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
 
-	// load/save car lot
-	/* CarLotSerializeDAO carLotData = new CarLotSerializeDAO(); */
-
 	@Override
 	public void viewCarLot() {
+		LoggingUtil.trace("CarLotServiceImpl - viewCarLot(); - start");
 		System.out.println("-- in view car lot --");
 
-		/*
-		 * // remove data so no duplicates CarLot.getCarlot().clear(); // load data if
-		 * (carLotData.loadCarLot() != null) {
-		 * CarLot.getCarlot().addAll(carLotData.loadCarLot()); }
-		 */
+		if (CarLot.getCarlot().size() == 0) {
+			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
+			System.out.println("Car Lot is Empty!");
+		} else {
+			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
+			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+				System.out.println("Car " + i + ": " + CarLot.getCarlot().get(i));
+			}
 
-		
-		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-			System.out.println("Car " + i + ": " + CarLot.getCarlot().get(i));
 		}
 
 	}
 
 	@Override
 	public void addCar() {
-		System.out.println("-- Enter a new car screen --");
+		LoggingUtil.trace("CarLotServiceImpl - addCar(); - start");
 
-		
-		/*
-		 * CarLot.getCarlot().clear();
-		 * 
-		 * if (carLotData.loadCarLot() != null) {
-		 * CarLot.getCarlot().addAll(carLotData.loadCarLot()); }
-		 */
+		System.out.println("-- Add New Car Screen --");
 
-		// TODO CREATE A CREATECAR METHOD
+		// Add car to lot
+		CarLot.getCarlot().add(createCar());
+
+		// success message
+		System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the car lot!");
+
+	}
+
+	// TODO JUNIT TEST
+	@Override
+	public Car createCar() {
+		LoggingUtil.trace("CarLotServiceImpl - createCar(); - start");
+
 		String price = "";
 		String carType = "";
 
 		Scanner scanner = new Scanner(System.in);
 
-		// TODO will need logic
-		// ownerUsername & forSale are default set
 		System.out.println("Please enter the car type: ");
 		carType = scanner.nextLine();
 
 		System.out.println("Please enter the car price: ");
 		price = scanner.nextLine();
 
-		/*
-		 * // TODO MAKE OWN METHOD CarIdSerializeDAO cis = new CarIdSerializeDAO();
-		 * 
-		 * // clear id list CarIdCounter.getCaridcounter().clear();
-		 * 
-		 * // load id list if (cis.loadCarId() != null) {
-		 * CarIdCounter.getCaridcounter().addAll(cis.loadCarId()); }
-		 */
-
 		// add new count
 		CarId carId = new CarId(1);
 		CarIdCounter.getCaridcounter().add(carId);
 
-		// adding car
-		CarLot.getCarlot().add(new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size()));
+		Car newCar = new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size());
 
-		/*
-		 * // save cis.saveCarId(CarIdCounter.getCaridcounter());
-		 * 
-		 * // saving carLot data carLotData.saveCarLot(CarLot.getCarlot());
-		 */
-
-		// success message
-		// prints out last car in the list
-		// last car in list == last car added
-		System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the car lot!");
+		return newCar;
 
 	}
 
 	@Override
-	public void removeCar() {
+	public void removeCarMenu() {
+		LoggingUtil.trace("CarLotServiceImpl - removeCarMenu(); - start");
 		System.out.println("-- Remove a car screen --");
 
-		// give option to see car list OR just input the car
-
 		boolean exitInput = false;
-		boolean carRemove = false;
 		String input = "";
 
 		do {
-
-			/*
-			 * // remove data so no duplicates CarLot.getCarlot().clear(); // load data
-			 * CarLot.getCarlot().addAll(carLotData.loadCarLot());
-			 */
-
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.println("Enter '1': To view the car the list");
@@ -111,59 +87,59 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 			input = scanner.nextLine();
 
-			// loop until exit (to remove more than 1 car)
 			if (input.equals("1")) {
-				// show car list if not empty
-				if (CarLot.getCarlot().size() == 0) {
-					System.out.println("Car list is empty!");
-				} else {
-					viewCarLot();
-				}
-
+				viewCarLot();
 				// reset input
 				input = "";
+
 			} else if (input.equals("2")) {
-				// allow them to input the car id to remove!
-
-				// get the car list and remove item depending on the id!
-				// TODO should be its own method
-				System.out.println("Enter Car ID -->");
-				input = scanner.nextLine();
-
-				// parse to int
-				// TODO need to ensure int
-				int intInput = Integer.parseInt(input);
 
 				if (CarLot.getCarlot().size() == 0) {
-					System.out.println("Car list is empty!");
+					System.out.println("Unable to Remove Car -> Car Lot is Empty");
 				} else {
-					for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-						// Get the car's id from the car lot
-						if (CarLot.getCarlot().get(i).getCarID() == intInput) {
-							// remove functionality goes here
-							System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
-							CarLot.getCarlot().remove(i);
-							carRemove = true;
-
-							/*
-							 * // saving carLot data with carLotData.saveCarLot(CarLot.getCarlot());
-							 */
-						}
-					}
+					removeCar();
+					input = "";
 				}
 
-				if (!carRemove) {
-					System.out.println("carId not found. No car removed.");
-				}
-
-				// reset input
-				input = "";
-				carRemove = false;
 			} else if (input.equals("0")) {
 				exitInput = true;
 			}
 
 		} while (!exitInput);
+
+	}
+	
+	
+
+	@Override
+	public void removeCar() {
+		LoggingUtil.trace("CarLotServiceImpl - removeCar(); - start");
+
+		System.out.println("Enter Car ID -->");
+
+		Scanner scanner = new Scanner(System.in);
+		String carID = "";
+		Boolean carRemoveCheck = false;
+		
+		carID = scanner.nextLine();
+		// TODO FIX
+		int intCarID = Integer.parseInt(carID);
+
+		
+		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+
+			if (CarLot.getCarlot().get(i).getCarID() == intCarID) {
+				
+				System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
+				CarLot.getCarlot().remove(i);
+				carRemoveCheck = true;
+
+			}
+		}
+
+		if (!carRemoveCheck) {
+			System.out.println("CarId Not Found. No Car Removed.");
+		}
 
 	}
 

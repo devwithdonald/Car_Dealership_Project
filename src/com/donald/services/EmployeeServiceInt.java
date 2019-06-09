@@ -2,7 +2,7 @@ package com.donald.services;
 
 public interface EmployeeServiceInt {
 
-	public void offerDecision();
+	public void offerDecisionMenu();
 	
 	public void acceptOffer();
 	

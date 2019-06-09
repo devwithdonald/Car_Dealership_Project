@@ -8,6 +8,10 @@ public interface CarLotServiceInt {
 	
 	public void addCar();
 	
+	public Car createCar();
+	
+	public void removeCarMenu();
+	
 	public void removeCar();
 	
 }

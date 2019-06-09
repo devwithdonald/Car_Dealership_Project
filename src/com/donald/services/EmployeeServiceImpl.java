@@ -10,85 +10,45 @@ import com.donald.users.CarLot;
 import com.donald.users.Customer;
 import com.donald.users.CustomerBase;
 import com.donald.users.MasterOfferList;
+import com.donald.util.LoggingUtil;
 
 public class EmployeeServiceImpl implements EmployeeServiceInt {
 
-	/*
-	 * CustomerListSerializeDAO customerListData = new CustomerListSerializeDAO();
-	 * CarLotSerializeDAO carLotData = new CarLotSerializeDAO(); OfferSerializeDAO
-	 * offerListData = new OfferSerializeDAO();
-	 */
-	
 	@Override
 	public void acceptOffer() {
+		LoggingUtil.trace("EmployeeServiceImpl - acceptOffer() - start");
 		System.out.println("-- Accept Offer Screen --");
-		
-		
-		
-		/*
-		 * //load MasterOfferList.getOfferlist().clear();
-		 * 
-		 * if (offerListData.loadOfferList() != null) {
-		 * MasterOfferList.getOfferlist().addAll(offerListData.loadOfferList()); }
-		 * 
-		 * //load CustomerBase.getCustomerlist().clear();
-		 * 
-		 * if (customerListData.loadCustomerList() != null) {
-		 * CustomerBase.getCustomerlist().addAll(customerListData.loadCustomerList()); }
-		 * 
-		 * //load CarLot.getCarlot().clear();
-		 * 
-		 * if (carLotData.loadCarLot() != null) {
-		 * CarLot.getCarlot().addAll(carLotData.loadCarLot()); }
-		 */
 
 		Scanner scanner = new Scanner(System.in);
-
 		String input = "";
 
-		System.out.println("Enter Offer ID to accept-->");
-
-		int index = 0;
-		boolean removeIndex = false;
-
+		System.out.println("Enter Offer ID to Accept --> ");
 		input = scanner.nextLine();
+
+		// TODO FIX
 		int intInput = Integer.parseInt(input);
-		
+
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 
 			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
-				//index = i;
-				//removeIndex = true;
-				// getting the offer car
+				LoggingUtil.trace("acceptOffer(); - found matching ID");
+
 				Car offerCar = MasterOfferList.getOfferlist().get(i).getOfferCar();
 
-				// getting the customer (buyer)
-				//might be wrong?
-				//Customer buyer = MasterOfferList.getOfferlist().get(i).getOfferer();
 				Customer buyer = null;
-				
-				//loop through and set that list?
+
 				for (Customer c : CustomerBase.getCustomerlist()) {
-					if(c.equals(MasterOfferList.getOfferlist().get(i).getOfferer())){
+					if (c.equals(MasterOfferList.getOfferlist().get(i).getOfferer())) {
 						buyer = c;
 					}
 				}
-				
-				System.out.println("iter1");
-				for (Customer c : CustomerBase.getCustomerlist()) {
-					System.out.println("name-> " + c.getUsername() + "car-> " + c.getCarsOwned());
-				}
-				
-				
-				
-				
+
 				// adding car to customer car list
 				buyer.getCarsOwned().add(offerCar);
 
 				// setting buyer new overall balance to past balance + offer balance
 				buyer.setBalance(buyer.getBalance() + MasterOfferList.getOfferlist().get(i).getOfferPrice());
-					
-				
+
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < buyer.getPendingOffers().size(); j++) {
 					if (buyer.getPendingOffers().get(j).getOfferID() == intInput) {
@@ -101,28 +61,15 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					buyer.setMakingPayments(true);
 				}
 
-
-
+				// TODO MAKE OWN METHOD
 				// remove car with that unique offer id from the offer list - matching by carID
-				// need to figure out remove every person that has had this car on their
-				// offerList
-				// TODO THIS NEEDS TO BE ITS OWN METHOD
-				// TODO TO REMOVE THIS CAR FROM EVERYONE ELSE OFFER LIST
 				for (int j = 0; j < MasterOfferList.getOfferlist().size(); j++) {
-					
-					System.out.println("carid msterlist>" + MasterOfferList.getOfferlist().get(j).getOfferCar().getCarID());
-					System.out.println("carid offercar>" + offerCar.getCarID());
-					
 					if (MasterOfferList.getOfferlist().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
-						// System.out.println("should remove->" +
-						// MasterOfferList.getOfferlist().get(j));
 						MasterOfferList.getOfferlist().remove(j);
 					}
 				}
-				
-				System.out.println("MASTEROFFERLISTSIZE ->" + MasterOfferList.getOfferlist().size());
 
-				
+				// TODO MAKE OWN METHOD
 				// set forSale false
 				offerCar.setForSale(false);
 
@@ -131,83 +78,44 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 				// setting username to care
 				offerCar.setOwnerUsername(buyer.getUsername());
-				
-				// might have to set to null
 
+				// TODO MAKE OWN METHOD
 				// remove car from lot
 				for (int j = 0; j < CarLot.getCarlot().size(); j++) {
-					if(CarLot.getCarlot().get(j).getCarID() == offerCar.getCarID()) {
+					if (CarLot.getCarlot().get(j).getCarID() == offerCar.getCarID()) {
 						CarLot.getCarlot().remove(j);
 					}
 				}
-				
-				
-				
-				WebServiceImpl wsi = new WebServiceImpl();
-				
-				wsi.calculateMonthlyPayment(buyer);
-				
-				System.out.println("buyer->" + buyer.getUsername());
-				System.out.println("buyers owned cars->" + buyer.getCarsOwned());
-				
-				
-				//save
-				/*
-				 * customerListData.saveCustomerList(CustomerBase.getCustomerlist());
-				 * carLotData.saveCarLot(CarLot.getCarlot());
-				 * offerListData.saveOfferList(MasterOfferList.getOfferlist());
-				 */
-				
-				System.out.println("buyer->" + buyer.getUsername());
-				System.out.println("buyers owned cars->" + buyer.getCarsOwned());
-				
-				
-				
-				System.out.println("iter2");
-				for (Customer c : CustomerBase.getCustomerlist()) {
-					System.out.println("name-> " + c.getUsername() + "car-> " + c.getCarsOwned());
-				}
-				//CarLot.getCarlot().remove(offerCar.getCarID());
 
-				// remove car from each customer list that his this car
-				// go through customer list, check
-//				for (int j = 0; j < CustomerBase.getCustomerlist().size(); j++) {
-//					if(CustomerBase.getCustomerlist().get(j).getPendingOffers().get(j))
-//				}
-				
-				//TODO MIGHT HAVE TO SAVE CUSTOMER LIST DATA AGAIN!!!
-				
-				//???????
-				//CarLot.getCarlot().remove(offerCar);
-				
-				
+				WebServiceImpl wsi = new WebServiceImpl();
+
+				wsi.calculateMonthlyPayment(buyer);
+
 			}
 
 		}
 
-		
 	}
 
 	@Override
 	public void rejectOffer() {
+		LoggingUtil.trace("EmployeeServiceImpl - rejectOffer() - start");
 		System.out.println("-- Reject Offer Screen --");
-		Scanner scanner = new Scanner(System.in);
 
+		Scanner scanner = new Scanner(System.in);
 		String input = "";
 
 		System.out.println("Enter Offer ID to reject-->");
-
 		input = scanner.nextLine();
+		// TODO FIX
 		int intInput = Integer.parseInt(input);
 
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
-				// reject logic
 
 				// getting the customer (reject)
 				Customer rejectCustomer = MasterOfferList.getOfferlist().get(i).getOfferer();
 
-				// take offer out
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < rejectCustomer.getPendingOffers().size(); j++) {
 					if (rejectCustomer.getPendingOffers().get(j).getOfferID() == intInput) {
@@ -215,9 +123,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					}
 				}
 
-				// removing from the master list as well by ID
-				// keep other offers
-
+				// removing from the master list as well by ID, keep other offers
 				MasterOfferList.getOfferlist().remove(i);
 
 			}
@@ -226,7 +132,9 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 	}
 
 	@Override
-	public void offerDecision() {
+	public void offerDecisionMenu() {
+		LoggingUtil.trace("CarLotServiceImpl - addCar(); - start");
+
 		System.out.println("-- Offer Decision Screen --");
 
 		WebServiceImpl wsi = new WebServiceImpl();
@@ -235,6 +143,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		String input = "";
 
 		do {
+			LoggingUtil.trace("CarLotServiceImpl - do loop - start");
+
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.println("Enter '1': To view the entire car offer list");
@@ -245,15 +155,19 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 			input = scanner.nextLine();
 
 			if (input.equals("1")) {
+				LoggingUtil.trace("do loop - accept/reject decision menu - calling viewCarOfferList();");
 				wsi.viewCarOfferList();
 				exitInput = false;
 			} else if (input.equals("2")) {
+				LoggingUtil.trace("do loop - accept/reject decision menu - calling acceptOffer();");
 				acceptOffer();
 				exitInput = false;
 			} else if (input.equals("3")) {
+				LoggingUtil.trace("do loop - accept/reject decision menu - calling rejectOffer();");
 				rejectOffer();
 				exitInput = false;
 			} else if (input.equals("0")) {
+				LoggingUtil.trace("do loop - accept/reject decision menu - exiting");
 				exitInput = true;
 			}
 

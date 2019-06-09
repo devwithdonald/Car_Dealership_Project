@@ -6,17 +6,18 @@ import com.donald.services.CarLotServiceImpl;
 import com.donald.services.EmployeeServiceImpl;
 import com.donald.services.WebServiceImpl;
 import com.donald.users.Employee;
+import com.donald.util.LoggingUtil;
 
 public class EmployeeScreen implements UserScreen{
 
-	// this method should call other methods that employee can do?
-	// boolean should return whether the program keeps runnning
+	// TODO JUNIT TEST
 	@Override
 	public boolean display() {
+		LoggingUtil.trace("Employee Screen - display(); - start");
 
-		// need to pass the login verification (if they dont return false)
-		// if false kick them out back to intial screen
+		// if false kick back to initial screen
 		if (!loginVerification()) {
+			LoggingUtil.trace("false employee login verification");
 			return false;
 		}
 
@@ -26,6 +27,14 @@ public class EmployeeScreen implements UserScreen{
 		String input = "";
 
 		do {
+			LoggingUtil.trace("do loop - EmployeeScreen - start");
+			
+			CarLotServiceImpl cls = new CarLotServiceImpl();
+			WebServiceImpl wsi = new WebServiceImpl();
+			EmployeeServiceImpl esi = new EmployeeServiceImpl();
+			
+
+			
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome! What would you like to do today?");
 
@@ -37,30 +46,30 @@ public class EmployeeScreen implements UserScreen{
 
 			input = scanner.nextLine();
 			
-			
-			CarLotServiceImpl cls = new CarLotServiceImpl();
-			WebServiceImpl wsi = new WebServiceImpl();
-			EmployeeServiceImpl esi = new EmployeeServiceImpl();
-			
-			// call stuff
+			//menu
 			switch (input) {
 			case "1":
+				LoggingUtil.trace("do loop - employee menu - calling addCar();");
 				cls.addCar();
 				exitInput = false;
 				break;
 			case "2":
-				esi.offerDecision();
+				LoggingUtil.trace("do loop - employee menu  - calling addCar();");
+				esi.offerDecisionMenu();
 				exitInput = false;
 				break;
 			case "3":
-				cls.removeCar();
+				LoggingUtil.trace("do loop - employee menu  - calling removeCar();");
+				cls.removeCarMenu();
 				exitInput = false;
 				break;
 			case "4":
+				LoggingUtil.trace("do loop - employee menu  - calling viewAllPayments();");
 				wsi.viewAllPayments();
 				exitInput = false;
 				break;
 			case "0":
+				LoggingUtil.trace("do loop - employee menu  - exiting");
 				exitInput = true;
 				System.out.println("Thank you, have a good day!\n");
 				break;
@@ -70,10 +79,13 @@ public class EmployeeScreen implements UserScreen{
 
 		return false;
 	}
-
+	
+	
+	//TODO JUNIT TEST
 	@Override
 	public boolean loginVerification() {
-
+		LoggingUtil.trace("employee loginVerification(); - start");
+		
 		int counter = 0;
 
 		String username = "";
@@ -97,6 +109,7 @@ public class EmployeeScreen implements UserScreen{
 			}
 
 			if (username.equals(Employee.getEmployee().getUSERNAME())) {
+				LoggingUtil.trace("employee username correct");
 				verifiedUsername = true;
 				counter++;
 			}
@@ -105,7 +118,8 @@ public class EmployeeScreen implements UserScreen{
 			System.out.println("enter password --> ");
 			password = scanner.nextLine();
 
-			if (password.equals(Employee.getEmployee().getUSERNAME())) {
+			if (password.equals(Employee.getEmployee().getPASSWORD())) {
+				LoggingUtil.trace("employee password correct");
 				verifiedPassword = true;
 				counter++;
 			}
@@ -113,10 +127,10 @@ public class EmployeeScreen implements UserScreen{
 		} while (!verifiedUsername && !verifiedPassword);
 
 		if (counter == 2) {
-			// verified let them in!
+			LoggingUtil.trace("employee login failed");
 			return true;
 		} else {
-			// not verified kick them out!
+			LoggingUtil.trace("employee login passed");
 			return false;
 		}
 

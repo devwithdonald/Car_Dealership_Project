@@ -75,11 +75,13 @@ public class CarDealerDriver {
 			
 
 			if (screen.equals("employee")) {
+				LoggingUtil.trace("Do Loop in Main - if -> 'employee'");
 				EmployeeScreen es = new EmployeeScreen();
 
-				// if employee didn't pass verification go to top of screen
+
 				if (!es.display()) {
-					//save
+					LoggingUtil.trace("Do Loop in Main - saving files - employee");
+					
 					carIdList.saveCarId(CarIdCounter.getCaridcounter());
 					carList.saveCarLot(CarLot.getCarlot());
 					customerList.saveCustomerList(CustomerBase.getCustomerlist());
@@ -91,11 +93,13 @@ public class CarDealerDriver {
 				}
 
 			} else if (screen.equals("customer")) {
+				LoggingUtil.trace("Do Loop in Main - if -> 'customer'");
 				CustomerScreen cs = new CustomerScreen();
 
 				// if customer didn't pass verification go to top of screen
 				if (!cs.display()) {
-					//save
+					LoggingUtil.trace("Do Loop in Main - saving files - employee");
+					
 					carIdList.saveCarId(CarIdCounter.getCaridcounter());
 					carList.saveCarLot(CarLot.getCarlot());
 					customerList.saveCustomerList(CustomerBase.getCustomerlist());
