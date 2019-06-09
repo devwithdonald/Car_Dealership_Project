@@ -63,8 +63,16 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				Car offerCar = MasterOfferList.getOfferlist().get(i).getOfferCar();
 
 				// getting the customer (buyer)
-				Customer buyer = MasterOfferList.getOfferlist().get(i).getOfferer();
-
+				//might be wrong?
+				//Customer buyer = MasterOfferList.getOfferlist().get(i).getOfferer();
+				Customer buyer = null;
+				
+				//loop through and set that list?
+				for (Customer c : CustomerBase.getCustomerlist()) {
+					if(c.equals(MasterOfferList.getOfferlist().get(i).getOfferer())){
+						buyer = c;
+					}
+				}
 				
 				System.out.println("iter1");
 				for (Customer c : CustomerBase.getCustomerlist()) {

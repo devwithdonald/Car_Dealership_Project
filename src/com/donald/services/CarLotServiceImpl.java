@@ -24,6 +24,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		 * CarLot.getCarlot().addAll(carLotData.loadCarLot()); }
 		 */
 
+		
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 			System.out.println("Car " + i + ": " + CarLot.getCarlot().get(i));
 		}

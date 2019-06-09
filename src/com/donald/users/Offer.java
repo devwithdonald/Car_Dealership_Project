@@ -6,7 +6,7 @@ public class Offer implements Serializable{
 
 
 	//these offerIDs need to unique
-	public static int offerCounterID = 1;
+	//public static int offerCounterID = 1;
 	private int offerID;
 	
 	private Car offerCar;
@@ -17,13 +17,13 @@ public class Offer implements Serializable{
 	
 
 	
-	public Offer(Car offerCar, Customer offerer, Integer offerPrice) {
+	public Offer(Car offerCar, Customer offerer, Integer offerPrice, Integer offerID) {
 		super();
 		this.offerCar = offerCar;
 		this.offerer = offerer;
 		this.offerPrice = offerPrice;
-		this.offerID = offerCounterID;
-		offerCounterID++;
+		this.offerID = offerID;
+		//offerCounterID++;
 	}
 
 	public int getOfferID() {

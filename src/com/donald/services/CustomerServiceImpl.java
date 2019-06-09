@@ -10,6 +10,8 @@ import com.donald.users.Customer;
 import com.donald.users.CustomerBase;
 import com.donald.users.MasterOfferList;
 import com.donald.users.Offer;
+import com.donald.users.UniqueOrderID;
+import com.donald.users.UniqueOrderIDCounter;
 
 public class CustomerServiceImpl implements CustomerServiceInt {
 
@@ -60,12 +62,17 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 			}
 		}
 		
+		// add new count
+		UniqueOrderID orderId = new UniqueOrderID(1);
+		UniqueOrderIDCounter.getUniqeidcounter().add(orderId);
+		
 		//make new offer object
 		//add offer car to the MASTER list
-		MasterOfferList.getOfferlist().add(new Offer(offerCar, loggedInCustomer, intOfferPrice));
+		MasterOfferList.getOfferlist().add(new Offer(offerCar, loggedInCustomer, intOfferPrice, UniqueOrderIDCounter.getUniqeidcounter().size()));
 		
 		//get the offerID as confirmation!
 		//offer just made
+		
 		Offer newOffer = MasterOfferList.getOfferlist().get(MasterOfferList.getOfferlist().size() - 1);
 		
 		int newOfferID = newOffer.getOfferID();
