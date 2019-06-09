@@ -57,14 +57,23 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 
 			if (MasterOfferList.getOfferlist().get(i).getOfferID() == intInput) {
-				index = i;
-				removeIndex = true;
+				//index = i;
+				//removeIndex = true;
 				// getting the offer car
 				Car offerCar = MasterOfferList.getOfferlist().get(i).getOfferCar();
 
 				// getting the customer (buyer)
 				Customer buyer = MasterOfferList.getOfferlist().get(i).getOfferer();
 
+				
+				System.out.println("iter1");
+				for (Customer c : CustomerBase.getCustomerlist()) {
+					System.out.println("name-> " + c.getUsername() + "car-> " + c.getCarsOwned());
+				}
+				
+				
+				
+				
 				// adding car to customer car list
 				buyer.getCarsOwned().add(offerCar);
 
@@ -144,6 +153,12 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				System.out.println("buyer->" + buyer.getUsername());
 				System.out.println("buyers owned cars->" + buyer.getCarsOwned());
 				
+				
+				
+				System.out.println("iter2");
+				for (Customer c : CustomerBase.getCustomerlist()) {
+					System.out.println("name-> " + c.getUsername() + "car-> " + c.getCarsOwned());
+				}
 				//CarLot.getCarlot().remove(offerCar.getCarID());
 
 				// remove car from each customer list that his this car

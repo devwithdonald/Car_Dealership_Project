@@ -145,9 +145,7 @@ public class Customer implements Serializable {
 		return true;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Customer [customerID=" + customerID + ", username=" + username + ", password=" + password + "]";
-//	}
+
+
 
 }

@@ -74,7 +74,8 @@ public class CustomerScreen implements UserScreen {
 			
 			
 			
-			System.out.println("In login screen -> car list" + loggedInCustomer.getCarsOwned());
+			System.out.println("id-> " + loggedInCustomer.getCustomerID() + " balance-> "  + loggedInCustomer.getBalance() + " pending offers-> "
+					+ loggedInCustomer.getPendingOffers() + " monthly payment " + loggedInCustomer.getMonthlyPayment());
 			
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
