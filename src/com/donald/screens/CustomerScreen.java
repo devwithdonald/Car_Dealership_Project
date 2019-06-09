@@ -52,7 +52,7 @@ public class CustomerScreen implements UserScreen {
 			switch (input) {
 			case "1":
 				LoggingUtil.trace("CustomerScreen - display() - calling viewCarLot();");
-				clsi.viewCarLot();
+				clsi.viewCarLotLimited();
 				exitInput = false;
 				break;
 			case "2":
@@ -175,6 +175,7 @@ public class CustomerScreen implements UserScreen {
 			} else {
 				System.out.println("Enter New Password-->");
 				password = scanner.nextLine();
+			
 
 				System.out.println("Success! '" + username + "' is Now a Registered User!");
 

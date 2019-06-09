@@ -15,7 +15,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void viewCarLot() {
 		LoggingUtil.trace("CarLotServiceImpl - viewCarLot(); - start");
-		System.out.println("-- in view car lot --");
+		System.out.println("-- In View Car Lot --");
 
 		if (CarLot.getCarlot().size() == 0) {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
@@ -23,7 +23,26 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		} else {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
 			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-				System.out.println("Car " + i + ": " + CarLot.getCarlot().get(i));
+				System.out.println(CarLot.getCarlot().get(i));
+			}
+
+		}
+
+	}
+	
+	@Override
+	public void viewCarLotLimited() {
+		LoggingUtil.trace("CarLotServiceImpl - viewCarLotLimited(); - start");
+		System.out.println("-- In View Car Lot --");
+
+		if (CarLot.getCarlot().size() == 0) {
+			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
+			System.out.println("Car Lot is Empty!");
+		} else {
+			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
+			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+				System.out.println("Car ID: " + CarLot.getCarlot().get(i).getCarID() + " Car Type: " + CarLot.getCarlot().get(i).getCarType() +
+						" Car Price: "+ CarLot.getCarlot().get(i).getPrice());
 			}
 
 		}
@@ -151,7 +170,6 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 			if (CarLot.getCarlot().get(i).getCarID() == carId) {
-				//return the car
 				car = CarLot.getCarlot().get(i);
 			}
 		}

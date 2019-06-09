@@ -23,28 +23,36 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 	public void makeOffer(Customer loggedInCustomer) {		
 		LoggingUtil.trace("CustomerServiceImpl - makeOffer(); - start");
 	
-		String carIDInput = "";
-		String offerPrice = "";
+		Integer carIDInput;
+		Integer offerPrice;
 		
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Please enter the car ID you would like to make an offer on -->");
-		carIDInput = scanner.nextLine();
+		while(!scanner.hasNextInt()) {
+			System.out.println("Please Enter a Valid Number.");
+		    scanner.next();
+		}
+		carIDInput = scanner.nextInt();
+		scanner.nextLine();
 		
 		System.out.println("Please enter your offer price -->");
-		offerPrice = scanner.nextLine();
-		
+		while(!scanner.hasNextInt()) {
+			System.out.println("Please Enter a Valid Number.");
+		    scanner.next();
+		}
+		offerPrice = scanner.nextInt();
+		scanner.nextLine();
+
 		Car offerCar = null;
-		
-		// TODO FIX
-		Integer intCarIDInput = Integer.parseInt(carIDInput);
-		Integer intOfferPrice = Integer.parseInt(offerPrice);
-		
-		//search through carlot list for car id
-		offerCar = cls.matchCarId(intCarIDInput);
+		offerCar = cls.matchCarId(carIDInput);
+		if(offerCar == null) {
+			System.out.println("Invalid Choice. Car is Not In The System.");
+			return;
+		}
 
 		//add offer car to the MASTER list
-		MasterOfferList.getOfferlist().add(new Offer(offerCar, loggedInCustomer, intOfferPrice, getUniqueOfferId(1)));
+		MasterOfferList.getOfferlist().add(new Offer(offerCar, loggedInCustomer, offerPrice, getUniqueOfferId(1)));
 		Offer newOffer = MasterOfferList.getOfferlist().get(MasterOfferList.getOfferlist().size() - 1);
 		int newOfferID = newOffer.getOfferID();
 		System.out.println("Offer ID ->" + newOfferID);

@@ -6,6 +6,8 @@ public interface CarLotServiceInt {
 
 	public void viewCarLot();
 	
+	public void viewCarLotLimited();
+	
 	public void addCar();
 	
 	public Car createCar();
