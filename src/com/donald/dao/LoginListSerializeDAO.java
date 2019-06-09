@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.donald.util.LoggingUtil;
+
 public class LoginListSerializeDAO implements LoginListDAO {
 
 	
@@ -30,7 +32,7 @@ public class LoginListSerializeDAO implements LoginListDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by LoginListSerializeDAO saveLoginList();");
 		}
 	}
 
@@ -49,19 +51,14 @@ public class LoginListSerializeDAO implements LoginListDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LoggingUtil.warn("FileNotFoundException called by LoginListSerializeDAO loadLoginList();");
 			return null;
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by LoginListSerializeDAO loadLoginList();");
 		} catch (ClassNotFoundException c) {
-			System.out.println("Class not found");
-			c.printStackTrace();
+			LoggingUtil.warn("ClassNotFoundException called by LoginListSerializeDAO loadLoginList();");
 		}
-		
-		for(Map.Entry<String, String> entry: CustomerLoginMap.entrySet()) {
-			System.out.println("Key= " + entry.getKey() + " Value= "+ entry.getValue());
-		}
-		
+
 		return CustomerLoginMap;
 	}
 

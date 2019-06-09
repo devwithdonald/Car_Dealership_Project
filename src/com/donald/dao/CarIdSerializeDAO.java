@@ -11,28 +11,30 @@ import java.util.List;
 
 import com.donald.users.CarId;
 import com.donald.users.Customer;
+import com.donald.util.LoggingUtil;
 
-public class CarIdSerializeDAO implements CarIdDAO{
+public class CarIdSerializeDAO implements CarIdDAO {
 
 	@Override
 	public void saveCarId(List<CarId> carId) {
-		
+
 		try {
+
 			FileOutputStream fos = new FileOutputStream("CarIdData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			oos.writeObject(carId);
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by CarIdSerializeDAO saveCarID();");
 		}
-		
+
 	}
 
 	@Override
 	public List<CarId> loadCarId() {
-		
+
 		List<CarId> carIdList = null;
 
 		try {
@@ -45,19 +47,16 @@ public class CarIdSerializeDAO implements CarIdDAO{
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LoggingUtil.warn("FileNotFoundException called by CarIdSerializeDAO loadCarID();");
+
 			return null;
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		} catch (ClassNotFoundException c) {
-			System.out.println("Class not found");
-			c.printStackTrace();
-		}
+			LoggingUtil.warn("IOException called by CarIdSerializeDAO loadCarID();");
 
-//		for (Customer customer : customerList) {
-//			System.out.println("username" + customer.getUsername() + "password" + customer.getPassword() + "ID"
-//					+ customer.getCustomerID());
-//		}
+		} catch (ClassNotFoundException c) {
+			LoggingUtil.warn("ClassNotFoundException called by CarIdSerializeDAO loadCarID();");
+
+		}
 
 		return carIdList;
 	}

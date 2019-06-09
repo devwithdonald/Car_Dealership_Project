@@ -11,56 +11,50 @@ import java.util.List;
 
 import com.donald.users.Car;
 import com.donald.users.Customer;
+import com.donald.util.LoggingUtil;
 
-
-public class CarLotSerializeDAO implements CarLotDAO{
+public class CarLotSerializeDAO implements CarLotDAO {
 
 	@Override
 	public void saveCarLot(List<Car> carLot) {
-		
+
 		try {
 			FileOutputStream fos = new FileOutputStream("CarLotData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			oos.writeObject(carLot);
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by CarLotSerializeDAO saveCarLot();");
 		}
-		
+
 	}
 
 	@Override
 	public List<Car> loadCarLot() {
 		List<Car> carLot = null;
-		
+
 		try {
 			FileInputStream fis = new FileInputStream("CarLotData");
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			
-			//loads list
+
+			// loads list
 			carLot = (ArrayList) ois.readObject();
-			
+
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LoggingUtil.warn("FileNotFoundException called by CarLotSerializeDAO loadCarLot();");
 			return null;
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by CarLotSerializeDAO loadCarLot();");
 		} catch (ClassNotFoundException c) {
-			System.out.println("Class not found");
-			c.printStackTrace();
+			LoggingUtil.warn("ClassNotFoundException called by CarLotSerializeDAO loadCarLot();");
 		}
-		
-//		for(Car car : carLot) {
-//			System.out.println(car);
-//		}
-		
+
+
 		return carLot;
 	}
-	
-	
 
 }

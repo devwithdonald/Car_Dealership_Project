@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.donald.users.Customer;
+import com.donald.util.LoggingUtil;
 
 public class CustomerListSerializeDAO implements CustomerListDAO {
 
@@ -25,7 +26,7 @@ public class CustomerListSerializeDAO implements CustomerListDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by CustomerListSerializeDAO saveCustomerList();");
 		}
 
 	}
@@ -44,18 +45,12 @@ public class CustomerListSerializeDAO implements CustomerListDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LoggingUtil.warn("FileNotFoundException called by CustomerListSerializeDAO loadCustomerList();");
 			return null;
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			LoggingUtil.warn("IOException called by CustomerListSerializeDAO loadCustomerList();");
 		} catch (ClassNotFoundException c) {
-			System.out.println("Class not found");
-			c.printStackTrace();
-		}
-
-		for (Customer customer : customerList) {
-			System.out.println("username" + customer.getUsername() + "password" + customer.getPassword() + "ID"
-					+ customer.getCustomerID());
+			LoggingUtil.warn("ClassNotFoundException called by CustomerListSerializeDAO loadCustomerList();");
 		}
 
 		return customerList;

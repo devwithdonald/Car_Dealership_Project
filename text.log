@@ -1,0 +1,16 @@
+2019-06-08 23:50:19 TRACE root:10 - Trace Log
+2019-06-08 23:50:19 DEBUG root:14 - debuggggger
+2019-06-09 00:00:37 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 00:00:37 TRACE root:10 - CarLotSerializeDAO load
+2019-06-09 00:00:37 TRACE root:10 - CustomerListSerializeDAO load
+2019-06-09 00:00:37 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 00:00:37 TRACE root:10 - OFferSerializeDAO load
+2019-06-09 00:00:37 TRACE root:10 - UniqueOrderIDSerializeDAO load
+2019-06-09 00:00:37 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 00:03:29 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 00:03:29 TRACE root:10 - CarLotSerializeDAO load
+2019-06-09 00:03:29 TRACE root:10 - CustomerListSerializeDAO load
+2019-06-09 00:03:29 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 00:03:29 TRACE root:10 - OFferSerializeDAO load
+2019-06-09 00:03:29 TRACE root:10 - UniqueOrderIDSerializeDAO load
+2019-06-09 00:03:29 TRACE root:10 - Do Loop in Main - Start
