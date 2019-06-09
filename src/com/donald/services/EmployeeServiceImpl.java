@@ -24,19 +24,18 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		boolean accepted = false;
 
 		System.out.println("Enter Offer ID to Accept --> ");
-		while(!scanner.hasNextInt()) {
+		while (!scanner.hasNextInt()) {
 			System.out.println("Please Enter a Valid Number.");
-		    scanner.next();
+			scanner.next();
 		}
 		acceptId = scanner.nextInt();
 		scanner.nextLine();
-		
 
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 
 			if (MasterOfferList.getOfferlist().get(i).getOfferID() == acceptId) {
 				LoggingUtil.trace("acceptOffer(); - found matching ID");
-				
+
 				accepted = true;
 
 				Car offerCar = MasterOfferList.getOfferlist().get(i).getOfferCar();
@@ -67,19 +66,16 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					buyer.setMakingPayments(true);
 				}
 
-				// TODO MAKE OWN METHOD
-				// remove car with that unique offer id from the offer list - matching by carID
-				for (int j = 0; j < MasterOfferList.getOfferlist().size(); j++) {
+				for (int j = MasterOfferList.getOfferlist().size() - 1; j >= 0; j--) {
 					if (MasterOfferList.getOfferlist().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
-						
+
 						String purchasePrice = MasterOfferList.getOfferlist().get(j).getOfferPrice().toString();
 						offerCar.setPurchasedPrice(purchasePrice);
-						
+
 						MasterOfferList.getOfferlist().remove(j);
 					}
 				}
 
-				// TODO MAKE OWN METHOD
 				// set forSale false
 				offerCar.setForSale(false);
 
@@ -88,8 +84,6 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 				// setting username to care
 				offerCar.setOwnerUsername(buyer.getUsername());
-				
-
 
 				// TODO MAKE OWN METHOD
 				// remove car from lot
@@ -106,8 +100,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 			}
 
 		}
-		
-		if(!accepted) {
+
+		if (!accepted) {
 			System.out.println("ID Not Found. Please Try Again.");
 		}
 
@@ -123,13 +117,12 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		boolean rejected = false;
 
 		System.out.println("Enter Offer ID to reject-->");
-		while(!scanner.hasNextInt()) {
+		while (!scanner.hasNextInt()) {
 			System.out.println("Please Enter a Valid Number.");
-		    scanner.next();
+			scanner.next();
 		}
 		rejectId = scanner.nextInt();
 		scanner.nextLine();
-		
 
 		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 			if (MasterOfferList.getOfferlist().get(i).getOfferID() == rejectId) {
@@ -149,8 +142,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 			}
 		}
-		
-		if(!rejected) {
+
+		if (!rejected) {
 			System.out.println("ID Not Found. Please Try Again.");
 		}
 

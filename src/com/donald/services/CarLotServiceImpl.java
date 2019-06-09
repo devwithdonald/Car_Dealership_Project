@@ -30,7 +30,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		}
 
 	}
-	
+
 	@Override
 	public void viewCarLotLimited() {
 		LoggingUtil.trace("CarLotServiceImpl - viewCarLotLimited(); - start");
@@ -42,8 +42,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		} else {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
 			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-				System.out.println("ID: " + CarLot.getCarlot().get(i).getCarID() + " Type: " + CarLot.getCarlot().get(i).getCarType() +
-						" Price: "+ CarLot.getCarlot().get(i).getPrice());
+				System.out.println("ID: " + CarLot.getCarlot().get(i).getCarID() + " Type: "
+						+ CarLot.getCarlot().get(i).getCarType() + " Price: " + CarLot.getCarlot().get(i).getPrice());
 			}
 
 		}
@@ -118,7 +118,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 					System.out.println("Unable to Remove Car -> Car Lot is Empty");
 				} else {
 
-					//get car id 
+					// get car id
 					removeCar(getCarId());
 					input = "";
 				}
@@ -130,27 +130,24 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		} while (!exitInput);
 
 	}
-	
+
 	public Integer getCarId() {
 		LoggingUtil.trace("CarLotServiceImpl - getCarId(); - start");
-		
+
 		Integer carID;
 
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.println("Enter Car ID -->");
-		while(!scanner.hasNextInt()) {
+		while (!scanner.hasNextInt()) {
 			System.out.println("Please Enter a Valid Number.");
-		    scanner.next();
+			scanner.next();
 		}
 		carID = scanner.nextInt();
 		scanner.nextLine();
-		
+
 		return carID;
 	}
-	
-
-	
 
 	@Override
 	public void removeCar(Integer carId) {
@@ -158,18 +155,17 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		Boolean carRemoveCheck = false;
 
-
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 
 			if (CarLot.getCarlot().get(i).getCarID() == carId) {
-				
+
 				System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
 				CarLot.getCarlot().remove(i);
 				carRemoveCheck = true;
 
 			}
 		}
-		
+
 		removeCarFromOfferList(carId);
 
 		if (!carRemoveCheck) {
@@ -177,29 +173,30 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		}
 
 	}
-	
+
 	public void removeCarFromOfferList(Integer carId) {
-		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
-			if(MasterOfferList.getOfferlist().get(i).getOfferCar().getCarID() == carId) {
-				MasterOfferList.getOfferlist().remove(i);;
+
+		for (int i = MasterOfferList.getOfferlist().size() - 1; i >= 0; i--) {
+			if (MasterOfferList.getOfferlist().get(i).getOfferCar().getCarID() == carId) {
+				MasterOfferList.getOfferlist().remove(i);
 			}
 		}
-		
+
 	}
-	
+
 	@Override
 	public Car matchCarId(Integer carId) {
-		
+
 		Car car = null;
-		
+
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 			if (CarLot.getCarlot().get(i).getCarID() == carId) {
 				car = CarLot.getCarlot().get(i);
 			}
 		}
-		
+
 		return car;
-		
+
 	}
 
 }
