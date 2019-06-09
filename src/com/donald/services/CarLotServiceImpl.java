@@ -142,5 +142,21 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		}
 
 	}
+	
+	//TODO JUNIT
+	@Override
+	public Car matchCarId(Integer carId) {
+		
+		Car car = null;
+		
+		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+			if (CarLot.getCarlot().get(i).getCarID() == carId) {
+				//return the car
+				car = CarLot.getCarlot().get(i);
+			}
+		}
+		return car;
+		
+	}
 
 }

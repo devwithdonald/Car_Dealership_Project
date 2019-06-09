@@ -13,4 +13,6 @@ public interface CustomerServiceInt {
 	
 	public void viewLocalPaymentsMade(Customer loggedInCustomer);
 	
+	public Integer getUniqueOfferId(Integer num);
+	
 }
