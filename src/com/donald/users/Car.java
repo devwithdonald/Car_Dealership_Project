@@ -16,7 +16,9 @@ public class Car implements Serializable{
 	private List<Offer> carOfferList;
 	private String purchasedPrice;
 	
-
+	public Car() {
+		
+	}
 
 	public Car(String ownerUsername, String price, String carType, Boolean forSale, Integer carID) {
 		super();

@@ -8,6 +8,7 @@ import com.donald.users.Car;
 import com.donald.users.CarId;
 import com.donald.users.CarIdCounter;
 import com.donald.users.CarLot;
+import com.donald.users.MasterOfferList;
 import com.donald.util.LoggingUtil;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
@@ -116,7 +117,9 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 				if (CarLot.getCarlot().size() == 0) {
 					System.out.println("Unable to Remove Car -> Car Lot is Empty");
 				} else {
-					removeCar();
+
+					//get car id 
+					removeCar(getCarId());
 					input = "";
 				}
 
@@ -128,14 +131,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 	}
 	
-	
-
-	@Override
-	public void removeCar() {
-		LoggingUtil.trace("CarLotServiceImpl - removeCar(); - start");
+	public Integer getCarId() {
+		LoggingUtil.trace("CarLotServiceImpl - getCarId(); - start");
 		
 		Integer carID;
-		Boolean carRemoveCheck = false;
 
 		Scanner scanner = new Scanner(System.in);
 		
@@ -146,10 +145,23 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		}
 		carID = scanner.nextInt();
 		scanner.nextLine();
+		
+		return carID;
+	}
+	
+
+	
+
+	@Override
+	public void removeCar(Integer carId) {
+		LoggingUtil.trace("CarLotServiceImpl - removeCar(); - start");
+
+		Boolean carRemoveCheck = false;
+
 
 		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
 
-			if (CarLot.getCarlot().get(i).getCarID() == carID) {
+			if (CarLot.getCarlot().get(i).getCarID() == carId) {
 				
 				System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
 				CarLot.getCarlot().remove(i);
@@ -157,6 +169,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 			}
 		}
+		
+		removeCarFromOfferList(carId);
 
 		if (!carRemoveCheck) {
 			System.out.println("CarId Not Found. No Car Removed.");
@@ -164,7 +178,15 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 	}
 	
-	//TODO JUNIT
+	public void removeCarFromOfferList(Integer carId) {
+		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
+			if(MasterOfferList.getOfferlist().get(i).getOfferCar().getCarID() == carId) {
+				MasterOfferList.getOfferlist().remove(i);;
+			}
+		}
+		
+	}
+	
 	@Override
 	public Car matchCarId(Integer carId) {
 		
@@ -175,6 +197,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 				car = CarLot.getCarlot().get(i);
 			}
 		}
+		
 		return car;
 		
 	}

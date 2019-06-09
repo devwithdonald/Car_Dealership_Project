@@ -14,7 +14,7 @@ public interface CarLotServiceInt {
 	
 	public void removeCarMenu();
 	
-	public void removeCar();
+	public void removeCar(Integer carId);
 	
 	public Car matchCarId(Integer carId);
 	
