@@ -30,3 +30,68 @@
 2019-06-09 02:32:06 TRACE root:10 - employee password correct
 2019-06-09 02:32:06 TRACE root:10 - employee login failed
 2019-06-09 02:32:06 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-09 21:40:04 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 21:40:04 TRACE root:10 - CarLotSerializeDAO load
+2019-06-09 21:40:04 TRACE root:10 - CustomerListSerializeDAO load
+2019-06-09 21:40:04 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 21:40:04 TRACE root:10 - OFferSerializeDAO load
+2019-06-09 21:40:04 TRACE root:10 - UniqueOrderIDSerializeDAO load
+2019-06-09 21:40:04 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:40:04 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-09 21:40:09 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 21:40:09 TRACE root:10 - CarLotSerializeDAO load
+2019-06-09 21:40:09 TRACE root:10 - CustomerListSerializeDAO load
+2019-06-09 21:40:09 TRACE root:10 - LoginListSerializeDAO load
+2019-06-09 21:40:09 TRACE root:10 - OFferSerializeDAO load
+2019-06-09 21:40:09 TRACE root:10 - UniqueOrderIDSerializeDAO load
+2019-06-09 21:40:09 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:40:09 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-09 21:40:17 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-09 21:40:17 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-09 21:40:17 TRACE root:10 - Employee Screen - display(); - start
+2019-06-09 21:40:17 TRACE root:10 - employee loginVerification(); - start
+2019-06-09 21:40:56 TRACE root:10 - employee login passed
+2019-06-09 21:40:56 TRACE root:10 - false employee login verification
+2019-06-09 21:40:56 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-09 21:40:56 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:40:56 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-09 21:40:57 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-09 21:40:57 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-09 21:40:57 TRACE root:10 - Employee Screen - display(); - start
+2019-06-09 21:40:57 TRACE root:10 - employee loginVerification(); - start
+2019-06-09 21:41:10 TRACE root:10 - employee login passed
+2019-06-09 21:41:10 TRACE root:10 - false employee login verification
+2019-06-09 21:41:10 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-09 21:41:10 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:41:10 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-09 21:41:13 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-09 21:41:13 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-09 21:41:13 TRACE root:10 - Employee Screen - display(); - start
+2019-06-09 21:41:13 TRACE root:10 - employee loginVerification(); - start
+2019-06-09 21:41:14 TRACE root:10 - employee username correct
+2019-06-09 21:41:15 TRACE root:10 - employee password correct
+2019-06-09 21:41:15 TRACE root:10 - employee login failed
+2019-06-09 21:41:15 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-09 21:41:28 TRACE root:10 - do loop - employee menu  - exiting
+2019-06-09 21:41:28 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-09 21:41:28 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:41:28 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-09 21:41:29 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-09 21:41:29 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-09 21:41:29 TRACE root:10 - Employee Screen - display(); - start
+2019-06-09 21:41:29 TRACE root:10 - employee loginVerification(); - start
+2019-06-09 21:41:31 TRACE root:10 - employee username correct
+2019-06-09 21:41:31 TRACE root:10 - employee login passed
+2019-06-09 21:41:31 TRACE root:10 - false employee login verification
+2019-06-09 21:41:31 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-09 21:41:31 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:41:31 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-09 21:41:34 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-09 21:41:34 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-09 21:41:34 TRACE root:10 - Employee Screen - display(); - start
+2019-06-09 21:41:34 TRACE root:10 - employee loginVerification(); - start
+2019-06-09 21:41:44 TRACE root:10 - employee login passed
+2019-06-09 21:41:44 TRACE root:10 - false employee login verification
+2019-06-09 21:41:44 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-09 21:41:44 TRACE root:10 - Do Loop in Main - Start
+2019-06-09 21:41:44 TRACE root:10 - WebServiceImpl - initialScreen(); - start

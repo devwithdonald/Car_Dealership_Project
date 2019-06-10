@@ -141,7 +141,9 @@ public class CustomerScreen implements UserScreen {
 		if (counter == 2) {
 			// verified let them in!
 			LoggingUtil.trace("LoginVerification(); - do loop - login verified");
-			customerLoginMatch(username);
+			
+			//adding here
+			loggedInCustomer = customerLoginMatch(username);
 			return true;
 		} else {
 			LoggingUtil.warn("failed login attempt");
@@ -149,14 +151,20 @@ public class CustomerScreen implements UserScreen {
 		}
 	}
 
-	public void customerLoginMatch(String username) {
 
+	public Customer customerLoginMatch(String username) {
+		LoggingUtil.trace("customerLoginMatch(); - start");
+		
+		Customer customer = null;
+		
 		for (int i = 0; i < CustomerBase.getCustomerlist().size(); i++) {
 			if (CustomerBase.getCustomerlist().get(i).getUsername().equals(username)) {
 				LoggingUtil.debug("customerLoginMatch(); - getting logged in customer");
-				loggedInCustomer = CustomerBase.getCustomerlist().get(i);
+				customer = CustomerBase.getCustomerlist().get(i);
 			}
 		}
+		
+		return customer;
 	}
 
 	public void register() {
