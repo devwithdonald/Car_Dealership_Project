@@ -60,7 +60,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 	}
 	
-	//TODO JUNIT TEST
+
 	@Override
 	public Integer getUniqueOfferId(Integer num) {
 		LoggingUtil.trace("CustomerServiceImpl - getUniqueOfferId();");
