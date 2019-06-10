@@ -76,25 +76,17 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					}
 				}
 
-				// set forSale false
+				// set forSale false, setting car offer list to null, setting username to care
 				offerCar.setForSale(false);
-
-				// setting car offer list to null
 				offerCar.setCarOfferList(null);
-
-				// setting username to care
 				offerCar.setOwnerUsername(buyer.getUsername());
 
-				// TODO MAKE OWN METHOD
 				// remove car from lot
-				for (int j = 0; j < CarLot.getCarlot().size(); j++) {
-					if (CarLot.getCarlot().get(j).getCarID() == offerCar.getCarID()) {
-						CarLot.getCarlot().remove(j);
-					}
-				}
+				CarLotServiceImpl clsi = new CarLotServiceImpl();
+				clsi.removeCar(offerCar.getCarID());
 
+				// calculate monthly payment
 				WebServiceImpl wsi = new WebServiceImpl();
-
 				wsi.calculateMonthlyPayment(buyer);
 
 			}

@@ -15,4 +15,6 @@ public interface CustomerServiceInt {
 	
 	public Integer getUniqueOfferId(Integer num);
 	
+	public void addOfferToMasterOfferList(Car offerCar, Customer loggedInCustomer, Integer offerPrice);
+	
 }

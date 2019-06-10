@@ -51,16 +51,26 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 			return;
 		}
 
+		
+		addOfferToMasterOfferList(offerCar, loggedInCustomer, offerPrice);
+				
+	}
+	
+	@Override
+	public void addOfferToMasterOfferList(Car offerCar, Customer loggedInCustomer, Integer offerPrice) {
+		LoggingUtil.trace("CustomerServiceImpl - addOfferToMasterOfferList(); - start");
+		
+		
 		//add offer car to the MASTER list
 		MasterOfferList.getOfferlist().add(new Offer(offerCar, loggedInCustomer, offerPrice, getUniqueOfferId(1)));
 		Offer newOffer = MasterOfferList.getOfferlist().get(MasterOfferList.getOfferlist().size() - 1);
 		int newOfferID = newOffer.getOfferID();
 		System.out.println("Offer ID ->" + newOfferID);
 		offerCar.getCarOfferList().add(newOffer);
-		
 	}
 	
 
+	
 	@Override
 	public Integer getUniqueOfferId(Integer num) {
 		LoggingUtil.trace("CustomerServiceImpl - getUniqueOfferId();");

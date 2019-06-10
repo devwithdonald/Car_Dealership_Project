@@ -13,7 +13,7 @@ import com.donald.util.LoggingUtil;
 public class WebServiceImpl implements WebServiceInt {
 
 
-	// TODO JUNIT TEST
+
 	@Override
 	public String initialScreen() {
 		LoggingUtil.trace("WebServiceImpl - initialScreen(); - start");

@@ -9,14 +9,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.donald.services.CarLotServiceImpl;
+import com.donald.services.CustomerServiceImpl;
 import com.donald.users.Car;
 import com.donald.users.CarLot;
+import com.donald.users.Customer;
+import com.donald.users.MasterOfferList;
+import com.donald.users.Offer;
 
 public class CarLotServiceTests {
 
 	private static CarLotServiceImpl clsi;
 	private static Car car;
-	private static CarLot carLot;
+
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -30,17 +34,30 @@ public class CarLotServiceTests {
 
 	@Before
 	public void setUp() throws Exception {
+		//adding cars
 		CarLot.getCarlot().add(new Car("dealer", "600", "ferrari", true, 1));
 		CarLot.getCarlot().add(new Car("dealer", "400", "butter", true, 2));
 		CarLot.getCarlot().add(new Car("dealer", "90", "mustang", true, 3));
 		CarLot.getCarlot().add(new Car("dealer", "150", "chevy", true, 4));
+
+		// adding offers,
+		MasterOfferList.getOfferlist()
+				.add(new Offer(new Car("dealer", "400", "car1", true, 1), new Customer("user1", "pass1"), 100, 1));
+		MasterOfferList.getOfferlist()
+				.add(new Offer(new Car("dealer", "500", "car2", true, 2), new Customer("user2", "pass2"), 200, 2));
+		MasterOfferList.getOfferlist()
+				.add(new Offer(new Car("dealer", "600", "car3", true, 3), new Customer("user3", "pass3"), 300, 3));
+
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		CarLot.getCarlot().clear();
+		MasterOfferList.getOfferlist().clear();
 	}
 
+	
+	
 	@Test
 	public void testZeroInput() {
 		assertEquals(car, clsi.matchCarId(0));
@@ -79,7 +96,7 @@ public class CarLotServiceTests {
 		assertEquals(after, CarLot.getCarlot().size());
 
 	}
-	
+
 	@Test
 	public void addTwoCarTest() {
 		int before = CarLot.getCarlot().size();
@@ -89,6 +106,24 @@ public class CarLotServiceTests {
 		int after = before + 2;
 		assertEquals(after, CarLot.getCarlot().size());
 
+	}
+
+	@Test
+	public void offerListRemoval() {
+
+		clsi.removeCarFromOfferList(1);
+
+		assertEquals(2, MasterOfferList.getOfferlist().size());
+	}
+	
+	
+	@Test
+	public void offerListRemovalMult() {
+
+		clsi.removeCarFromOfferList(1);
+		clsi.removeCarFromOfferList(3);
+
+		assertEquals(1, MasterOfferList.getOfferlist().size());
 	}
 
 }

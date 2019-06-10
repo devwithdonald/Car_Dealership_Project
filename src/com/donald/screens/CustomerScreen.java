@@ -22,7 +22,6 @@ public class CustomerScreen implements UserScreen {
 
 	Customer loggedInCustomer;
 
-	//TODO JUNIT TEST
 	@Override
 	public boolean display() {
 		LoggingUtil.trace("CustomerScreen - display() - start");
@@ -84,7 +83,7 @@ public class CustomerScreen implements UserScreen {
 		return false;
 	}
 
-	// TODO JUNIT TEST
+
 	@Override
 	public boolean loginVerification() {
 		LoggingUtil.trace("CustomerScreen - loginVerification - start");
@@ -203,7 +202,7 @@ public class CustomerScreen implements UserScreen {
 
 	}
 
-	// TODO JUNIT TEST
+
 	public boolean customerAccessMenu() {
 		LoggingUtil.trace("CustomerScreen - customerAccessMenu(); - start");
 		boolean exitInput = false;
