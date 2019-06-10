@@ -26,7 +26,7 @@ public class CustomerListSerializeDAO implements CustomerListDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by CustomerListSerializeDAO saveCustomerList();");
+			LoggingUtil.error("IOException called by CustomerListSerializeDAO saveCustomerList();");
 		}
 
 	}
@@ -45,12 +45,12 @@ public class CustomerListSerializeDAO implements CustomerListDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			LoggingUtil.warn("FileNotFoundException called by CustomerListSerializeDAO loadCustomerList();");
+			LoggingUtil.error("FileNotFoundException called by CustomerListSerializeDAO loadCustomerList();");
 			return null;
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by CustomerListSerializeDAO loadCustomerList();");
+			LoggingUtil.error("IOException called by CustomerListSerializeDAO loadCustomerList();");
 		} catch (ClassNotFoundException c) {
-			LoggingUtil.warn("ClassNotFoundException called by CustomerListSerializeDAO loadCustomerList();");
+			LoggingUtil.error("ClassNotFoundException called by CustomerListSerializeDAO loadCustomerList();");
 		}
 
 		return customerList;

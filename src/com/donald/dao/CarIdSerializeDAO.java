@@ -27,7 +27,7 @@ public class CarIdSerializeDAO implements CarIdDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by CarIdSerializeDAO saveCarID();");
+			LoggingUtil.error("IOException called by CarIdSerializeDAO saveCarID();");
 		}
 
 	}
@@ -47,14 +47,14 @@ public class CarIdSerializeDAO implements CarIdDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			LoggingUtil.warn("FileNotFoundException called by CarIdSerializeDAO loadCarID();");
+			LoggingUtil.error("FileNotFoundException called by CarIdSerializeDAO loadCarID();");
 
 			return null;
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by CarIdSerializeDAO loadCarID();");
+			LoggingUtil.error("IOException called by CarIdSerializeDAO loadCarID();");
 
 		} catch (ClassNotFoundException c) {
-			LoggingUtil.warn("ClassNotFoundException called by CarIdSerializeDAO loadCarID();");
+			LoggingUtil.error("ClassNotFoundException called by CarIdSerializeDAO loadCarID();");
 
 		}
 

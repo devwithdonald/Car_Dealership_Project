@@ -26,7 +26,7 @@ public class OfferSerializeDAO implements OfferDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by OfferSerializeDAO saveOfferList();");
+			LoggingUtil.error("IOException called by OfferSerializeDAO saveOfferList();");
 		}
 
 	}
@@ -46,12 +46,12 @@ public class OfferSerializeDAO implements OfferDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			LoggingUtil.warn("FileNotFoundException called by OfferSerializeDAO loadOfferList();");
+			LoggingUtil.error("FileNotFoundException called by OfferSerializeDAO loadOfferList();");
 			return null;
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by OfferSerializeDAO loadOfferList();");
+			LoggingUtil.error("IOException called by OfferSerializeDAO loadOfferList();");
 		} catch (ClassNotFoundException c) {
-			LoggingUtil.warn("ClassNotFoundException called by OfferSerializeDAO loadOfferList();");
+			LoggingUtil.error("ClassNotFoundException called by OfferSerializeDAO loadOfferList();");
 			c.printStackTrace();
 		}
 

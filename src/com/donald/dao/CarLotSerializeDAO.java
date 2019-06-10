@@ -26,7 +26,7 @@ public class CarLotSerializeDAO implements CarLotDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by CarLotSerializeDAO saveCarLot();");
+			LoggingUtil.error("IOException called by CarLotSerializeDAO saveCarLot();");
 		}
 
 	}
@@ -45,12 +45,12 @@ public class CarLotSerializeDAO implements CarLotDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			LoggingUtil.warn("FileNotFoundException called by CarLotSerializeDAO loadCarLot();");
+			LoggingUtil.error("FileNotFoundException called by CarLotSerializeDAO loadCarLot();");
 			return null;
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by CarLotSerializeDAO loadCarLot();");
+			LoggingUtil.error("IOException called by CarLotSerializeDAO loadCarLot();");
 		} catch (ClassNotFoundException c) {
-			LoggingUtil.warn("ClassNotFoundException called by CarLotSerializeDAO loadCarLot();");
+			LoggingUtil.error("ClassNotFoundException called by CarLotSerializeDAO loadCarLot();");
 		}
 
 

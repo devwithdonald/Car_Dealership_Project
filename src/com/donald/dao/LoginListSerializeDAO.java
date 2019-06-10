@@ -32,7 +32,7 @@ public class LoginListSerializeDAO implements LoginListDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by LoginListSerializeDAO saveLoginList();");
+			LoggingUtil.error("IOException called by LoginListSerializeDAO saveLoginList();");
 		}
 	}
 
@@ -51,12 +51,12 @@ public class LoginListSerializeDAO implements LoginListDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			LoggingUtil.warn("FileNotFoundException called by LoginListSerializeDAO loadLoginList();");
+			LoggingUtil.error("FileNotFoundException called by LoginListSerializeDAO loadLoginList();");
 			return null;
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by LoginListSerializeDAO loadLoginList();");
+			LoggingUtil.error("IOException called by LoginListSerializeDAO loadLoginList();");
 		} catch (ClassNotFoundException c) {
-			LoggingUtil.warn("ClassNotFoundException called by LoginListSerializeDAO loadLoginList();");
+			LoggingUtil.error("ClassNotFoundException called by LoginListSerializeDAO loadLoginList();");
 		}
 
 		return CustomerLoginMap;

@@ -26,7 +26,7 @@ public class UniqueOrderIDSerializeDAO implements UniqueOrderIdDAO {
 			oos.close();
 			fos.close();
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by UniqueOrderIdSerializeDAO saveOrderId();");
+			LoggingUtil.error("IOException called by UniqueOrderIdSerializeDAO saveOrderId();");
 		}
 
 	}
@@ -45,12 +45,12 @@ public class UniqueOrderIDSerializeDAO implements UniqueOrderIdDAO {
 			ois.close();
 			fis.close();
 		} catch (FileNotFoundException e) {
-			LoggingUtil.warn("FileNotFoundException called by UniqueOrderIdSerializeDAO loadOrderID();");
+			LoggingUtil.error("FileNotFoundException called by UniqueOrderIdSerializeDAO loadOrderID();");
 			return null;
 		} catch (IOException ioe) {
-			LoggingUtil.warn("IOException called by UniqueOrderIdSerializeDAO loadOrderID();");
+			LoggingUtil.error("IOException called by UniqueOrderIdSerializeDAO loadOrderID();");
 		} catch (ClassNotFoundException c) {
-			LoggingUtil.warn("ClassNotFoundException called by UniqueOrderIdSerializeDAO loadOrderID();");
+			LoggingUtil.error("ClassNotFoundException called by UniqueOrderIdSerializeDAO loadOrderID();");
 
 		}
 
