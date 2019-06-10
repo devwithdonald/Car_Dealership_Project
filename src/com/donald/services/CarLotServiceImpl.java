@@ -64,7 +64,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 	}
 
-	// TODO JUNIT TEST
+
 	@Override
 	public Car createCar() {
 		LoggingUtil.trace("CarLotServiceImpl - createCar(); - start");
@@ -131,6 +131,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 	}
 
+	@Override
 	public Integer getCarId() {
 		LoggingUtil.trace("CarLotServiceImpl - getCarId(); - start");
 
@@ -174,6 +175,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 	}
 
+	@Override
 	public void removeCarFromOfferList(Integer carId) {
 
 		for (int i = MasterOfferList.getOfferlist().size() - 1; i >= 0; i--) {

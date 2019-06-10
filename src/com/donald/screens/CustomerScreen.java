@@ -39,6 +39,7 @@ public class CustomerScreen implements UserScreen {
 			LoggingUtil.debug("customer screen top of do loop");
 			Scanner scanner = new Scanner(System.in);
 			
+			
 			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
 			System.out.println("Enter '1': View all cars on the lot");
 			System.out.println("Enter '2': To make an offer on a car");

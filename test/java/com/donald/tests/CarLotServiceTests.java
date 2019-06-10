@@ -13,7 +13,7 @@ import com.donald.users.Car;
 import com.donald.users.CarLot;
 
 public class CarLotServiceTests {
-	
+
 	private static CarLotServiceImpl clsi;
 	private static Car car;
 	private static CarLot carLot;
@@ -21,7 +21,6 @@ public class CarLotServiceTests {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		clsi = new CarLotServiceImpl();
-
 
 	}
 
@@ -42,43 +41,54 @@ public class CarLotServiceTests {
 		CarLot.getCarlot().clear();
 	}
 
-	
 	@Test
 	public void testZeroInput() {
 		assertEquals(car, clsi.matchCarId(0));
 	}
-	
+
 	@Test
 	public void testHighInput() {
 		assertEquals(car, clsi.matchCarId(38483947));
 	}
-	
-	
+
 	@Test
 	public void testOneCarRemoval() {
 		clsi.removeCar(1);
 		assertEquals(3, CarLot.getCarlot().size());
 	}
-	
-	
+
 	@Test
 	public void testMultCarRemoval() {
 		clsi.removeCar(2);
 		clsi.removeCar(3);
-		assertEquals(2,CarLot.getCarlot().size());
+		assertEquals(2, CarLot.getCarlot().size());
 	}
-	
+
 	@Test
 	public void testInvalidRemovalEmpty() {
 		clsi.removeCar(98308);
 		assertEquals(4, CarLot.getCarlot().size());
 	}
-	
-	
-	
 
+	@Test
+	public void addOneCarTest() {
+		int before = CarLot.getCarlot().size();
+		// size should go up 1
+		clsi.addCar();
+		int after = before + 1;
+		assertEquals(after, CarLot.getCarlot().size());
+
+	}
 	
+	@Test
+	public void addTwoCarTest() {
+		int before = CarLot.getCarlot().size();
+		// size should go up 1
+		clsi.addCar();
+		clsi.addCar();
+		int after = before + 2;
+		assertEquals(after, CarLot.getCarlot().size());
 
-
+	}
 
 }

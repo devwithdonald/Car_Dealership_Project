@@ -18,4 +18,7 @@ public interface CarLotServiceInt {
 	
 	public Car matchCarId(Integer carId);
 	
+	public void removeCarFromOfferList(Integer carId);
+	
+	public Integer getCarId();
 }
