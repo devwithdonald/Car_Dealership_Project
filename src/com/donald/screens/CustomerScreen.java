@@ -28,6 +28,7 @@ public class CustomerScreen implements UserScreen {
 		LoggingUtil.trace("CustomerScreen - display() - start");
 
 		if (!customerAccessMenu()) {
+			LoggingUtil.warn("failed customer access");
 			return false;
 		}
 
@@ -35,6 +36,7 @@ public class CustomerScreen implements UserScreen {
 		String input = "";
 
 		do {
+			LoggingUtil.debug("customer screen top of do loop");
 			Scanner scanner = new Scanner(System.in);
 			
 			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
@@ -107,9 +109,11 @@ public class CustomerScreen implements UserScreen {
 			username = scanner.nextLine();
 
 			if (username.equals("0")) {
+				LoggingUtil.debug("exiting from login verifcation");
 				break;
 			}
 			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
+				LoggingUtil.trace("customer username correct");
 				verifiedUsername = true;
 				counter++;
 			}
@@ -119,6 +123,7 @@ public class CustomerScreen implements UserScreen {
 
 			if (counter == 1) {
 				if (MasterCustomerLoginList.getCustomerloginmap().get(username).equals(password)) {
+					LoggingUtil.trace("customer password correct");
 					verifiedPassword = true;
 					counter++;
 				}
