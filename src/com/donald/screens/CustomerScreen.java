@@ -40,10 +40,10 @@ public class CustomerScreen implements UserScreen {
 			
 			
 			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
-			System.out.println("Enter '1': View all cars on the lot");
-			System.out.println("Enter '2': To make an offer on a car");
-			System.out.println("Enter '3': View cars that you own");
-			System.out.println("Enter '4': View remaining payments on an owned car");
+			System.out.println("Enter '1': View all boats on the lot");
+			System.out.println("Enter '2': To make an offer on a boat");
+			System.out.println("Enter '3': View boats that you own");
+			System.out.println("Enter '4': View remaining payments on an owned boats");
 			System.out.println("Enter '0': Exit!");
 			input = scanner.nextLine();
 

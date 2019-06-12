@@ -28,7 +28,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Please enter the car ID you would like to make an offer on -->");
+		System.out.println("Please enter the boat ID you would like to make an offer on -->");
 		while(!scanner.hasNextInt()) {
 			System.out.println("Please Enter a Valid Number.");
 		    scanner.next();
@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		Car offerCar = null;
 		offerCar = cls.matchCarId(carIDInput);
 		if(offerCar == null) {
-			System.out.println("Invalid Choice. Car is Not In The System.");
+			System.out.println("Invalid Choice. Boat is Not In The System.");
 			return;
 		}
 
@@ -89,7 +89,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 		if (loggedInCustomer.getCarsOwned().size() == 0) {
 			LoggingUtil.warn("No cars in " + loggedInCustomer + " inventory");
-			System.out.println("You Have No Cars In Your Inventory!");
+			System.out.println("You Have No Boats In Your Inventory!");
 		} else {
 			for (int i = 0; i < loggedInCustomer.getCarsOwned().size(); i++) {
 				System.out.println(loggedInCustomer.getCarsOwned().get(i));

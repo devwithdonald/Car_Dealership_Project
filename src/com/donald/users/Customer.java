@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Customer implements Serializable {
 
-	//private static int customerIDCounter = 1;
+
 	private int customerID;
 
 	private List<Payment> localPaymentList;
@@ -31,10 +31,8 @@ public class Customer implements Serializable {
 		this.balance = 0;
 		this.pendingOffers = new ArrayList<>();
 		this.monthlyPayment = 0.0;
-		//size - 1
 		this.customerID = CustomerBase.getCustomerlist().size();
-//		this.customerID =
-		//customerIDCounter++;
+
 	}
 
 	public Double getMonthlyPayment() {

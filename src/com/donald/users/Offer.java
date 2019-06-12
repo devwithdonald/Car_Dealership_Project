@@ -5,10 +5,7 @@ import java.io.Serializable;
 public class Offer implements Serializable{
 
 
-	//these offerIDs need to unique
-	//public static int offerCounterID = 1;
 	private int offerID;
-	
 	private Car offerCar;
 	private Customer offerer;
 	private Integer offerPrice;
@@ -23,7 +20,6 @@ public class Offer implements Serializable{
 		this.offerer = offerer;
 		this.offerPrice = offerPrice;
 		this.offerID = offerID;
-		//offerCounterID++;
 	}
 
 	public int getOfferID() {
@@ -56,7 +52,7 @@ public class Offer implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Offer [offerID=" + offerID + ", offercarID=" + offerCar.getCarID() + ", offerCarType=" + offerCar.getCarType() + ", offerCarOriginalPrice=" + offerCar.getPrice() +  ", offerer=" + offerer.getUsername() + ", offerPrice="
+		return "Offer [offerID=" + offerID + ", offerBoatID=" + offerCar.getCarID() + ", offerBoatType=" + offerCar.getCarType() + ", offerBoatOriginalPrice=" + offerCar.getPrice() +  ", offerer=" + offerer.getUsername() + ", offerPrice="
 				+ offerPrice + "]";
 	}
 

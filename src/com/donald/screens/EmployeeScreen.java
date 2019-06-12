@@ -38,9 +38,9 @@ public class EmployeeScreen implements UserScreen{
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome! What would you like to do today?");
 
-			System.out.println("Enter '1': To add a car to the car lot. ");
+			System.out.println("Enter '1': To add a boat to the boat lot. ");
 			System.out.println("Enter '2': To accept or reject offers.");
-			System.out.println("Enter '3': To remove a car from the car lot");
+			System.out.println("Enter '3': To remove a boat from the boat lot");
 			System.out.println("Enter '4': View all payments");
 			System.out.println("Enter '0': Exit!");
 

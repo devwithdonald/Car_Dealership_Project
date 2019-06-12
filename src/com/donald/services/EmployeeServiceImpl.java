@@ -157,9 +157,9 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 			Scanner scanner = new Scanner(System.in);
 
-			System.out.println("Enter '1': To view the entire car offer list");
-			System.out.println("Enter '2': To ACCEPT a car offer");
-			System.out.println("Enter '3': To REJECT a car offer");
+			System.out.println("Enter '1': To view the entire boat offer list");
+			System.out.println("Enter '2': To ACCEPT a boat offer");
+			System.out.println("Enter '3': To REJECT a boat offer");
 			System.out.println("Enter '0': Exit!");
 
 			input = scanner.nextLine();

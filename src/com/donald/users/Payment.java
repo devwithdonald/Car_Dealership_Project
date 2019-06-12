@@ -3,9 +3,8 @@ package com.donald.users;
 public class Payment {
 
 	private int amountPaid;
-	private Car car; //on what car the payment is made
+	private Car car; 
 	
-	//get payment left for a car! separate method!
 	
 	public Payment() {
 		super();
@@ -63,7 +62,7 @@ public class Payment {
 	
 	@Override
 	public String toString() {
-		return "Payment [amountPaid=" + amountPaid + ", car=" + car + "]";
+		return "Payment [amountPaid=" + amountPaid + ", boat=" + car + "]";
 	}
 	
 	

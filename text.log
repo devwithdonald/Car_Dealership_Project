@@ -518,3 +518,24 @@
 2019-06-12 19:39:42 TRACE root:10 - Do Loop in Main - Start
 2019-06-12 19:39:42 TRACE root:10 - WebServiceImpl - initialScreen(); - start
 2019-06-12 19:39:42 TRACE root:10 - WebServiceImpl - input = '0'
+2019-06-12 19:52:32 TRACE root:10 - LoginListSerializeDAO load
+2019-06-12 19:52:32 TRACE root:10 - CarLotSerializeDAO load
+2019-06-12 19:52:32 TRACE root:10 - CustomerListSerializeDAO load
+2019-06-12 19:52:32 TRACE root:10 - LoginListSerializeDAO load
+2019-06-12 19:52:32 TRACE root:10 - OFferSerializeDAO load
+2019-06-12 19:52:32 TRACE root:10 - UniqueOrderIDSerializeDAO load
+2019-06-12 19:52:32 TRACE root:10 - Do Loop in Main - Start
+2019-06-12 19:52:32 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-12 19:52:35 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-12 19:52:35 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-12 19:52:35 TRACE root:10 - Employee Screen - display(); - start
+2019-06-12 19:52:35 TRACE root:10 - employee loginVerification(); - start
+2019-06-12 19:52:36 TRACE root:10 - employee username correct
+2019-06-12 19:52:37 TRACE root:10 - employee password correct
+2019-06-12 19:52:37 TRACE root:10 - employee login failed
+2019-06-12 19:52:37 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-12 19:52:40 TRACE root:10 - do loop - employee menu  - exiting
+2019-06-12 19:52:40 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-12 19:52:40 TRACE root:10 - Do Loop in Main - Start
+2019-06-12 19:52:40 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-12 19:52:40 TRACE root:10 - WebServiceImpl - input = '0'

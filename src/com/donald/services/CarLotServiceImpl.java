@@ -16,11 +16,11 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void viewCarLot() {
 		LoggingUtil.trace("CarLotServiceImpl - viewCarLot(); - start");
-		System.out.println("-- In View Car Lot --");
+		System.out.println("-- In View Boat Lot --");
 
 		if (CarLot.getCarlot().size() == 0) {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
-			System.out.println("Car Lot is Empty!");
+			System.out.println("Boat Lot is Empty!");
 		} else {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
 			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
@@ -34,16 +34,16 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void viewCarLotLimited() {
 		LoggingUtil.trace("CarLotServiceImpl - viewCarLotLimited(); - start");
-		System.out.println("-- In View Car Lot --");
+		System.out.println("-- In View Boat Lot --");
 
 		if (CarLot.getCarlot().size() == 0) {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
-			System.out.println("Car Lot is Empty!");
+			System.out.println("Boat Lot is Empty!");
 		} else {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
 			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-				System.out.println("ID-> " + CarLot.getCarlot().get(i).getCarID() + " Type-> "
-						+ CarLot.getCarlot().get(i).getCarType() + " Price-> " + CarLot.getCarlot().get(i).getPrice());
+				System.out.println("ID -> " + CarLot.getCarlot().get(i).getCarID() + " Type -> "
+						+ CarLot.getCarlot().get(i).getCarType() + " Price -> " + CarLot.getCarlot().get(i).getPrice());
 			}
 
 		}
@@ -54,13 +54,13 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	public void addCar() {
 		LoggingUtil.trace("CarLotServiceImpl - addCar(); - start");
 
-		System.out.println("-- Add New Car Screen --");
+		System.out.println("-- Add New Boat Screen --");
 
 		// Add car to lot
 		CarLot.getCarlot().add(createCar());
 
 		// success message
-		System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the car lot!");
+		System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the boat lot!");
 
 	}
 
@@ -73,10 +73,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Please enter the car type: ");
+		System.out.println("Please enter the boat type: ");
 		carType = scanner.nextLine();
 
-		System.out.println("Please enter the car price: ");
+		System.out.println("Please enter the boat price: ");
 		price = scanner.nextLine();
 
 		// add new count
@@ -92,7 +92,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 	@Override
 	public void removeCarMenu() {
 		LoggingUtil.trace("CarLotServiceImpl - removeCarMenu(); - start");
-		System.out.println("-- Remove a car screen --");
+		System.out.println("-- Remove a boat screen --");
 
 		boolean exitInput = false;
 		String input = "";
@@ -100,8 +100,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		do {
 			Scanner scanner = new Scanner(System.in);
 
-			System.out.println("Enter '1': To view the car the list");
-			System.out.println("Enter '2': To input the carID you would like to remove");
+			System.out.println("Enter '1': To view the boat the list");
+			System.out.println("Enter '2': To input the boat ID you would like to remove");
 			System.out.println("Enter '0': Exit!");
 
 			input = scanner.nextLine();
@@ -114,7 +114,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 			} else if (input.equals("2")) {
 
 				if (CarLot.getCarlot().size() == 0) {
-					System.out.println("Unable to Remove Car -> Car Lot is Empty");
+					System.out.println("Unable to Remove Boat -> Boat Lot is Empty");
 				} else {
 
 					// get car id
@@ -138,7 +138,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Enter Car ID -->");
+		System.out.println("Enter Boat ID -->");
 		while (!scanner.hasNextInt()) {
 			System.out.println("Please Enter a Valid Number.");
 			scanner.next();
@@ -159,7 +159,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 			if (CarLot.getCarlot().get(i).getCarID() == carId) {
 
-				System.out.println("Removing Car: " + CarLot.getCarlot().get(i).toString());
+				System.out.println("Removing Boat: " + CarLot.getCarlot().get(i).toString());
 				CarLot.getCarlot().remove(i);
 				carRemoveCheck = true;
 
@@ -169,7 +169,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		removeCarFromOfferList(carId);
 
 		if (!carRemoveCheck) {
-			System.out.println("CarId Not Found. No Car Removed.");
+			System.out.println("Boat ID Not Found. No Boat Removed.");
 		}
 
 	}
