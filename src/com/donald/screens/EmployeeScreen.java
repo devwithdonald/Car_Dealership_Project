@@ -10,7 +10,7 @@ import com.donald.util.LoggingUtil;
 
 public class EmployeeScreen implements UserScreen{
 
-	// TODO JUNIT TEST
+
 	@Override
 	public boolean display() {
 		LoggingUtil.trace("Employee Screen - display(); - start");

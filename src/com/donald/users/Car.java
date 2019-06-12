@@ -26,11 +26,10 @@ public class Car implements Serializable{
 		this.price = price;
 		this.carType = carType;
 		this.forSale = forSale;
-		//this.carID = CarLot.getCarlot().size();
 		this.carID = carID;
 		this.carOfferList = new ArrayList<>();
 		this.purchasedPrice = price;
-		//Car.carIDCounter++;
+
 	}
 
 	public String getPurchasedPrice() {

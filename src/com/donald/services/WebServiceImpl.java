@@ -17,7 +17,7 @@ public class WebServiceImpl implements WebServiceInt {
 	@Override
 	public String initialScreen() {
 		LoggingUtil.trace("WebServiceImpl - initialScreen(); - start");
-		System.out.println("Hello & Welcome.");
+		System.out.println("Hello & welcome to Boat Buddies! Boat Buddies is here to give you \nthe best boat buying experience a person can dream of.");
 
 		boolean validInput = false;
 		String input = "";
@@ -85,13 +85,13 @@ public class WebServiceImpl implements WebServiceInt {
 	public void viewCarOfferList() {
 		LoggingUtil.trace("WebServiceImpl - viewCarOfferList(); - start");
 		
-		System.out.println("-- View All Car Offers For Each Car --");
+		System.out.println("-- View All Boat Offers For Each Boat --");
 
 		if (MasterOfferList.getOfferlist().size() == 0) {
-			LoggingUtil.debug("viewCarOfferList -> Car Offer List is Empty");
-			System.out.println("Car Offer List is Empty");
+			LoggingUtil.debug("viewCarOfferList -> Boat Offer List is Empty");
+			System.out.println("Boat Offer List is Empty");
 		} else {
-			LoggingUtil.debug("viewCarOfferList -> Car Offer List is NOT Empty");
+			LoggingUtil.debug("viewCarOfferList -> Boat Offer List is NOT Empty");
 			for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
 				System.out.println(MasterOfferList.getOfferlist().get(i));
 			}
