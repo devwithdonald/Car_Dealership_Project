@@ -89,7 +89,7 @@ public class Car implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Car [boatID=" + carID + ", ownerUsername=" + ownerUsername + ", dealerPrice=" + price + ", purchasedPrice" + purchasedPrice + ", boatType=" + carType
+		return "Car [boatID=" + carID + ", ownerUsername=" + ownerUsername + ", dealerPrice=" + price + ", purchasedPrice=" + purchasedPrice + ", boatType=" + carType
 				+ ", forSale=" + forSale + ", boatOfferList=" + carOfferList + "]";
 	}
 
