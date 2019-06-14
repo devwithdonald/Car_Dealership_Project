@@ -10,8 +10,8 @@ public class Employee {
 	}
 
 	//consistent for the employees
-	private final String USERNAME = "admin";
-	private final String PASSWORD = "admin";
+	private final String USERNAME = "admin"; // good 
+	private final String PASSWORD = "admin"; // good 
 	
 	public String getUSERNAME() {
 		return USERNAME;

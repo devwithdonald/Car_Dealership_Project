@@ -2,8 +2,8 @@ package com.donald.users;
 
 public class Payment {
 
-	private int amountPaid;
-	private Car car; 
+	private int amountPaid; //good 
+	private Car car; // will need to get this sql statement
 	
 	
 	public Payment() {

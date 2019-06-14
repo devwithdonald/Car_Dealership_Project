@@ -5,10 +5,10 @@ import java.io.Serializable;
 public class Offer implements Serializable{
 
 
-	private int offerID;
-	private Car offerCar;
-	private Customer offerer;
-	private Integer offerPrice;
+	private int offerID; // good 
+	private Car offerCar; // sql statement
+	private Customer offerer; // sql statement
+	private Integer offerPrice; // good
 	
 	
 	

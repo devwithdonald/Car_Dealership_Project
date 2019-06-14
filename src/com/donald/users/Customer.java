@@ -7,16 +7,15 @@ import java.util.List;
 public class Customer implements Serializable {
 
 
-	private int customerID;
-
-	private List<Payment> localPaymentList;
-	private boolean makingPayments = false;
-	private String username;
-	private String password;
-	private List<Car> carsOwned;
-	private Integer balance;
-	private List<Offer> pendingOffers;
-	private Double monthlyPayment;
+	private int customerID; // good
+	private List<Payment> localPaymentList; // will need to call db to populate
+	private boolean makingPayments = false; // good
+	private String username; // good 
+	private String password; // good 
+	private List<Car> carsOwned; // get all cars where id == this? //sql statement to populate
+	private Integer balance; // good but will need to -> update
+	private List<Offer> pendingOffers; // sql statement to populate
+	private Double monthlyPayment; // good 
 
 	
 	
