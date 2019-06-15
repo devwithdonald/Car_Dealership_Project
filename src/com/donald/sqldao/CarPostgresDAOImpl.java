@@ -23,26 +23,28 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 	@Override
 	public int insertCar(Car car) {
 		LoggingUtil.debug("In insertCar DAO");
-		String sql = "insert into car(type, price) " + "values('?', '?');";
+		String sql = "insert into car(type, price) " + "values(?, ?);";
 
 		PreparedStatement pstmt;
 		int newId = 0;
 
 		try {
+			System.out.println("getcartype" + car.getCarType());
 			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			//pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, car.getCarType());
 			pstmt.setString(2, car.getPrice());
 			int numberOfRows = pstmt.executeUpdate();
 
 			//wrong!
-			//ResultSet rs = pstmt.getGeneratedKeys();
+			ResultSet rs = pstmt.getGeneratedKeys();
 			
 			
 			//wrong!
-			//if (rs.next()) {
-				//LoggingUtil.debug("generated primary key/id was grabbed for car");
-				//newId = rs.getInt(1);
-			//}
+			if (rs.next()) {
+				LoggingUtil.debug("generated primary key/id was grabbed for car");
+				newId = rs.getInt(1);
+			}
 			
 			LoggingUtil.debug(numberOfRows + " number of rows affected - insertCar");
 
@@ -107,7 +109,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 	public List<Car> getAllCars() {
 		List<Car> carList = new ArrayList<>();
 
-		String sql = "select * from car;";
+		String sql = "select * from car where for_sale = true;";
 
 		PreparedStatement pstmt;
 
@@ -122,7 +124,6 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
-				System.out.println("car.getCarID()"  + car.getCarID());
 				
 				car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
 				
@@ -178,7 +179,6 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 		PreparedStatement pstmt;
 
 		try {
-			System.out.println("get car by car id");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			ResultSet rs = pstmt.executeQuery();
@@ -198,6 +198,33 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 		return car;
 	}
+	
+//	public int getCarId(Car car) {
+//
+//		String sql = "select car_id from car " + "where car_id = ?;";
+//
+//		PreparedStatement pstmt;
+//
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, car.getCarID());
+//			ResultSet rs = pstmt.executeQuery();
+//
+//			if (rs.next()) {
+//				car = new Car(rs.getString("owner_username"), rs.getString("price"), rs.getString("type"),
+//						rs.getBoolean("for_sale"), rs.getInt("car_id"));
+//
+//				car.setPurchasedPrice(rs.getString("purchased_price"));
+//
+//				//car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
+//			}
+//
+//		} catch (SQLException e) {
+//			LoggingUtil.error(e.getMessage());
+//		}
+//
+//		return car;
+//	}
 	
 
 }

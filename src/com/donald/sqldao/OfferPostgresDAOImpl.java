@@ -137,7 +137,7 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			ResultSet rs = pstmt.executeQuery();
-			System.out.println("here!");
+
 			while (rs.next()) {
 
 				Offer offer = new Offer(carDAO.getCarById(rs.getInt("car_id")), customerDAO.getCustomerById(rs.getInt("customer_id")), rs.getInt("offer_price"), rs.getInt("offer_id"));
@@ -149,7 +149,6 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 			LoggingUtil.error(e.getMessage());
 		}
 
-		System.out.println(carOfferList);
 		return carOfferList;
 	}
 	

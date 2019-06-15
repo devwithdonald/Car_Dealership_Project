@@ -19,5 +19,7 @@ public interface CarSQLDAO {
 	
 	public Car getCarById(int id);
 	
+//	public int getCarId(Car car);
+	
 
 }
