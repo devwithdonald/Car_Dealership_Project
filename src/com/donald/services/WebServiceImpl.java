@@ -3,10 +3,10 @@ package com.donald.services;
 import java.util.Scanner;
 
 import com.donald.sqldao.OfferPostgresDAOImpl;
+import com.donald.sqldao.PaymentPostgresDAOImpl;
 import com.donald.users.Customer;
-import com.donald.users.MasterOfferList;
-import com.donald.users.MasterPaymentList;
 import com.donald.users.Offer;
+import com.donald.users.Payment;
 import com.donald.util.LoggingUtil;
 
 public class WebServiceImpl implements WebServiceInt {
@@ -14,6 +14,7 @@ public class WebServiceImpl implements WebServiceInt {
 
 	
 	OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
+	PaymentPostgresDAOImpl paymentDAO = new PaymentPostgresDAOImpl();
 
 	@Override
 	public String initialScreen() {
@@ -62,12 +63,17 @@ public class WebServiceImpl implements WebServiceInt {
 		LoggingUtil.trace("WebServiceImpl - viewAllPayments(); - start");
 		System.out.println("-- View All Payments --");
 
-		if (MasterPaymentList.getMasterPaymentList().size() == 0) {
+		if (paymentDAO.getAllPayments().size() == 0) {
 			System.out.println("Master Payment List is Empty!");
 		} else {
-			for (int i = 0; i < MasterPaymentList.getMasterPaymentList().size(); i++) {
-				System.out.println(MasterPaymentList.getMasterPaymentList().get(i));
+			
+			for (Payment payment : paymentDAO.getAllPayments()) {
+				System.out.println(payment);
 			}
+			
+//			for (int i = 0; i < MasterPaymentList.getMasterPaymentList().size(); i++) {
+//				System.out.println(MasterPaymentList.getMasterPaymentList().get(i));
+//			}
 		}
 
 	}

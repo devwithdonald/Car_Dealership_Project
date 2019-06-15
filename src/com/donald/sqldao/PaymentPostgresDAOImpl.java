@@ -9,6 +9,7 @@ import java.util.List;
 
 
 import com.donald.users.Customer;
+import com.donald.users.Offer;
 import com.donald.users.Payment;
 import com.donald.util.ConnectionFactory;
 import com.donald.util.LoggingUtil;
@@ -33,8 +34,29 @@ public class PaymentPostgresDAOImpl implements PaymentSQLDAO {
 
 	@Override
 	public List<Payment> getAllPayments() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Payment> paymentList = new ArrayList<>();
+
+		String sql = "select * from payment;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				
+				Payment payment = new Payment(rs.getInt("amount_paid"), carDAO.getCarById(rs.getInt("car_id")));
+
+				paymentList.add(payment);
+			}
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+
+		return paymentList;
+
 	}
 
 	@Override

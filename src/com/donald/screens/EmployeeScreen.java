@@ -53,7 +53,7 @@ public class EmployeeScreen implements UserScreen{
 				cls.addCar();
 				exitInput = false;
 				break;
-			case "2": //TODO
+			case "2": 
 				LoggingUtil.trace("do loop - employee menu  - calling addCar();");
 				esi.offerDecisionMenu();
 				exitInput = false;

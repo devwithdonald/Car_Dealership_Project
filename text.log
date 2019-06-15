@@ -2178,3 +2178,76 @@
 2019-06-15 17:22:59 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
 2019-06-15 17:23:00 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
 2019-06-15 17:23:00 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:31:14 DEBUG root:14 - null Connection
+2019-06-15 17:31:14 DEBUG root:14 - NOT null connection
+2019-06-15 17:31:15 INFO  root:18 - successfully connected to DB
+2019-06-15 17:31:15 DEBUG root:14 - NOT null connection
+2019-06-15 17:31:15 INFO  root:18 - successfully connected to DB
+2019-06-15 17:31:15 DEBUG root:14 - NOT null connection
+2019-06-15 17:31:15 INFO  root:18 - successfully connected to DB
+2019-06-15 17:31:15 DEBUG root:14 - NOT null connection
+2019-06-15 17:31:16 INFO  root:18 - successfully connected to DB
+2019-06-15 17:31:16 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:31:16 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:31:17 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 17:31:17 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 17:31:17 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 17:31:17 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 17:31:18 TRACE root:10 - employee username correct
+2019-06-15 17:31:19 TRACE root:10 - employee password correct
+2019-06-15 17:31:19 TRACE root:10 - employee login failed
+2019-06-15 17:31:19 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:31:21 TRACE root:10 - do loop - employee menu  - calling viewAllPayments();
+2019-06-15 17:31:21 TRACE root:10 - WebServiceImpl - viewAllPayments(); - start
+2019-06-15 17:31:21 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:32:30 DEBUG root:14 - null Connection
+2019-06-15 17:32:30 DEBUG root:14 - NOT null connection
+2019-06-15 17:32:30 INFO  root:18 - successfully connected to DB
+2019-06-15 17:32:30 DEBUG root:14 - NOT null connection
+2019-06-15 17:32:31 INFO  root:18 - successfully connected to DB
+2019-06-15 17:32:31 DEBUG root:14 - NOT null connection
+2019-06-15 17:32:31 INFO  root:18 - successfully connected to DB
+2019-06-15 17:32:31 DEBUG root:14 - NOT null connection
+2019-06-15 17:32:31 INFO  root:18 - successfully connected to DB
+2019-06-15 17:32:31 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:32:31 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:32:32 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 17:32:32 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 17:32:32 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 17:32:32 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 17:32:34 TRACE root:10 - employee username correct
+2019-06-15 17:32:35 TRACE root:10 - employee password correct
+2019-06-15 17:32:35 TRACE root:10 - employee login failed
+2019-06-15 17:32:35 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:32:39 TRACE root:10 - do loop - employee menu  - calling viewAllPayments();
+2019-06-15 17:32:39 TRACE root:10 - WebServiceImpl - viewAllPayments(); - start
+2019-06-15 17:32:39 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:34:09 DEBUG root:14 - null Connection
+2019-06-15 17:34:09 DEBUG root:14 - NOT null connection
+2019-06-15 17:34:10 INFO  root:18 - successfully connected to DB
+2019-06-15 17:34:10 DEBUG root:14 - NOT null connection
+2019-06-15 17:34:10 INFO  root:18 - successfully connected to DB
+2019-06-15 17:34:10 DEBUG root:14 - NOT null connection
+2019-06-15 17:34:11 INFO  root:18 - successfully connected to DB
+2019-06-15 17:34:11 DEBUG root:14 - NOT null connection
+2019-06-15 17:34:11 INFO  root:18 - successfully connected to DB
+2019-06-15 17:34:11 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:34:11 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:34:13 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 17:34:13 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 17:34:13 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 17:34:13 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 17:34:14 TRACE root:10 - employee username correct
+2019-06-15 17:34:14 TRACE root:10 - employee password correct
+2019-06-15 17:34:14 TRACE root:10 - employee login failed
+2019-06-15 17:34:14 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:34:39 TRACE root:10 - do loop - employee menu  - calling viewAllPayments();
+2019-06-15 17:34:39 TRACE root:10 - WebServiceImpl - viewAllPayments(); - start
+2019-06-15 17:34:39 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:38:14 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 17:38:14 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 17:38:14 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:38:15 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 17:38:15 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 17:38:15 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 17:38:16 TRACE root:10 - CarLotServiceImpl - do loop - start

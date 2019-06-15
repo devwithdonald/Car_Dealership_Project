@@ -62,7 +62,7 @@ public class Payment {
 	
 	@Override
 	public String toString() {
-		return "Payment [amountPaid=" + amountPaid + ", boat=" + car + "]";
+		return "Payment [amountPaid=" + amountPaid + ", boatID=" + car.getCarID() + ", BoatOwner=" + car.getOwnerUsername() + "]";
 	}
 	
 	
