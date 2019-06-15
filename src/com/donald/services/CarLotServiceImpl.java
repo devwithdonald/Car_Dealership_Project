@@ -14,7 +14,7 @@ import com.donald.util.LoggingUtil;
 public class CarLotServiceImpl implements CarLotServiceInt {
 	
 	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
-	private static OfferPostgresDAOImpl offerDAO;
+	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
 	
 
 	@Override
@@ -23,9 +23,15 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		System.out.println("-- In View Boat Lot --");
 
 		
-		for (Car car : carDAO.getAllCars()) {
-			System.out.println(car);
+		if (carDAO.getAllCars().size() == 0) {
+			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
+			System.out.println("Boat Lot is Empty!");
+		} else {
+			for (Car car : carDAO.getAllCars()) {
+				System.out.println(car);
+			}
 		}
+
 		
 		
 //		if (CarLot.getCarlot().size() == 0) {
@@ -141,7 +147,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 			} else if (input.equals("2")) {
 
-				if (CarLot.getCarlot().size() == 0) {
+				if (carDAO.getAllCars().size() == 0) {
 					System.out.println("Unable to Remove Boat -> Boat Lot is Empty");
 				} else {
 
@@ -183,29 +189,40 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		Boolean carRemoveCheck = false;
 
-		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+		for (int i = 0; i < carDAO.getAllCars().size(); i++) {
 
-			if (CarLot.getCarlot().get(i).getCarID() == carId) {
+			if (carDAO.getAllCars().get(i).getCarID() == carId) {
 
-				System.out.println("Removing Boat: " + CarLot.getCarlot().get(i).toString());
+				//System.out.println("Removing Boat: " + CarLot.getCarlot().get(i).toString());
 				
 				//update car in db
-				carDAO.updateCarOnRemoval(CarLot.getCarlot().get(i));
+				//carDAO.updateCarOnRemoval(CarLot.getCarlot().get(i));
 				
 				
-				CarLot.getCarlot().remove(i);
+				//CarLot.getCarlot().remove(i);
+				
+				
+				//change status car for FOR SALE
+				carDAO.updateCarOnRemoval(carDAO.getCarById(carId));
+				//change status of car for OFFER
+				offerDAO.updateOfferOnRemoval(carId);
+				
 				carRemoveCheck = true;
 				
 			}
 		}
+		
+		
+		
 
 		
-		removeCarFromOfferList(carId);
+		
+		//removeCarFromOfferList(carId);
 
 		if (!carRemoveCheck) {
 			System.out.println("Boat ID Not Found. No Boat Removed.");
 		}
-
+		
 	}
 
 	@Override
