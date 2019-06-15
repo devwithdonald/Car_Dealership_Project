@@ -2,8 +2,7 @@ package com.donald.services;
 
 import java.util.Scanner;
 
-import com.donald.dao.CarIdSerializeDAO;
-import com.donald.dao.CarLotSerializeDAO;
+import com.donald.sqldao.CarPostgresDAOImpl;
 import com.donald.users.Car;
 import com.donald.users.CarId;
 import com.donald.users.CarIdCounter;
@@ -12,6 +11,9 @@ import com.donald.users.MasterOfferList;
 import com.donald.util.LoggingUtil;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
+	
+	private static CarPostgresDAOImpl carDAO;
+	
 
 	@Override
 	public void viewCarLot() {
@@ -56,9 +58,17 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		System.out.println("-- Add New Boat Screen --");
 
-		// Add car to lot
-		CarLot.getCarlot().add(createCar());
+		
+		//add car in local system
+		Car car = createCar();
+		// Add car to db // returns newly generated car ID
+		int newId = carDAO.insertCar(car);
+		car.setCarID(newId);
+		// Add car to lot locally
+		CarLot.getCarlot().add(car);
+		
 
+		
 		// success message
 		System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the boat lot!");
 
@@ -83,8 +93,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		CarId carId = new CarId(1);
 		CarIdCounter.getCaridcounter().add(carId);
 
-		Car newCar = new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size());
-
+		//take id out?
+		//Car newCar = new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size());
+		Car newCar = new Car("dealer", price, carType, true);
+		
 		return newCar;
 
 	}

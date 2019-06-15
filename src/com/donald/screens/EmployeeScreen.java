@@ -27,6 +27,7 @@ public class EmployeeScreen implements UserScreen{
 		String input = "";
 
 		do {
+					
 			LoggingUtil.trace("do loop - EmployeeScreen - start");
 			
 			CarLotServiceImpl cls = new CarLotServiceImpl();
@@ -81,7 +82,7 @@ public class EmployeeScreen implements UserScreen{
 	}
 	
 	
-	//TODO JUNIT TEST
+
 	@Override
 	public boolean loginVerification() {
 		LoggingUtil.trace("employee loginVerification(); - start");

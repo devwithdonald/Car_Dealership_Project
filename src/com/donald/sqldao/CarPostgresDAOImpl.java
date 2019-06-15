@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,22 +21,33 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 	private static OfferPostgresDAOImpl offerDAO;
 
 	@Override
-	public void insertCar(Car car) {
+	public int insertCar(Car car) {
 		String sql = "insert into car(type, price) " + "values('?', '?');";
 
 		PreparedStatement pstmt;
+		int newId = 0;
 
 		try {
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			pstmt.setString(1, car.getCarType());
 			pstmt.setString(2, car.getPrice());
 			int numberOfRows = pstmt.executeUpdate();
 
+			ResultSet rs = pstmt.getGeneratedKeys();
+			
+			
+			if (rs.next()) {
+				LoggingUtil.debug("generated primary key/id was grabbed for car");
+				newId = rs.getInt(1);
+			}
+			
 			LoggingUtil.debug(numberOfRows + " number of rows affected - insertCar");
 
 		} catch (SQLException e) {
 			LoggingUtil.error(e.getMessage());
 		}
+		
+		return newId;
 
 	}
 
@@ -159,5 +171,6 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 		return car;
 	}
+	
 
 }

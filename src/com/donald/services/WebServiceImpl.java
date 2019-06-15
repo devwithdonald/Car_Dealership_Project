@@ -17,6 +17,7 @@ public class WebServiceImpl implements WebServiceInt {
 	@Override
 	public String initialScreen() {
 		LoggingUtil.trace("WebServiceImpl - initialScreen(); - start");
+		
 		System.out.println("Hello & welcome to Boat Buddies! Boat Buddies is here to give you \nthe best boat buying experience a person can dream of.");
 
 		boolean validInput = false;

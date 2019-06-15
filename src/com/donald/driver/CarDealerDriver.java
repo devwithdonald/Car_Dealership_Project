@@ -25,43 +25,49 @@ public class CarDealerDriver {
 
 
 		//persistence
-		CarIdSerializeDAO carIdList = new CarIdSerializeDAO();
-		CarLotSerializeDAO carList = new CarLotSerializeDAO();
-		CustomerListSerializeDAO customerList = new CustomerListSerializeDAO();
-		LoginListSerializeDAO loginList = new LoginListSerializeDAO();
-		OfferSerializeDAO offerList = new OfferSerializeDAO();
-		UniqueOrderIDSerializeDAO orderIdList = new UniqueOrderIDSerializeDAO();
+		//CarIdSerializeDAO carIdList = new CarIdSerializeDAO();
+		//CarLotSerializeDAO carList = new CarLotSerializeDAO();
+		//CustomerListSerializeDAO customerList = new CustomerListSerializeDAO();
+		//LoginListSerializeDAO loginList = new LoginListSerializeDAO();
+		//OfferSerializeDAO offerList = new OfferSerializeDAO();
+		//UniqueOrderIDSerializeDAO orderIdList = new UniqueOrderIDSerializeDAO();
 		
-		if(carIdList.loadCarId() != null) {
-			LoggingUtil.trace("LoginListSerializeDAO load");
-			CarIdCounter.getCaridcounter().clear();
-			CarIdCounter.getCaridcounter().addAll(carIdList.loadCarId());
-		}
-		if(carList.loadCarLot() != null) {
-			LoggingUtil.trace("CarLotSerializeDAO load");
-			CarLot.getCarlot().clear();
-			CarLot.getCarlot().addAll(carList.loadCarLot());
-		}
-		if(customerList.loadCustomerList() != null) {
-			LoggingUtil.trace("CustomerListSerializeDAO load");
-			CustomerBase.getCustomerlist().clear();
-			CustomerBase.getCustomerlist().addAll(customerList.loadCustomerList());
-		}
-		if(loginList.loadLoginList() != null) {
-			LoggingUtil.trace("LoginListSerializeDAO load");
-			MasterCustomerLoginList.getCustomerloginmap().clear();
-			MasterCustomerLoginList.getCustomerloginmap().putAll(loginList.loadLoginList());
-		}
-		if(offerList.loadOfferList() != null) {
-			LoggingUtil.trace("OFferSerializeDAO load");
-			MasterOfferList.getOfferlist().clear();
-			MasterOfferList.getOfferlist().addAll(offerList.loadOfferList());
-		}
-		if(orderIdList.loadOrderID() != null) {
-			LoggingUtil.trace("UniqueOrderIDSerializeDAO load");
-			UniqueOrderIDCounter.getUniqeidcounter().clear();
-			UniqueOrderIDCounter.getUniqeidcounter().addAll(orderIdList.loadOrderID());
-		}
+//		if(carIdList.loadCarId() != null) {
+//			LoggingUtil.trace("LoginListSerializeDAO load");
+//			CarIdCounter.getCaridcounter().clear();
+//			CarIdCounter.getCaridcounter().addAll(carIdList.loadCarId());
+//		}
+//		if(carList.loadCarLot() != null) {
+//			LoggingUtil.trace("CarLotSerializeDAO load");
+//			CarLot.getCarlot().clear();
+//			CarLot.getCarlot().addAll(carList.loadCarLot());
+//		}
+//		if(customerList.loadCustomerList() != null) {
+//			LoggingUtil.trace("CustomerListSerializeDAO load");
+//			CustomerBase.getCustomerlist().clear();
+//			CustomerBase.getCustomerlist().addAll(customerList.loadCustomerList());
+//		}
+//		if(loginList.loadLoginList() != null) {
+//			LoggingUtil.trace("LoginListSerializeDAO load");
+//			MasterCustomerLoginList.getCustomerloginmap().clear();
+//			MasterCustomerLoginList.getCustomerloginmap().putAll(loginList.loadLoginList());
+//		}
+//		if(offerList.loadOfferList() != null) {
+//			LoggingUtil.trace("OFferSerializeDAO load");
+//			MasterOfferList.getOfferlist().clear();
+//			MasterOfferList.getOfferlist().addAll(offerList.loadOfferList());
+//		}
+//		if(orderIdList.loadOrderID() != null) {
+//			LoggingUtil.trace("UniqueOrderIDSerializeDAO load");
+//			UniqueOrderIDCounter.getUniqeidcounter().clear();
+//			UniqueOrderIDCounter.getUniqeidcounter().addAll(orderIdList.loadOrderID());
+//		}
+		
+		
+		
+		
+		
+		
 		
 		WebServiceImpl web = new WebServiceImpl();
 
@@ -82,12 +88,12 @@ public class CarDealerDriver {
 				if (!es.display()) {
 					LoggingUtil.trace("Do Loop in Main - saving files - employee");
 					
-					carIdList.saveCarId(CarIdCounter.getCaridcounter());
-					carList.saveCarLot(CarLot.getCarlot());
-					customerList.saveCustomerList(CustomerBase.getCustomerlist());
-					loginList.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
-					offerList.saveOfferList(MasterOfferList.getOfferlist());
-					orderIdList.saveOrderId(UniqueOrderIDCounter.getUniqeidcounter());
+//					carIdList.saveCarId(CarIdCounter.getCaridcounter());
+//					carList.saveCarLot(CarLot.getCarlot());
+//					customerList.saveCustomerList(CustomerBase.getCustomerlist());
+//					loginList.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
+//					offerList.saveOfferList(MasterOfferList.getOfferlist());
+//					orderIdList.saveOrderId(UniqueOrderIDCounter.getUniqeidcounter());
 					// go to top of loop
 					continue;
 				}
@@ -100,12 +106,12 @@ public class CarDealerDriver {
 				if (!cs.display()) {
 					LoggingUtil.trace("Do Loop in Main - saving files - employee");
 					
-					carIdList.saveCarId(CarIdCounter.getCaridcounter());
-					carList.saveCarLot(CarLot.getCarlot());
-					customerList.saveCustomerList(CustomerBase.getCustomerlist());
-					loginList.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
-					offerList.saveOfferList(MasterOfferList.getOfferlist());
-					orderIdList.saveOrderId(UniqueOrderIDCounter.getUniqeidcounter());
+//					carIdList.saveCarId(CarIdCounter.getCaridcounter());
+//					carList.saveCarLot(CarLot.getCarlot());
+//					customerList.saveCustomerList(CustomerBase.getCustomerlist());
+//					loginList.saveLoginList(MasterCustomerLoginList.getCustomerloginmap());
+//					offerList.saveOfferList(MasterOfferList.getOfferlist());
+//					orderIdList.saveOrderId(UniqueOrderIDCounter.getUniqeidcounter());
 					// go to top of loop
 					continue;
 				}

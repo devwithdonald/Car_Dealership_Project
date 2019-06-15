@@ -7,7 +7,7 @@ import com.donald.users.Customer;
 
 public interface CarSQLDAO {
 
-	public void insertCar(Car car);
+	public int insertCar(Car car);
 
 	public void updateCar(Car car, Customer customer);
 
@@ -16,5 +16,6 @@ public interface CarSQLDAO {
 	public List<Car> getCarsByCustomerId(int id);
 	
 	public Car getCarById(int id);
+	
 
 }

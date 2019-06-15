@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Car implements Serializable{
 
+
+
 	private Integer carID; // good!
 	private String ownerUsername; // good !
 	private String price; // good!
@@ -17,7 +19,20 @@ public class Car implements Serializable{
 	public Car() {
 		
 	}
+	
+	//for creating cars
+	public Car(String ownerUsername, String price, String carType, Boolean forSale) {
+		super();
+		this.ownerUsername = ownerUsername;
+		this.price = price;
+		this.carType = carType;
+		this.forSale = forSale;
+		this.carOfferList = new ArrayList<>();
+		this.purchasedPrice = price;
 
+	}
+
+	// for retrieving cars from db
 	public Car(String ownerUsername, String price, String carType, Boolean forSale, Integer carID) {
 		super();
 		this.ownerUsername = ownerUsername;
@@ -29,6 +44,8 @@ public class Car implements Serializable{
 		this.purchasedPrice = price;
 
 	}
+	
+
 
 	public String getPurchasedPrice() {
 		return purchasedPrice;
@@ -80,6 +97,10 @@ public class Car implements Serializable{
 	
 	public int getCarID() {
 		return carID;
+	}
+	
+	public void setCarID(Integer carID) {
+		this.carID = carID;
 	}
 
 
