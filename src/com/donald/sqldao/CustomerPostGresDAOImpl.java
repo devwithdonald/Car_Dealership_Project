@@ -136,13 +136,13 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 				customer.setMonthlyPayment(rs.getDouble(6));
 
 				// get carList
-				customer.setCarsOwned(CarPostgresDAOImpl.getCarsByCustomerId(customer.getCustomerID()));
+				customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));
 
 				// get pending offers
 				customer.setPendingOffers(OfferPostgresDAOImpl.getOffersByCustomerId(customer.getCustomerID()));
 
 				// get local payment list
-				customer.setLocalPaymentList(PaymentPostgresDAOImpl.getPaymentsByCustomerId(customer.getCustomerID()));
+				customer.setLocalPaymentList(paymentDAO.getPaymentsByCustomerId(customer.getCustomerID()));
 			}
 
 		} catch (SQLException e) {
