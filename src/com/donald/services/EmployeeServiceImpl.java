@@ -2,11 +2,10 @@ package com.donald.services;
 
 import java.util.Scanner;
 
-import com.donald.dao.CarLotSerializeDAO;
-import com.donald.dao.CustomerListSerializeDAO;
-import com.donald.dao.OfferSerializeDAO;
+import com.donald.sqldao.CarPostgresDAOImpl;
+import com.donald.sqldao.CustomerPostGresDAOImpl;
+import com.donald.sqldao.OfferPostgresDAOImpl;
 import com.donald.users.Car;
-import com.donald.users.CarLot;
 import com.donald.users.Customer;
 import com.donald.users.CustomerBase;
 import com.donald.users.MasterOfferList;
@@ -14,6 +13,10 @@ import com.donald.util.LoggingUtil;
 
 public class EmployeeServiceImpl implements EmployeeServiceInt {
 
+	private static CarPostgresDAOImpl carDAO;
+	private static OfferPostgresDAOImpl offerDAO;
+	private static CustomerPostGresDAOImpl customerDAO;
+	
 	@Override
 	public void acceptOffer() {
 		LoggingUtil.trace("EmployeeServiceImpl - acceptOffer() - start");
@@ -66,6 +69,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					buyer.setMakingPayments(true);
 				}
 
+				//removing other offers from list
 				for (int j = MasterOfferList.getOfferlist().size() - 1; j >= 0; j--) {
 					if (MasterOfferList.getOfferlist().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
 
@@ -73,6 +77,11 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 						offerCar.setPurchasedPrice(purchasePrice);
 
 						MasterOfferList.getOfferlist().remove(j);
+						
+						//accept offer -> change to db // 3 is accepted offer
+						offerDAO.updateOffer(MasterOfferList.getOfferlist().get(j), 1);
+						
+						
 					}
 				}
 
@@ -88,6 +97,17 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				// calculate monthly payment
 				WebServiceImpl wsi = new WebServiceImpl();
 				wsi.calculateMonthlyPayment(buyer);
+				
+				
+				
+				//update car changes to database
+				carDAO.updateCar(offerCar, buyer);
+				//accept offer -> change to db // 3 is accepted offer
+				offerDAO.updateOffer(MasterOfferList.getOfferlist().get(i), 3);
+				//update customer balance
+				customerDAO.updateCustomer(buyer);
+				
+				
 
 			}
 

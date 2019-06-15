@@ -58,6 +58,7 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, offerInt);
 			pstmt.setInt(2, 1); // default for employee
+			pstmt.setInt(3, offer.getOfferID());
 			int numberOfRows = pstmt.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
