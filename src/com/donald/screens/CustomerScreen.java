@@ -2,25 +2,20 @@ package com.donald.screens;
 
 import java.util.Scanner;
 
-import com.donald.dao.CarLotSerializeDAO;
-import com.donald.dao.CustomerListSerializeDAO;
-import com.donald.dao.LoginListSerializeDAO;
-import com.donald.dao.OfferSerializeDAO;
 import com.donald.services.CarLotServiceImpl;
 import com.donald.services.CustomerServiceImpl;
-import com.donald.services.EmployeeServiceImpl;
-import com.donald.services.WebServiceImpl;
-import com.donald.users.CarLot;
+import com.donald.sqldao.CustomerPostGresDAOImpl;
 import com.donald.users.Customer;
 import com.donald.users.CustomerBase;
-import com.donald.users.Employee;
 import com.donald.users.MasterCustomerLoginList;
-import com.donald.users.MasterOfferList;
 import com.donald.util.LoggingUtil;
 
 public class CustomerScreen implements UserScreen {
 
+	CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
+	
 	Customer loggedInCustomer;
+
 
 	@Override
 	public boolean display() {
@@ -183,20 +178,34 @@ public class CustomerScreen implements UserScreen {
 			System.out.println("enter new username-->");
 			username = scanner.nextLine();
 
-			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
-				System.out.println("This Username is Already Taken");
+			if (customerDAO.getCustomerByUsername(username) != null) {
+				System.out.println("This username is already taken!");
 			} else {
-				System.out.println("Enter New Password-->");
+				System.out.println("Enter new password ->");
 				password = scanner.nextLine();
-			
-
+				
 				System.out.println("Success! '" + username + "' is Now a Registered User!");
-
-				CustomerBase.getCustomerlist().add(new Customer(username, password));
-				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
-
+				
+				customerDAO.registerCustomer(username, password);
 				exitInput = true;
 			}
+			
+			
+			
+//			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
+//				System.out.println("This Username is Already Taken");
+//			} else {
+//				System.out.println("Enter New Password-->");
+//				password = scanner.nextLine();
+//			
+//
+//				System.out.println("Success! '" + username + "' is Now a Registered User!");
+//
+//				CustomerBase.getCustomerlist().add(new Customer(username, password));
+//				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
+//
+//				exitInput = true;
+//			}
 
 		} while (!exitInput);
 

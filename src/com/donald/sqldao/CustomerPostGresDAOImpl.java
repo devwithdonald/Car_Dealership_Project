@@ -15,9 +15,9 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 
 	private static Connection conn = ConnectionFactory.getConnection();
 	//TODO does this work?
-	private static CarPostgresDAOImpl carDAO;
-	private static PaymentPostgresDAOImpl paymentDAO;
-	private static OfferPostgresDAOImpl offerDAO;
+	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
+	private static PaymentPostgresDAOImpl paymentDAO = new PaymentPostgresDAOImpl();
+	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
 	
 	// private connection
 	// CAN CREATE CARDAO
@@ -50,6 +50,24 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 			LoggingUtil.error(e.getMessage());
 		}
 
+	}
+	
+	public void registerCustomer(String username, String password) {
+		String sql = "insert into customer(username, password) " + "values(?, ?);";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			int numberOfRows = pstmt.executeUpdate();
+
+			LoggingUtil.debug(numberOfRows + " number of rows affected - insertCustomer");
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
 	}
 
 	@Override
@@ -135,6 +153,43 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 				customer.setMakingPayments(rs.getBoolean(4));
 				customer.setBalance(rs.getInt(5));
 				customer.setMonthlyPayment(rs.getDouble(6));
+
+				// get carList
+				//customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));
+
+				// get pending offers
+				//customer.setPendingOffers(offerDAO.getOffersByCustomerId(customer.getCustomerID()));
+
+				// get local payment list
+				//customer.setLocalPaymentList(paymentDAO.getPaymentsByCustomerId(customer.getCustomerID()));
+			}
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+
+		return customer;
+	}
+	
+	public Customer getCustomerByUsername(String username) {
+		
+		Customer customer = null;
+
+		String sql = "select * from customer " + "where username = ?;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			ResultSet rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				customer = new Customer(rs.getString("username"), rs.getString("password"));
+				customer.setCustomerID(rs.getInt("customer_id"));
+				customer.setMakingPayments(rs.getBoolean("making_payments"));
+				customer.setBalance(rs.getInt("balance"));
+				customer.setMonthlyPayment(rs.getDouble("monthly_payment"));
 
 				// get carList
 				//customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));

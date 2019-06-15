@@ -2936,3 +2936,80 @@
 2019-06-15 19:09:31 TRACE root:10 - Do Loop in Main - Start
 2019-06-15 19:09:31 TRACE root:10 - WebServiceImpl - initialScreen(); - start
 2019-06-15 19:09:32 TRACE root:10 - WebServiceImpl - input = '0'
+2019-06-15 19:41:48 DEBUG root:14 - null Connection
+2019-06-15 19:41:48 DEBUG root:14 - NOT null connection
+2019-06-15 19:41:49 INFO  root:18 - successfully connected to DB
+2019-06-15 19:41:49 DEBUG root:14 - NOT null connection
+2019-06-15 19:41:49 INFO  root:18 - successfully connected to DB
+2019-06-15 19:41:49 DEBUG root:14 - NOT null connection
+2019-06-15 19:41:50 INFO  root:18 - successfully connected to DB
+2019-06-15 19:41:50 DEBUG root:14 - NOT null connection
+2019-06-15 19:41:50 INFO  root:18 - successfully connected to DB
+2019-06-15 19:41:50 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:41:50 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:41:54 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-15 19:41:54 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-15 19:41:54 TRACE root:10 - CustomerScreen - display() - start
+2019-06-15 19:41:54 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-15 19:41:55 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-15 19:41:55 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-15 19:41:55 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-15 19:41:59 DEBUG root:14 - null Connection
+2019-06-15 19:41:59 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:05 DEBUG root:14 - null Connection
+2019-06-15 19:42:05 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:42:10 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:42:10 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:10 ERROR root:26 - Failed to make DB connection
+2019-06-15 19:42:10 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:42:10 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:42:16 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-15 19:42:16 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-15 19:42:16 TRACE root:10 - CustomerScreen - display() - start
+2019-06-15 19:42:16 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-15 19:42:17 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling register()
+2019-06-15 19:42:17 TRACE root:10 - CustomerScreen - register() - start
+2019-06-15 19:42:17 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-15 19:42:55 DEBUG root:14 - null Connection
+2019-06-15 19:42:55 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:56 INFO  root:18 - successfully connected to DB
+2019-06-15 19:42:56 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:56 INFO  root:18 - successfully connected to DB
+2019-06-15 19:42:56 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:56 INFO  root:18 - successfully connected to DB
+2019-06-15 19:42:56 DEBUG root:14 - NOT null connection
+2019-06-15 19:42:57 INFO  root:18 - successfully connected to DB
+2019-06-15 19:42:57 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:42:57 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:43:00 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-15 19:43:00 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-15 19:43:00 TRACE root:10 - CustomerScreen - display() - start
+2019-06-15 19:43:00 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-15 19:43:01 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling register()
+2019-06-15 19:43:01 TRACE root:10 - CustomerScreen - register() - start
+2019-06-15 19:43:01 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-15 19:43:07 DEBUG root:14 - 1 number of rows affected - insertCustomer
+2019-06-15 19:43:09 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling register()
+2019-06-15 19:43:09 TRACE root:10 - CustomerScreen - register() - start
+2019-06-15 19:43:09 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-15 19:43:11 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-15 19:43:27 DEBUG root:14 - 1 number of rows affected - insertCustomer
+2019-06-15 19:43:29 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-15 19:43:29 WARN  root:22 - failed customer access
+2019-06-15 19:43:29 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-15 19:43:29 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:43:29 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:43:30 TRACE root:10 - WebServiceImpl - input = '0'
