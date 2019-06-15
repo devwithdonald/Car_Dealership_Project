@@ -17,7 +17,7 @@ public class PaymentPostgresDAOImpl implements PaymentSQLDAO {
 
 	private static Connection conn = ConnectionFactory.getConnection();
 	//TODO does this work?
-	private static CarPostgresDAOImpl carDAO;
+	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
 	
 	@Override
 	public void insertPayment(Payment payment) {

@@ -2,17 +2,18 @@ package com.donald.services;
 
 import java.util.Scanner;
 
-import com.donald.dao.OfferSerializeDAO;
-import com.donald.users.Car;
-import com.donald.users.CarLot;
+import com.donald.sqldao.OfferPostgresDAOImpl;
 import com.donald.users.Customer;
 import com.donald.users.MasterOfferList;
 import com.donald.users.MasterPaymentList;
+import com.donald.users.Offer;
 import com.donald.util.LoggingUtil;
 
 public class WebServiceImpl implements WebServiceInt {
 
 
+	
+	OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
 
 	@Override
 	public String initialScreen() {
@@ -88,14 +89,19 @@ public class WebServiceImpl implements WebServiceInt {
 		
 		System.out.println("-- View All Boat Offers For Each Boat --");
 
-		if (MasterOfferList.getOfferlist().size() == 0) {
+		if (offerDAO.getAllOffers().size() == 0) {
 			LoggingUtil.debug("viewCarOfferList -> Boat Offer List is Empty");
 			System.out.println("Boat Offer List is Empty");
 		} else {
 			LoggingUtil.debug("viewCarOfferList -> Boat Offer List is NOT Empty");
-			for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
-				System.out.println(MasterOfferList.getOfferlist().get(i));
+			
+			for (Offer offer : offerDAO.getAllOffers()) {
+				System.out.println(offer);
 			}
+			
+//			for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
+//				System.out.println(MasterOfferList.getOfferlist().get(i));
+//			}
 		}
 
 	}

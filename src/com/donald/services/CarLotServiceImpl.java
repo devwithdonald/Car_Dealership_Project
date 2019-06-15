@@ -212,12 +212,6 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 			}
 		}
 		
-		
-		
-
-		
-		
-		//removeCarFromOfferList(carId);
 
 		if (!carRemoveCheck) {
 			System.out.println("Boat ID Not Found. No Boat Removed.");

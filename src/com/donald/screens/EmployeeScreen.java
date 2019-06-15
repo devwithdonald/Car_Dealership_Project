@@ -47,14 +47,13 @@ public class EmployeeScreen implements UserScreen{
 
 			input = scanner.nextLine();
 			
-			//menu
 			switch (input) {
 			case "1":
 				LoggingUtil.trace("do loop - employee menu - calling addCar();");
 				cls.addCar();
 				exitInput = false;
 				break;
-			case "2":
+			case "2": //TODO
 				LoggingUtil.trace("do loop - employee menu  - calling addCar();");
 				esi.offerDecisionMenu();
 				exitInput = false;
