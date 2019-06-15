@@ -6,13 +6,13 @@ import java.util.List;
 
 public class Car implements Serializable{
 
-	private Integer carID; // good
-	private String ownerUsername; // good 
-	private String price; // good 
-	private String carType; // good 
-	private Boolean forSale; // good
+	private Integer carID; // good!
+	private String ownerUsername; // good !
+	private String price; // good!
+	private String carType; // good! 
+	private Boolean forSale; // good!
 	private List<Offer> carOfferList; // need statement to populate, strictly for java use
-	private String purchasedPrice; // good 
+	private String purchasedPrice; // good! 
 	
 	public Car() {
 		
