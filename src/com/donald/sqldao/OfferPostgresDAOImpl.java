@@ -18,9 +18,9 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 	private static Connection conn = ConnectionFactory.getConnection();
 	
 	//TODO does this work?
-	private static CarPostgresDAOImpl carDAO;
+	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
 	
-	private static CustomerPostGresDAOImpl customerDAO;
+	private static CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
 
 	@Override
 	public void insertOffer(Offer offer) {
@@ -129,19 +129,19 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 		List<Offer> carOfferList = new ArrayList<>();
 
 		String sql = "select * from offer " + 
-				"where car_id = ?;";
-
+				"where car_id = ? and status_id = 2";
+		
 		PreparedStatement pstmt;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			ResultSet rs = pstmt.executeQuery();
-
+			System.out.println("here!");
 			while (rs.next()) {
 
 				Offer offer = new Offer(carDAO.getCarById(rs.getInt("car_id")), customerDAO.getCustomerById(rs.getInt("customer_id")), rs.getInt("offer_price"), rs.getInt("offer_id"));
-
+				
 				carOfferList.add(offer);
 			}
 
@@ -149,6 +149,7 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 			LoggingUtil.error(e.getMessage());
 		}
 
+		System.out.println(carOfferList);
 		return carOfferList;
 	}
 	

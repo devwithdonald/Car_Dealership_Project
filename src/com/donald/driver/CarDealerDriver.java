@@ -76,7 +76,6 @@ public class CarDealerDriver {
 		do {
 			LoggingUtil.trace("Do Loop in Main - Start");
 			
-			
 			String screen = web.initialScreen();
 			
 

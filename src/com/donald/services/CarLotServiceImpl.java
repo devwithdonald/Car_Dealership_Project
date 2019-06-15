@@ -13,7 +13,7 @@ import com.donald.util.LoggingUtil;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
 	
-	private static CarPostgresDAOImpl carDAO;
+	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
 	private static OfferPostgresDAOImpl offerDAO;
 	
 
@@ -22,16 +22,22 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		LoggingUtil.trace("CarLotServiceImpl - viewCarLot(); - start");
 		System.out.println("-- In View Boat Lot --");
 
-		if (CarLot.getCarlot().size() == 0) {
-			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
-			System.out.println("Boat Lot is Empty!");
-		} else {
-			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
-			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-				System.out.println(CarLot.getCarlot().get(i));
-			}
-
+		
+		for (Car car : carDAO.getAllCars()) {
+			System.out.println(car);
 		}
+		
+		
+//		if (CarLot.getCarlot().size() == 0) {
+//			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
+//			System.out.println("Boat Lot is Empty!");
+//		} else {
+//			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
+//			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
+//				System.out.println(CarLot.getCarlot().get(i));
+//			}
+//
+//		}
 
 	}
 
@@ -63,6 +69,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		
 		//add car in local system
 		Car car = createCar();
+		
+		LoggingUtil.debug("car in add car method -> " + car);
 		// Add car to db // returns newly generated car ID
 		int newId = carDAO.insertCar(car);
 		car.setCarID(newId);
@@ -96,6 +104,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		//take id out?
 		//Car newCar = new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size());
 		Car newCar = new Car("dealer", price, carType, true);
+		
+		LoggingUtil.debug("New Car Created ->" + newCar);
 		
 		return newCar;
 

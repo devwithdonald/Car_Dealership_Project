@@ -18,10 +18,11 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 	private static Connection conn = ConnectionFactory.getConnection();
 	
 	//TODO does this work?
-	private static OfferPostgresDAOImpl offerDAO;
+	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
 
 	@Override
 	public int insertCar(Car car) {
+		LoggingUtil.debug("In insertCar DAO");
 		String sql = "insert into car(type, price) " + "values('?', '?');";
 
 		PreparedStatement pstmt;
@@ -33,13 +34,15 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 			pstmt.setString(2, car.getPrice());
 			int numberOfRows = pstmt.executeUpdate();
 
-			ResultSet rs = pstmt.getGeneratedKeys();
+			//wrong!
+			//ResultSet rs = pstmt.getGeneratedKeys();
 			
 			
-			if (rs.next()) {
-				LoggingUtil.debug("generated primary key/id was grabbed for car");
-				newId = rs.getInt(1);
-			}
+			//wrong!
+			//if (rs.next()) {
+				//LoggingUtil.debug("generated primary key/id was grabbed for car");
+				//newId = rs.getInt(1);
+			//}
 			
 			LoggingUtil.debug(numberOfRows + " number of rows affected - insertCar");
 
@@ -113,14 +116,16 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				// create customer
+				
 				Car car = new Car(rs.getString("owner_username"), rs.getString("price"), rs.getString("type"),
 						rs.getBoolean("for_sale"), rs.getInt("car_id"));
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
+				System.out.println("car.getCarID()"  + car.getCarID());
+				
 				car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
-
+				
 				carList.add(car);
 			}
 
@@ -173,6 +178,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 		PreparedStatement pstmt;
 
 		try {
+			System.out.println("get car by car id");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			ResultSet rs = pstmt.executeQuery();
@@ -183,7 +189,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
-				car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
+				//car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
 			}
 
 		} catch (SQLException e) {

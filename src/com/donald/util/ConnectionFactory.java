@@ -19,9 +19,10 @@ public class ConnectionFactory {
 	public static synchronized Connection getConnection() {
 
 		if (cf == null) {
+			LoggingUtil.debug("null Connection");
 			cf = new ConnectionFactory();
 		}
-
+		LoggingUtil.debug("NOT null connection");
 		return cf.createConnection();
 
 	}
@@ -29,27 +30,33 @@ public class ConnectionFactory {
 	private ConnectionFactory() {
 		Properties prop = new Properties();
 		try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE);) {
+
 			prop.load(fis);
 			url = prop.getProperty("url");
 			user = prop.getProperty("user");
 			password = prop.getProperty("password");
+
 		} catch (FileNotFoundException e) {
-			//log
-			e.printStackTrace();
+
+			LoggingUtil.error(e.getMessage());
 		} catch (IOException e) {
-			//log 
-			e.printStackTrace();
+
+			LoggingUtil.error(e.getMessage());
 		}
 	}
+
 
 	private Connection createConnection() {
 		Connection conn = null;
 
 		try {
 			conn = DriverManager.getConnection(url, user, password);
+			LoggingUtil.info("successfully connected to DB");
+			System.out.println("successfully connected!!!");
 		} catch (SQLException e) {
-			//log
-			System.out.println("Faild to make DB Connection");
+			// log
+			LoggingUtil.error("Failed to make DB connection");
+			System.out.println("Failed to make DB Connection");
 		}
 
 		return conn;
