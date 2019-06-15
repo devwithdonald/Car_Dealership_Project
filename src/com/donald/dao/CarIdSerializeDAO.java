@@ -20,6 +20,7 @@ public class CarIdSerializeDAO implements CarIdDAO {
 
 		try {
 
+			
 			FileOutputStream fos = new FileOutputStream("CarIdData");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 
