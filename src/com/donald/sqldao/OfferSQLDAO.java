@@ -12,5 +12,9 @@ public interface OfferSQLDAO {
 	
 	public List<Offer> getAllOffers();
 	
+	public List<Offer> getOffersByCustomerId(int id);
+	
+	public List<Offer> getOffersByCarId(int id);
+	
 	public Offer getOfferById(int id);
 }

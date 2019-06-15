@@ -15,6 +15,9 @@ import com.donald.util.LoggingUtil;
 public class CarPostgresDAOImpl implements CarSQLDAO {
 
 	private static Connection conn = ConnectionFactory.getConnection();
+	
+	//TODO does this work?
+	private static OfferPostgresDAOImpl offerDAO;
 
 	@Override
 	public void insertCar(Car car) {
@@ -83,7 +86,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
-				car.setCarOfferList(OfferPostgresDAOimpl.getOffersByCarID(car.getCarID()));
+				car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
 
 				carList.add(car);
 			}
@@ -116,7 +119,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
-				car.setCarOfferList(OfferPostgresDAOimpl.getOffersByCarID(car.getCarID()));
+				car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
 
 				customerCarList.add(car);
 			}
@@ -147,7 +150,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
-				car.setCarOfferList(OfferPostgresDAOimpl.getOffersByCarID(car.getCarID()));
+				car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
 			}
 
 		} catch (SQLException e) {

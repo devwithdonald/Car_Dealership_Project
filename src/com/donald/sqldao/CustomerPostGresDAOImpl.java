@@ -17,7 +17,8 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 	//TODO does this work?
 	private static CarPostgresDAOImpl carDAO;
 	private static PaymentPostgresDAOImpl paymentDAO;
-
+	private static OfferPostgresDAOImpl offerDAO;
+	
 	// private connection
 	// CAN CREATE CARDAO
 	// private static CarDao carDao = osfpwo
@@ -99,7 +100,7 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 				customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));
 
 				// get pending offers
-				customer.setPendingOffers(OfferPostgresDAOImpl.getOffersByCustomerId(customer.getCustomerID()));
+				customer.setPendingOffers(offerDAO.getOffersByCustomerId(customer.getCustomerID()));
 
 				// get local payment list
 				customer.setLocalPaymentList(paymentDAO.getPaymentsByCustomerId(customer.getCustomerID()));
@@ -139,7 +140,7 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 				customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));
 
 				// get pending offers
-				customer.setPendingOffers(OfferPostgresDAOImpl.getOffersByCustomerId(customer.getCustomerID()));
+				customer.setPendingOffers(offerDAO.getOffersByCustomerId(customer.getCustomerID()));
 
 				// get local payment list
 				customer.setLocalPaymentList(paymentDAO.getPaymentsByCustomerId(customer.getCustomerID()));

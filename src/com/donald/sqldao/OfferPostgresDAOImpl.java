@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.donald.users.Car;
+import com.donald.users.Customer;
 import com.donald.users.Offer;
 import com.donald.util.ConnectionFactory;
 import com.donald.util.LoggingUtil;
@@ -93,12 +95,85 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 		return offerList;
 	}
 
+	@Override
+	public List<Offer> getOffersByCustomerId(int id){
+		List<Offer> customerOfferList = new ArrayList<>();
+
+		String sql = "select * from offer " + 
+				"where customer_id = ?;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				Offer offer = new Offer(carDAO.getCarById(rs.getInt("car_id")), customerDAO.getCustomerById(rs.getInt("customer_id")), rs.getInt("offer_price"), rs.getInt("offer_id"));
+
+				customerOfferList.add(offer);
+			}
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+
+		return customerOfferList;
+	}
+
+	@Override
+	public List<Offer> getOffersByCarId(int id){
+		List<Offer> carOfferList = new ArrayList<>();
+
+		String sql = "select * from offer " + 
+				"where car_id = ?;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				Offer offer = new Offer(carDAO.getCarById(rs.getInt("car_id")), customerDAO.getCustomerById(rs.getInt("customer_id")), rs.getInt("offer_price"), rs.getInt("offer_id"));
+
+				carOfferList.add(offer);
+			}
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+
+		return carOfferList;
+	}
 	
-	//TODO DOING
 	@Override
 	public Offer getOfferById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Offer offer = null;
+
+		String sql = "select * from offer " + "where offer_id = ?;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				offer = new Offer(carDAO.getCarById(rs.getInt("car_id")), customerDAO.getCustomerById(rs.getInt("customer_id")), rs.getInt("offer_price"), rs.getInt("offer_id"));
+
+			}
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+
+		return offer;
 	}
 
 }
