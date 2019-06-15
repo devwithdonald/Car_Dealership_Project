@@ -13,9 +13,9 @@ import com.donald.util.LoggingUtil;
 
 public class EmployeeServiceImpl implements EmployeeServiceInt {
 
-	private static CarPostgresDAOImpl carDAO;
-	private static OfferPostgresDAOImpl offerDAO;
-	private static CustomerPostGresDAOImpl customerDAO;
+	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
+	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
+	private static CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
 	
 	@Override
 	public void acceptOffer() {
@@ -34,28 +34,29 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		acceptId = scanner.nextInt();
 		scanner.nextLine();
 
-		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
+		for (int i = 0; i < offerDAO.getAllOffers().size(); i++) {
 
-			if (MasterOfferList.getOfferlist().get(i).getOfferID() == acceptId) {
+			if (offerDAO.getAllOffers().get(i).getOfferID() == acceptId) {
 				LoggingUtil.trace("acceptOffer(); - found matching ID");
 
 				accepted = true;
 
-				Car offerCar = MasterOfferList.getOfferlist().get(i).getOfferCar();
+				Car offerCar = offerDAO.getAllOffers().get(i).getOfferCar();
+				Customer buyer = offerDAO.getAllOffers().get(i).getOfferer();
+				
+//				Customer buyer = null;
+//
+//				for (Customer c : CustomerBase.getCustomerlist()) {
+//					if (c.getUsername().equals(MasterOfferList.getOfferlist().get(i).getOfferer().getUsername())) {
+//						buyer = c;
+//					}
+//				}
 
-				Customer buyer = null;
-
-				for (Customer c : CustomerBase.getCustomerlist()) {
-					if (c.getUsername().equals(MasterOfferList.getOfferlist().get(i).getOfferer().getUsername())) {
-						buyer = c;
-					}
-				}
-
-				// adding car to customer car list
+				// adding car to customer car list ???
 				buyer.getCarsOwned().add(offerCar);
 
 				// setting buyer new overall balance to past balance + offer balance
-				buyer.setBalance(buyer.getBalance() + MasterOfferList.getOfferlist().get(i).getOfferPrice());
+				buyer.setBalance(buyer.getBalance() + offerDAO.getAllOffers().get(i).getOfferPrice());
 
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < buyer.getPendingOffers().size(); j++) {
@@ -70,16 +71,16 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				}
 
 				//removing other offers from list
-				for (int j = MasterOfferList.getOfferlist().size() - 1; j >= 0; j--) {
-					if (MasterOfferList.getOfferlist().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
+				for (int j = offerDAO.getAllOffers().size() - 1; j >= 0; j--) {
+					if (offerDAO.getAllOffers().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
 
-						String purchasePrice = MasterOfferList.getOfferlist().get(j).getOfferPrice().toString();
+						String purchasePrice = offerDAO.getAllOffers().get(j).getOfferPrice().toString();
 						offerCar.setPurchasedPrice(purchasePrice);
 
-						MasterOfferList.getOfferlist().remove(j);
+						//MasterOfferList.getOfferlist().remove(j);
 						
 						//accept offer -> change to db // 3 is accepted offer
-						offerDAO.updateOffer(MasterOfferList.getOfferlist().get(j), 1);
+						offerDAO.updateOffer(offerDAO.getAllOffers().get(j), 1);
 						
 						
 					}
@@ -91,21 +92,24 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				offerCar.setOwnerUsername(buyer.getUsername());
 
 				// remove car from lot
-				CarLotServiceImpl clsi = new CarLotServiceImpl();
-				clsi.removeCar(offerCar.getCarID());
+				//CarLotServiceImpl clsi = new CarLotServiceImpl();
+				//clsi.removeCar(offerCar.getCarID());
 
 				// calculate monthly payment
 				WebServiceImpl wsi = new WebServiceImpl();
 				wsi.calculateMonthlyPayment(buyer);
 				
+				//customer stuff
+				
+				
 				
 				
 				//update car changes to database
-				carDAO.updateCar(offerCar, buyer);
+				carDAO.updateCarOnAcceptOffer(offerCar, buyer);
 				//accept offer -> change to db // 3 is accepted offer
-				offerDAO.updateOffer(MasterOfferList.getOfferlist().get(i), 3);
-				//update customer balance
-				customerDAO.updateCustomer(buyer);
+				offerDAO.updateOfferOnAcceptance(acceptId, buyer);
+				//update customer balances
+				customerDAO.updateCustomerOnAcceptedOffer(buyer);
 				
 				
 

@@ -58,9 +58,9 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 	// only happens when car is bought
 	@Override
-	public void updateCar(Car car, Customer customer) {
+	public void updateCarOnAcceptOffer(Car car, Customer customer) {
 		String sql = "update car "
-				+ "set customer_id = ?, owner_username = '?', price = '?', type = '?', for_sale = ?, purchased_price = '?' "
+				+ "set customer_id = ?, owner_username = ?, price = ?, type = ?, for_sale = ?, purchased_price = ? "
 				+ "where car_id = ?;";
 
 		PreparedStatement pstmt;

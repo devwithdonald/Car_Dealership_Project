@@ -53,7 +53,7 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 	}
 
 	@Override
-	public void updateCustomer(Customer cust) {
+	public void updateCustomerOnAcceptedOffer(Customer cust) {
 
 		String sql = "update customer " + "set making_payments = ?, balance = ?, monthly_payment = ? "
 				+ "where customer_id = ?;";

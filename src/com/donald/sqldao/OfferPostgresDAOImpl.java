@@ -47,7 +47,7 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 
 	//when employee is accepting or declining (should give 1 or 3 depending on rejected or accepted
 	@Override
-	public void updateOffer(Offer offer, int offerInt) {
+	public void updateOffer(Offer offer, int statusId) {
 		String sql = "update offer " + 
 				"set status_id = ?, employee_decision_maker = ? " + 
 				"where offer_id = ?;";
@@ -56,9 +56,30 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, offerInt);
+			pstmt.setInt(1, statusId);
 			pstmt.setInt(2, 1); // default for employee
 			pstmt.setInt(3, offer.getOfferID());
+			int numberOfRows = pstmt.executeUpdate();
+
+			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+
+	}
+	
+	public void updateOfferOnAcceptance(int offerId, Customer buyer) {
+		String sql = "update offer " + 
+				"set status_id = 3, employee_decision_maker = 1, customer_id = ? " + 
+				"where offer_id = ?;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, buyer.getCustomerID());
+			pstmt.setInt(2, offerId);
 			int numberOfRows = pstmt.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");

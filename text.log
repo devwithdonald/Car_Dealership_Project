@@ -2251,3 +2251,464 @@
 2019-06-15 17:38:15 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
 2019-06-15 17:38:15 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
 2019-06-15 17:38:16 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:54:51 DEBUG root:14 - null Connection
+2019-06-15 17:54:51 DEBUG root:14 - NOT null connection
+2019-06-15 17:54:52 INFO  root:18 - successfully connected to DB
+2019-06-15 17:54:52 DEBUG root:14 - NOT null connection
+2019-06-15 17:54:52 INFO  root:18 - successfully connected to DB
+2019-06-15 17:54:52 DEBUG root:14 - NOT null connection
+2019-06-15 17:54:52 INFO  root:18 - successfully connected to DB
+2019-06-15 17:54:52 DEBUG root:14 - NOT null connection
+2019-06-15 17:54:53 INFO  root:18 - successfully connected to DB
+2019-06-15 17:54:53 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:54:53 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:54:56 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 17:54:56 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 17:54:56 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 17:54:56 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 17:54:57 TRACE root:10 - employee username correct
+2019-06-15 17:54:59 TRACE root:10 - employee password correct
+2019-06-15 17:54:59 TRACE root:10 - employee login failed
+2019-06-15 17:54:59 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:55:01 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 17:55:01 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 17:55:01 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:55:01 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 17:55:01 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 17:55:02 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 17:55:02 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:55:10 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 17:55:10 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 17:56:44 DEBUG root:14 - null Connection
+2019-06-15 17:56:44 DEBUG root:14 - NOT null connection
+2019-06-15 17:56:45 INFO  root:18 - successfully connected to DB
+2019-06-15 17:56:45 DEBUG root:14 - NOT null connection
+2019-06-15 17:56:46 INFO  root:18 - successfully connected to DB
+2019-06-15 17:56:46 DEBUG root:14 - NOT null connection
+2019-06-15 17:56:46 INFO  root:18 - successfully connected to DB
+2019-06-15 17:56:46 DEBUG root:14 - NOT null connection
+2019-06-15 17:56:46 INFO  root:18 - successfully connected to DB
+2019-06-15 17:56:46 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:56:46 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:56:48 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 17:56:48 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 17:56:48 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 17:56:48 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 17:56:49 TRACE root:10 - employee username correct
+2019-06-15 17:56:50 TRACE root:10 - employee password correct
+2019-06-15 17:56:50 TRACE root:10 - employee login failed
+2019-06-15 17:56:50 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:56:52 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 17:56:52 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 17:56:52 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:56:53 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 17:56:53 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 17:56:54 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 17:56:54 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:56:56 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 17:56:56 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 17:57:01 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-15 17:57:22 DEBUG root:14 - null Connection
+2019-06-15 17:57:22 DEBUG root:14 - NOT null connection
+2019-06-15 17:57:31 DEBUG root:14 - null Connection
+2019-06-15 17:57:31 DEBUG root:14 - NOT null connection
+2019-06-15 17:57:33 ERROR root:26 - Failed to make DB connection
+2019-06-15 17:57:33 DEBUG root:14 - NOT null connection
+2019-06-15 17:57:33 ERROR root:26 - Failed to make DB connection
+2019-06-15 17:57:33 DEBUG root:14 - NOT null connection
+2019-06-15 17:57:33 ERROR root:26 - Failed to make DB connection
+2019-06-15 17:57:33 DEBUG root:14 - NOT null connection
+2019-06-15 17:57:33 ERROR root:26 - Failed to make DB connection
+2019-06-15 17:57:33 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:57:33 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:58:06 DEBUG root:14 - null Connection
+2019-06-15 17:58:06 DEBUG root:14 - NOT null connection
+2019-06-15 17:58:07 INFO  root:18 - successfully connected to DB
+2019-06-15 17:58:07 DEBUG root:14 - NOT null connection
+2019-06-15 17:58:07 INFO  root:18 - successfully connected to DB
+2019-06-15 17:58:07 DEBUG root:14 - NOT null connection
+2019-06-15 17:58:07 INFO  root:18 - successfully connected to DB
+2019-06-15 17:58:07 DEBUG root:14 - NOT null connection
+2019-06-15 17:58:08 INFO  root:18 - successfully connected to DB
+2019-06-15 17:58:08 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 17:58:08 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 17:58:10 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 17:58:10 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 17:58:10 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 17:58:10 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 17:58:11 TRACE root:10 - employee username correct
+2019-06-15 17:58:12 TRACE root:10 - employee password correct
+2019-06-15 17:58:12 TRACE root:10 - employee login failed
+2019-06-15 17:58:12 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 17:59:17 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 17:59:17 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 17:59:17 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:59:17 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 17:59:17 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 17:59:18 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 17:59:18 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 17:59:21 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 17:59:21 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 17:59:26 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-15 17:59:30 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 17:59:49 ERROR root:26 - An I/O error occurred while sending to the backend.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 17:59:59 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:00 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:01 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:02 ERROR root:26 - This connection has been closed.
+2019-06-15 18:00:02 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:00:02 ERROR root:26 - The column index is out of range: 4, number of columns: 3.
+2019-06-15 18:00:28 DEBUG root:14 - null Connection
+2019-06-15 18:00:28 DEBUG root:14 - NOT null connection
+2019-06-15 18:00:29 INFO  root:18 - successfully connected to DB
+2019-06-15 18:00:29 DEBUG root:14 - NOT null connection
+2019-06-15 18:00:29 INFO  root:18 - successfully connected to DB
+2019-06-15 18:00:29 DEBUG root:14 - NOT null connection
+2019-06-15 18:00:29 INFO  root:18 - successfully connected to DB
+2019-06-15 18:00:29 DEBUG root:14 - NOT null connection
+2019-06-15 18:00:30 INFO  root:18 - successfully connected to DB
+2019-06-15 18:00:30 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:00:30 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:00:31 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:00:31 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:00:31 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:00:31 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:00:32 TRACE root:10 - employee username correct
+2019-06-15 18:00:32 TRACE root:10 - employee password correct
+2019-06-15 18:00:32 TRACE root:10 - employee login failed
+2019-06-15 18:00:32 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:00:33 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:00:33 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:00:33 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:00:34 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:00:34 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:00:34 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-15 18:00:34 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:00:40 TRACE root:10 - do loop - accept/reject decision menu - exiting
+2019-06-15 18:00:40 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:01:16 DEBUG root:14 - null Connection
+2019-06-15 18:01:16 DEBUG root:14 - NOT null connection
+2019-06-15 18:01:17 INFO  root:18 - successfully connected to DB
+2019-06-15 18:01:17 DEBUG root:14 - NOT null connection
+2019-06-15 18:01:17 INFO  root:18 - successfully connected to DB
+2019-06-15 18:01:17 DEBUG root:14 - NOT null connection
+2019-06-15 18:01:17 INFO  root:18 - successfully connected to DB
+2019-06-15 18:01:17 DEBUG root:14 - NOT null connection
+2019-06-15 18:01:18 INFO  root:18 - successfully connected to DB
+2019-06-15 18:01:18 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:01:18 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:01:19 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:01:19 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:01:19 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:01:19 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:01:21 TRACE root:10 - employee username correct
+2019-06-15 18:01:21 TRACE root:10 - employee password correct
+2019-06-15 18:01:21 TRACE root:10 - employee login failed
+2019-06-15 18:01:21 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:01:23 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:01:23 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:01:23 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:01:23 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:01:23 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:01:24 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 18:01:24 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:01:37 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 18:01:37 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 18:01:42 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-15 18:01:46 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:01:48 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:01:49 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:01:50 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:01:51 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:01:51 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:01:51 ERROR root:26 - The column index is out of range: 4, number of columns: 3.
+2019-06-15 18:13:03 DEBUG root:14 - null Connection
+2019-06-15 18:13:03 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:03 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:03 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:04 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:04 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:04 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:04 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:05 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:05 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:13:05 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:13:06 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:13:06 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:13:06 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:13:06 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:13:07 TRACE root:10 - employee username correct
+2019-06-15 18:13:07 TRACE root:10 - employee password correct
+2019-06-15 18:13:07 TRACE root:10 - employee login failed
+2019-06-15 18:13:07 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:13:09 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:13:09 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:13:09 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:13:09 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:13:09 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:13:09 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-15 18:13:09 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:13:29 DEBUG root:14 - null Connection
+2019-06-15 18:13:29 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:29 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:29 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:30 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:30 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:30 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:30 DEBUG root:14 - NOT null connection
+2019-06-15 18:13:31 INFO  root:18 - successfully connected to DB
+2019-06-15 18:13:31 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:13:31 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:13:32 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:13:32 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:13:32 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:13:32 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:13:32 TRACE root:10 - employee username correct
+2019-06-15 18:13:33 TRACE root:10 - employee password correct
+2019-06-15 18:13:33 TRACE root:10 - employee login failed
+2019-06-15 18:13:33 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:13:34 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:13:34 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:13:34 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:13:35 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:13:35 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:13:35 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 18:13:36 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:13:37 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 18:13:37 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 18:13:44 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-15 18:13:48 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:13:50 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:13:51 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:13:52 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:13:52 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:13:53 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:13:53 ERROR root:26 - The column index is out of range: 4, number of columns: 3.
+2019-06-15 18:13:53 ERROR root:26 - ERROR: column "customerid" of relation "offer" does not exist
+  Position: 62
+2019-06-15 18:13:53 DEBUG root:14 - 1 number of rows affected
+2019-06-15 18:13:53 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:14:10 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:14:10 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:14:10 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-15 18:14:10 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:16:58 DEBUG root:14 - null Connection
+2019-06-15 18:16:58 DEBUG root:14 - NOT null connection
+2019-06-15 18:16:59 INFO  root:18 - successfully connected to DB
+2019-06-15 18:16:59 DEBUG root:14 - NOT null connection
+2019-06-15 18:16:59 INFO  root:18 - successfully connected to DB
+2019-06-15 18:16:59 DEBUG root:14 - NOT null connection
+2019-06-15 18:16:59 INFO  root:18 - successfully connected to DB
+2019-06-15 18:16:59 DEBUG root:14 - NOT null connection
+2019-06-15 18:17:00 INFO  root:18 - successfully connected to DB
+2019-06-15 18:17:00 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:17:00 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:17:01 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:17:01 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:17:01 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:17:01 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:17:02 TRACE root:10 - employee username correct
+2019-06-15 18:17:03 TRACE root:10 - employee password correct
+2019-06-15 18:17:03 TRACE root:10 - employee login failed
+2019-06-15 18:17:03 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:17:11 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:17:11 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:17:11 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:17:11 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:17:11 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:17:11 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 18:17:12 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:17:16 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 18:17:16 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 18:17:20 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-15 18:17:24 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:26 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:27 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:28 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:29 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:29 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:29 ERROR root:26 - The column index is out of range: 4, number of columns: 3.
+2019-06-15 18:17:29 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:17:29 DEBUG root:14 - 1 number of rows affected
+2019-06-15 18:17:29 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:17:33 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:17:33 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:17:33 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-15 18:17:33 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:20:38 DEBUG root:14 - null Connection
+2019-06-15 18:20:38 DEBUG root:14 - NOT null connection
+2019-06-15 18:20:49 ERROR root:26 - Failed to make DB connection
+2019-06-15 18:20:49 DEBUG root:14 - NOT null connection
+2019-06-15 18:20:49 ERROR root:26 - Failed to make DB connection
+2019-06-15 18:20:49 DEBUG root:14 - NOT null connection
+2019-06-15 18:20:49 ERROR root:26 - Failed to make DB connection
+2019-06-15 18:20:49 DEBUG root:14 - NOT null connection
+2019-06-15 18:20:49 ERROR root:26 - Failed to make DB connection
+2019-06-15 18:20:49 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:20:49 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:20:54 TRACE root:10 - WebServiceImpl - input = '0'
+2019-06-15 18:20:55 DEBUG root:14 - null Connection
+2019-06-15 18:20:55 DEBUG root:14 - NOT null connection
+2019-06-15 18:21:03 INFO  root:18 - successfully connected to DB
+2019-06-15 18:21:03 DEBUG root:14 - NOT null connection
+2019-06-15 18:21:03 INFO  root:18 - successfully connected to DB
+2019-06-15 18:21:03 DEBUG root:14 - NOT null connection
+2019-06-15 18:21:04 INFO  root:18 - successfully connected to DB
+2019-06-15 18:21:04 DEBUG root:14 - NOT null connection
+2019-06-15 18:21:04 INFO  root:18 - successfully connected to DB
+2019-06-15 18:21:04 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:21:04 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:21:09 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:21:09 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:21:09 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:21:09 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:21:10 TRACE root:10 - employee username correct
+2019-06-15 18:21:11 TRACE root:10 - employee password correct
+2019-06-15 18:21:11 TRACE root:10 - employee login failed
+2019-06-15 18:21:11 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:21:13 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:21:13 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:21:13 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:21:14 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:21:14 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:21:14 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 18:21:15 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:21:16 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 18:21:16 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 18:21:42 ERROR root:26 - An I/O error occurred while sending to the backend.
+2019-06-15 18:21:42 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:21:57 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:21:57 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:21:57 ERROR root:26 - This connection has been closed.
+2019-06-15 18:21:57 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-15 18:21:57 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:23:24 DEBUG root:14 - null Connection
+2019-06-15 18:23:24 DEBUG root:14 - NOT null connection
+2019-06-15 18:23:25 INFO  root:18 - successfully connected to DB
+2019-06-15 18:23:25 DEBUG root:14 - NOT null connection
+2019-06-15 18:23:25 INFO  root:18 - successfully connected to DB
+2019-06-15 18:23:25 DEBUG root:14 - NOT null connection
+2019-06-15 18:23:25 INFO  root:18 - successfully connected to DB
+2019-06-15 18:23:25 DEBUG root:14 - NOT null connection
+2019-06-15 18:23:26 INFO  root:18 - successfully connected to DB
+2019-06-15 18:23:26 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:23:26 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:23:27 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:23:27 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:23:27 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:23:27 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:23:27 TRACE root:10 - employee username correct
+2019-06-15 18:23:28 TRACE root:10 - employee password correct
+2019-06-15 18:23:28 TRACE root:10 - employee login failed
+2019-06-15 18:23:28 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:23:32 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-15 18:23:32 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:23:32 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:23:33 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:23:33 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:23:33 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-15 18:23:34 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:23:36 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-15 18:23:36 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-15 18:23:40 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-15 18:23:44 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:46 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:47 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:48 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:49 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:49 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:49 DEBUG root:14 - 1 number of rows affected - updateCar
+2019-06-15 18:23:49 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-15 18:23:49 DEBUG root:14 - 1 number of rows affected
+2019-06-15 18:23:49 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:23:52 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-15 18:23:52 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-15 18:23:52 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-15 18:23:52 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-15 18:25:02 DEBUG root:14 - null Connection
+2019-06-15 18:25:02 DEBUG root:14 - NOT null connection
+2019-06-15 18:25:03 INFO  root:18 - successfully connected to DB
+2019-06-15 18:25:03 DEBUG root:14 - NOT null connection
+2019-06-15 18:25:04 INFO  root:18 - successfully connected to DB
+2019-06-15 18:25:04 DEBUG root:14 - NOT null connection
+2019-06-15 18:25:04 INFO  root:18 - successfully connected to DB
+2019-06-15 18:25:04 DEBUG root:14 - NOT null connection
+2019-06-15 18:25:05 INFO  root:18 - successfully connected to DB
+2019-06-15 18:25:05 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:25:05 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:25:06 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 18:25:06 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 18:25:06 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 18:25:06 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 18:25:08 TRACE root:10 - employee username correct
+2019-06-15 18:25:09 TRACE root:10 - employee password correct
+2019-06-15 18:25:09 TRACE root:10 - employee login failed
+2019-06-15 18:25:09 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:25:10 TRACE root:10 - do loop - employee menu - calling addCar();
+2019-06-15 18:25:10 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-15 18:25:10 TRACE root:10 - CarLotServiceImpl - createCar(); - start
+2019-06-15 18:25:15 DEBUG root:14 - New Car Created ->Car [boatID=null, ownerUsername=dealer, dealerPrice=3999940, purchasedPrice=3999940, boatType=bigger, forSale=true, boatOfferList=[]]
+2019-06-15 18:25:15 DEBUG root:14 - car in add car method -> Car [boatID=null, ownerUsername=dealer, dealerPrice=3999940, purchasedPrice=3999940, boatType=bigger, forSale=true, boatOfferList=[]]
+2019-06-15 18:25:15 DEBUG root:14 - In insertCar DAO
+2019-06-15 18:25:15 DEBUG root:14 - generated primary key/id was grabbed for car
+2019-06-15 18:25:15 DEBUG root:14 - 1 number of rows affected - insertCar
+2019-06-15 18:25:15 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:25:17 TRACE root:10 - do loop - employee menu  - calling removeCar();
+2019-06-15 18:25:17 TRACE root:10 - CarLotServiceImpl - removeCarMenu(); - start
+2019-06-15 18:25:17 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-15 18:25:24 TRACE root:10 - CarLotServiceImpl - getCarId(); - start
+2019-06-15 18:25:25 TRACE root:10 - CarLotServiceImpl - removeCar(); - start
+2019-06-15 18:25:26 DEBUG root:14 - 1 number of rows affected - updateCar
+2019-06-15 18:25:26 DEBUG root:14 - 0 number of rows affected - updateOffer
+2019-06-15 18:25:27 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-15 18:25:28 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:25:35 TRACE root:10 - do loop - employee menu  - calling viewAllPayments();
+2019-06-15 18:25:35 TRACE root:10 - WebServiceImpl - viewAllPayments(); - start
+2019-06-15 18:25:35 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 18:25:39 TRACE root:10 - do loop - employee menu  - exiting
+2019-06-15 18:25:39 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-15 18:25:39 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 18:25:39 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 18:25:42 TRACE root:10 - WebServiceImpl - input = '0'

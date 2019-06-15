@@ -8,7 +8,7 @@ public interface CustomerSQLDAO {
 
 	public void insertCustomer(Customer cust);
 	
-	public void updateCustomer(Customer cust);
+	public void updateCustomerOnAcceptedOffer(Customer cust);
 	
 	public List<Customer> getAllCustomers();
 	

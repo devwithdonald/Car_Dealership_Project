@@ -2,13 +2,16 @@ package com.donald.sqldao;
 
 import java.util.List;
 
+import com.donald.users.Customer;
 import com.donald.users.Offer;
 
 public interface OfferSQLDAO {
 	
 	public void insertOffer(Offer offer);
 	
-	public void updateOffer(Offer offer, int offerInt);
+	public void updateOffer(Offer offer, int statusId);
+	
+	public void updateOfferOnAcceptance(int offerId, Customer buyer);
 	
 	public List<Offer> getAllOffers();
 	
