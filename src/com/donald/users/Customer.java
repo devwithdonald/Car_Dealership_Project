@@ -8,6 +8,8 @@ public class Customer implements Serializable {
 
 
 	private int customerID; // good
+
+
 	private List<Payment> localPaymentList; // will need to call db to populate
 	private boolean makingPayments = false; // good
 	private String username; // good 
@@ -72,6 +74,10 @@ public class Customer implements Serializable {
 
 	public String getPassword() {
 		return password;
+	}
+	
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
 	}
 
 	public void setPassword(String password) {
