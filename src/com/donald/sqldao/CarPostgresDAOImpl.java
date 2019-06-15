@@ -29,7 +29,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 		int newId = 0;
 
 		try {
-			System.out.println("getcartype" + car.getCarType());
+			//System.out.println("getcartype" + car.getCarType());
 			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			//pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, car.getCarType());

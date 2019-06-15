@@ -140,25 +140,32 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 		rejectId = scanner.nextInt();
 		scanner.nextLine();
 
-		for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
-			if (MasterOfferList.getOfferlist().get(i).getOfferID() == rejectId) {
+		for (int i = 0; i < offerDAO.getAllOffers().size(); i++) {
+			if (offerDAO.getAllOffers().get(i).getOfferID() == rejectId) {
+				
+				
+				offerDAO.updateOfferOnRejection(rejectId);
 				rejected = true;
 				// getting the customer (reject)
-				Customer rejectCustomer = MasterOfferList.getOfferlist().get(i).getOfferer();
+				//Customer rejectCustomer = offerDAO.getAllOffers().get(i).getOfferer();
 
 				// remove pending offer from buyer where the unique id match
-				for (int j = 0; j < rejectCustomer.getPendingOffers().size(); j++) {
-					if (rejectCustomer.getPendingOffers().get(j).getOfferID() == rejectId) {
-						rejectCustomer.getPendingOffers().remove(j);
-					}
-				}
+//				for (int j = 0; j < rejectCustomer.getPendingOffers().size(); j++) {
+//					if (rejectCustomer.getPendingOffers().get(j).getOfferID() == rejectId) {
+//						rejectCustomer.getPendingOffers().remove(j);
+//					}
+//				}
 
 				// removing from the master list as well by ID, keep other offers
-				MasterOfferList.getOfferlist().remove(i);
+				//MasterOfferList.getOfferlist().remove(i);
+				
+				//
+				
 
 			}
 		}
-
+		
+		
 		if (!rejected) {
 			System.out.println("ID Not Found. Please Try Again.");
 		}

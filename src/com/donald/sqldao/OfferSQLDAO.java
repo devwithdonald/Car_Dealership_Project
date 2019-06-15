@@ -21,5 +21,7 @@ public interface OfferSQLDAO {
 	
 	public Offer getOfferById(int id);
 	
-	public void updateOfferOnRemoval(int carId);
+	public void updateOfferOnCarRemoval(int carId);
+	
+	public void updateOfferOnRejection(int offerId);
 }

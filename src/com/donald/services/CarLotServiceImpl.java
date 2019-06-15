@@ -205,7 +205,7 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 				//change status car for FOR SALE
 				carDAO.updateCarOnRemoval(carDAO.getCarById(carId));
 				//change status of car for OFFER
-				offerDAO.updateOfferOnRemoval(carId);
+				offerDAO.updateOfferOnCarRemoval(carId);
 				
 				carRemoveCheck = true;
 				
