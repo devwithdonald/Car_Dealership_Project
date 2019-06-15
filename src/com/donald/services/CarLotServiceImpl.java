@@ -3,6 +3,7 @@ package com.donald.services;
 import java.util.Scanner;
 
 import com.donald.sqldao.CarPostgresDAOImpl;
+import com.donald.sqldao.OfferPostgresDAOImpl;
 import com.donald.users.Car;
 import com.donald.users.CarId;
 import com.donald.users.CarIdCounter;
@@ -13,6 +14,7 @@ import com.donald.util.LoggingUtil;
 public class CarLotServiceImpl implements CarLotServiceInt {
 	
 	private static CarPostgresDAOImpl carDAO;
+	private static OfferPostgresDAOImpl offerDAO;
 	
 
 	@Override
@@ -170,12 +172,18 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 			if (CarLot.getCarlot().get(i).getCarID() == carId) {
 
 				System.out.println("Removing Boat: " + CarLot.getCarlot().get(i).toString());
+				
+				//update car in db
+				carDAO.updateCarOnRemoval(CarLot.getCarlot().get(i));
+				
+				
 				CarLot.getCarlot().remove(i);
 				carRemoveCheck = true;
-
+				
 			}
 		}
 
+		
 		removeCarFromOfferList(carId);
 
 		if (!carRemoveCheck) {
@@ -189,6 +197,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		for (int i = MasterOfferList.getOfferlist().size() - 1; i >= 0; i--) {
 			if (MasterOfferList.getOfferlist().get(i).getOfferCar().getCarID() == carId) {
+				
+				//set offerlist to denied in db
+				offerDAO.updateOffer(MasterOfferList.getOfferlist().get(i), 1);
+				
 				MasterOfferList.getOfferlist().remove(i);
 			}
 		}

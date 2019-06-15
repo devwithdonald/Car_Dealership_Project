@@ -10,6 +10,8 @@ public interface CarSQLDAO {
 	public int insertCar(Car car);
 
 	public void updateCar(Car car, Customer customer);
+	
+	public void updateCarOnRemoval(Car car);
 
 	public List<Car> getAllCars();
 

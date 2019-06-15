@@ -78,6 +78,27 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 		}
 
 	}
+	
+	@Override
+	public void updateCarOnRemoval(Car car) {
+		String sql = "update car "
+				+ "set for_sale = ? "
+				+ "where car_id = ?;";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setBoolean(1, false); //removal of car from list == false in db
+			pstmt.setInt(2, car.getCarID());
+			int numberOfRows = pstmt.executeUpdate();
+
+			LoggingUtil.debug(numberOfRows + " number of rows affected - updateCar");
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+	}
 
 	@Override
 	public List<Car> getAllCars() {
