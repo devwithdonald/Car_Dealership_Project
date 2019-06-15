@@ -3013,3 +3013,74 @@
 2019-06-15 19:43:29 TRACE root:10 - Do Loop in Main - Start
 2019-06-15 19:43:29 TRACE root:10 - WebServiceImpl - initialScreen(); - start
 2019-06-15 19:43:30 TRACE root:10 - WebServiceImpl - input = '0'
+2019-06-15 19:44:32 DEBUG root:14 - null Connection
+2019-06-15 19:44:32 DEBUG root:14 - NOT null connection
+2019-06-15 19:44:33 INFO  root:18 - successfully connected to DB
+2019-06-15 19:44:33 DEBUG root:14 - NOT null connection
+2019-06-15 19:44:34 INFO  root:18 - successfully connected to DB
+2019-06-15 19:44:34 DEBUG root:14 - NOT null connection
+2019-06-15 19:44:34 INFO  root:18 - successfully connected to DB
+2019-06-15 19:44:34 DEBUG root:14 - NOT null connection
+2019-06-15 19:44:34 INFO  root:18 - successfully connected to DB
+2019-06-15 19:44:34 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:44:34 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:44:36 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-15 19:44:36 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-15 19:44:36 TRACE root:10 - CustomerScreen - display() - start
+2019-06-15 19:44:36 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-15 19:44:36 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling register()
+2019-06-15 19:44:36 TRACE root:10 - CustomerScreen - register() - start
+2019-06-15 19:44:36 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-15 19:44:37 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-15 19:52:00 DEBUG root:14 - null Connection
+2019-06-15 19:52:00 DEBUG root:14 - NOT null connection
+2019-06-15 19:52:01 INFO  root:18 - successfully connected to DB
+2019-06-15 19:52:01 DEBUG root:14 - NOT null connection
+2019-06-15 19:52:02 INFO  root:18 - successfully connected to DB
+2019-06-15 19:52:02 DEBUG root:14 - NOT null connection
+2019-06-15 19:52:02 INFO  root:18 - successfully connected to DB
+2019-06-15 19:52:02 DEBUG root:14 - NOT null connection
+2019-06-15 19:52:02 INFO  root:18 - successfully connected to DB
+2019-06-15 19:52:02 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:52:02 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:52:04 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-15 19:52:04 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-15 19:52:04 TRACE root:10 - Employee Screen - display(); - start
+2019-06-15 19:52:04 TRACE root:10 - employee loginVerification(); - start
+2019-06-15 19:52:05 TRACE root:10 - employee username correct
+2019-06-15 19:52:06 TRACE root:10 - employee password correct
+2019-06-15 19:52:06 TRACE root:10 - employee login failed
+2019-06-15 19:52:06 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 19:52:08 TRACE root:10 - do loop - employee menu  - calling removeCar();
+2019-06-15 19:52:08 TRACE root:10 - CarLotServiceImpl - removeCarMenu(); - start
+2019-06-15 19:52:08 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-15 19:52:12 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-15 19:52:23 TRACE root:10 - do loop - employee menu  - exiting
+2019-06-15 19:52:23 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-15 19:52:23 TRACE root:10 - Do Loop in Main - Start
+2019-06-15 19:52:23 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-15 19:52:24 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-15 19:52:24 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-15 19:52:24 TRACE root:10 - CustomerScreen - display() - start
+2019-06-15 19:52:24 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-15 19:52:25 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-15 19:52:25 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-15 19:52:25 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-15 19:52:27 TRACE root:10 - customer username correct
+2019-06-15 19:52:28 DEBUG root:14 - LoginVerification(); - do loop - password wrong
+2019-06-15 19:52:28 WARN  root:22 - failed login attempt
+2019-06-15 19:52:30 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-15 19:52:30 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-15 19:52:30 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-15 19:52:38 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-15 19:52:38 WARN  root:22 - failed login attempt
+2019-06-15 19:52:39 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-15 19:52:39 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-15 19:52:39 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-15 19:52:41 TRACE root:10 - customer username correct
+2019-06-15 19:52:44 TRACE root:10 - customer password correct
+2019-06-15 19:52:44 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-15 19:52:44 DEBUG root:14 - customer screen top of do loop
+2019-06-15 19:52:47 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-15 19:52:47 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-15 19:52:47 DEBUG root:14 - customer screen top of do loop

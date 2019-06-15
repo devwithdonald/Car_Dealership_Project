@@ -49,7 +49,9 @@ public class CustomerScreen implements UserScreen {
 			switch (input) {
 			case "1":
 				LoggingUtil.trace("CustomerScreen - display() - calling viewCarLot();");
-				clsi.viewCarLotLimited();
+				
+				clsi.viewCarLot();
+				//clsi.viewCarLotLimited();
 				exitInput = false;
 				break;
 			case "2":
@@ -93,6 +95,8 @@ public class CustomerScreen implements UserScreen {
 		// boolean exitInput = false;
 
 		do {
+			Customer tempCustomer = null;
+			
 			LoggingUtil.trace("LoginVerification(); - do loop - start");
 
 			Scanner scanner = new Scanner(System.in);
@@ -107,28 +111,47 @@ public class CustomerScreen implements UserScreen {
 				LoggingUtil.debug("exiting from login verifcation");
 				break;
 			}
-			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
+			
+			//new code
+			if (customerDAO.getCustomerByUsername(username) != null) {
 				LoggingUtil.trace("customer username correct");
 				verifiedUsername = true;
 				counter++;
+				tempCustomer = customerDAO.getCustomerByUsername(username);
 			}
+			
+//			//old code
+//			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
+//				LoggingUtil.trace("customer username correct");
+//				verifiedUsername = true;
+//				counter++;
+//			}
+			
 			// password validation
 			System.out.println("enter password --> ");
 			password = scanner.nextLine();
 
 			if (counter == 1) {
-				if (MasterCustomerLoginList.getCustomerloginmap().get(username).equals(password)) {
+				
+				if (tempCustomer.getPassword().equals(password)) {
 					LoggingUtil.trace("customer password correct");
 					verifiedPassword = true;
 					counter++;
 				}
+				
+				
+//				if (MasterCustomerLoginList.getCustomerloginmap().get(username).equals(password)) {
+//					LoggingUtil.trace("customer password correct");
+//					verifiedPassword = true;
+//					counter++;
+//				}
 			} else {
 				LoggingUtil.debug("LoginVerification(); - do loop - username not found");
 				System.out.println("Username Not Found!");
 			}
 			// after failed password attempt
 			if (counter == 1) {
-				LoggingUtil.debug("LoginVerification(); - do loop - password not wrong");
+				LoggingUtil.debug("LoginVerification(); - do loop - password wrong");
 				System.out.println("Wrong Password");
 			}
 		} while (!verifiedUsername && !verifiedPassword);
@@ -138,7 +161,7 @@ public class CustomerScreen implements UserScreen {
 			LoggingUtil.trace("LoginVerification(); - do loop - login verified");
 			
 			//adding here
-			loggedInCustomer = customerLoginMatch(username);
+			loggedInCustomer = customerDAO.getCustomerByUsername(username);
 			return true;
 		} else {
 			LoggingUtil.warn("failed login attempt");
@@ -147,6 +170,7 @@ public class CustomerScreen implements UserScreen {
 	}
 
 
+	//no need 
 	public Customer customerLoginMatch(String username) {
 		LoggingUtil.trace("customerLoginMatch(); - start");
 		
