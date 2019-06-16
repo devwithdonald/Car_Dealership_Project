@@ -45,7 +45,6 @@ public class ConnectionFactory {
 		}
 	}
 
-
 	private Connection createConnection() {
 		Connection conn = null;
 

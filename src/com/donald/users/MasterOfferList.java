@@ -5,14 +5,11 @@ import java.util.List;
 
 public class MasterOfferList {
 
-	//only one master offerList
+	// only one master offerList
 	private static final List<Offer> offerList = new ArrayList<>();
 
 	public static List<Offer> getOfferlist() {
 		return offerList;
 	}
 
-
-	
-	
 }

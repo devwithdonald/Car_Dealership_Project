@@ -14,23 +14,10 @@ import com.donald.util.LoggingUtil;
 public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 
 	private static Connection conn = ConnectionFactory.getConnection();
-	//TODO does this work?
+
 	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
 	private static PaymentPostgresDAOImpl paymentDAO = new PaymentPostgresDAOImpl();
 	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
-	
-	// private connection
-	// CAN CREATE CARDAO
-	// private static CarDao carDao = osfpwo
-	// carDao
-
-	// in getAllCustomers
-	// select * from customer
-	// in the while loop
-	// -- // basic stuff in customer table
-	// -- create Customer c = new Customer(rs.getInt(1), rs.getString(2);
-	// -- // now get list of cars
-	// -- c.setCars(CarDao.getCarsByCustomerID(c.getID));
 
 	@Override
 	public void insertCustomer(Customer cust) {
@@ -51,7 +38,8 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 		}
 
 	}
-	
+
+	@Override
 	public void registerCustomer(String username, String password) {
 		String sql = "insert into customer(username, password) " + "values(?, ?);";
 
@@ -133,7 +121,6 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 		return customerList;
 	}
 
-
 	@Override
 	public Customer getCustomerById(int id) {
 		Customer customer = null;
@@ -154,14 +141,6 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 				customer.setBalance(rs.getInt(5));
 				customer.setMonthlyPayment(rs.getDouble(6));
 
-				// get carList
-				//customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));
-
-				// get pending offers
-				//customer.setPendingOffers(offerDAO.getOffersByCustomerId(customer.getCustomerID()));
-
-				// get local payment list
-				//customer.setLocalPaymentList(paymentDAO.getPaymentsByCustomerId(customer.getCustomerID()));
 			}
 
 		} catch (SQLException e) {
@@ -170,9 +149,9 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 
 		return customer;
 	}
-	
+
 	public Customer getCustomerByUsername(String username) {
-		
+
 		Customer customer = null;
 
 		String sql = "select * from customer " + "where username = ?;";
@@ -191,14 +170,6 @@ public class CustomerPostGresDAOImpl implements CustomerSQLDAO {
 				customer.setBalance(rs.getInt("balance"));
 				customer.setMonthlyPayment(rs.getDouble("monthly_payment"));
 
-				// get carList
-				//customer.setCarsOwned(carDAO.getCarsByCustomerId(customer.getCustomerID()));
-
-				// get pending offers
-				//customer.setPendingOffers(offerDAO.getOffersByCustomerId(customer.getCustomerID()));
-
-				// get local payment list
-				//customer.setLocalPaymentList(paymentDAO.getPaymentsByCustomerId(customer.getCustomerID()));
 			}
 
 		} catch (SQLException e) {

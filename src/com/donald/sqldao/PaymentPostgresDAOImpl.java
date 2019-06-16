@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.donald.users.Customer;
 import com.donald.users.Offer;
 import com.donald.users.Payment;
@@ -17,9 +16,9 @@ import com.donald.util.LoggingUtil;
 public class PaymentPostgresDAOImpl implements PaymentSQLDAO {
 
 	private static Connection conn = ConnectionFactory.getConnection();
-	//TODO does this work?
+
 	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
-	
+
 	@Override
 	public void insertPayment(Payment payment) {
 		// TODO Auto-generated method stub
@@ -45,7 +44,7 @@ public class PaymentPostgresDAOImpl implements PaymentSQLDAO {
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				
+
 				Payment payment = new Payment(rs.getInt("amount_paid"), carDAO.getCarById(rs.getInt("car_id")));
 
 				paymentList.add(payment);
@@ -63,8 +62,7 @@ public class PaymentPostgresDAOImpl implements PaymentSQLDAO {
 	public List<Payment> getPaymentsByCustomerId(int id) {
 		List<Payment> customerPaymentList = new ArrayList<>();
 
-		String sql = "select * from payment " + 
-				"where customer_id = ?;";
+		String sql = "select * from payment " + "where customer_id = ?;";
 
 		PreparedStatement pstmt;
 
@@ -74,7 +72,6 @@ public class PaymentPostgresDAOImpl implements PaymentSQLDAO {
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				// create customer
 				Payment payment = new Payment(rs.getInt("amount_paid"), carDAO.getCarById(rs.getInt("car_id")));
 
 				customerPaymentList.add(payment);

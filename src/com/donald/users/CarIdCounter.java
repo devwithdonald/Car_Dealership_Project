@@ -10,7 +10,5 @@ public class CarIdCounter {
 	public static List<CarId> getCaridcounter() {
 		return carIdCounter;
 	}
-	
 
-	
 }

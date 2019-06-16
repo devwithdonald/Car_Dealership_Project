@@ -17,7 +17,6 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 	private static Connection conn = ConnectionFactory.getConnection();
 	
-	//TODO does this work?
 	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
 
 	@Override
@@ -29,9 +28,9 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 		int newId = 0;
 
 		try {
-			//System.out.println("getcartype" + car.getCarType());
+
 			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			//pstmt = conn.prepareStatement(sql);
+
 			pstmt.setString(1, car.getCarType());
 			pstmt.setString(2, car.getPrice());
 			int numberOfRows = pstmt.executeUpdate();
@@ -189,7 +188,6 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 
 				car.setPurchasedPrice(rs.getString("purchased_price"));
 
-				//car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
 			}
 
 		} catch (SQLException e) {
@@ -199,32 +197,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 		return car;
 	}
 	
-//	public int getCarId(Car car) {
-//
-//		String sql = "select car_id from car " + "where car_id = ?;";
-//
-//		PreparedStatement pstmt;
-//
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, car.getCarID());
-//			ResultSet rs = pstmt.executeQuery();
-//
-//			if (rs.next()) {
-//				car = new Car(rs.getString("owner_username"), rs.getString("price"), rs.getString("type"),
-//						rs.getBoolean("for_sale"), rs.getInt("car_id"));
-//
-//				car.setPurchasedPrice(rs.getString("purchased_price"));
-//
-//				//car.setCarOfferList(offerDAO.getOffersByCarId(car.getCarID()));
-//			}
-//
-//		} catch (SQLException e) {
-//			LoggingUtil.error(e.getMessage());
-//		}
-//
-//		return car;
-//	}
+
 	
 
 }

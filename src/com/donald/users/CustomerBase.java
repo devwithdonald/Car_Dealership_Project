@@ -10,5 +10,5 @@ public class CustomerBase {
 	public static List<Customer> getCustomerlist() {
 		return customerList;
 	}
-	
+
 }

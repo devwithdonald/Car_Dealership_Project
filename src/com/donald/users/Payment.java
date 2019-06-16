@@ -2,23 +2,20 @@ package com.donald.users;
 
 public class Payment {
 
-	private int amountPaid; //good 
-	private Car car; // will need to get this sql statement
-	
-	
+	private int amountPaid;
+	private Car car;
+
 	public Payment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Payment(int amountPaid, Car car) {
 		super();
 		this.amountPaid = amountPaid;
 		this.car = car;
 	}
-	
 
-	
 	public int getAmountPaid() {
 		return amountPaid;
 	}
@@ -26,13 +23,15 @@ public class Payment {
 	public void setAmountPaid(int amountPaid) {
 		this.amountPaid = amountPaid;
 	}
+
 	public Car getCar() {
 		return car;
 	}
+
 	public void setCar(Car car) {
 		this.car = car;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -41,6 +40,7 @@ public class Payment {
 		result = prime * result + ((car == null) ? 0 : car.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -59,18 +59,11 @@ public class Payment {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Payment [amountPaid=" + amountPaid + ", boatID=" + car.getCarID() + ", BoatOwner=" + car.getOwnerUsername() + "]";
+		return "Payment [amountPaid=" + amountPaid + ", boatID=" + car.getCarID() + ", BoatOwner="
+				+ car.getOwnerUsername() + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

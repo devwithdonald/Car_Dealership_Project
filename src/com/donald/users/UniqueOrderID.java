@@ -2,11 +2,11 @@ package com.donald.users;
 
 import java.io.Serializable;
 
-public class UniqueOrderID implements Serializable{
-	
+public class UniqueOrderID implements Serializable {
+
 	private Integer count;
-	
-	public UniqueOrderID(Integer count){
+
+	public UniqueOrderID(Integer count) {
 		this.count = count;
 	}
 

@@ -4,23 +4,20 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Car implements Serializable{
+public class Car implements Serializable {
 
+	private Integer carID;
+	private String ownerUsername;
+	private String price;
+	private String carType;
+	private Boolean forSale;
+	private List<Offer> carOfferList;
+	private String purchasedPrice;
 
-
-	private Integer carID; // good!
-	private String ownerUsername; // good !
-	private String price; // good!
-	private String carType; // good! 
-	private Boolean forSale; // good!
-	private List<Offer> carOfferList; // need statement to populate, strictly for java use
-	private String purchasedPrice; // good! 
-	
 	public Car() {
-		
 	}
-	
-	//for creating cars
+
+	// for creating cars
 	public Car(String ownerUsername, String price, String carType, Boolean forSale) {
 		super();
 		this.ownerUsername = ownerUsername;
@@ -44,8 +41,6 @@ public class Car implements Serializable{
 		this.purchasedPrice = price;
 
 	}
-	
-
 
 	public String getPurchasedPrice() {
 		return purchasedPrice;
@@ -94,22 +89,19 @@ public class Car implements Serializable{
 	public void setForSale(Boolean forSale) {
 		this.forSale = forSale;
 	}
-	
+
 	public int getCarID() {
 		return carID;
 	}
-	
+
 	public void setCarID(Integer carID) {
 		this.carID = carID;
 	}
 
-
-
-
 	@Override
 	public String toString() {
-		return "Car [boatID=" + carID + ", ownerUsername=" + ownerUsername + ", dealerPrice=" + price + ", purchasedPrice=" + purchasedPrice + ", boatType=" + carType
-				+ ", forSale=" + forSale + "]";
+		return "Car [boatID=" + carID + ", ownerUsername=" + ownerUsername + ", dealerPrice=" + price
+				+ ", purchasedPrice=" + purchasedPrice + ", boatType=" + carType + ", forSale=" + forSale + "]";
 	}
 
 	@Override

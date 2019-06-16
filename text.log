@@ -5088,3 +5088,185 @@
 2019-06-16 14:45:42 TRACE root:10 - Do Loop in Main - Start
 2019-06-16 14:45:42 TRACE root:10 - WebServiceImpl - initialScreen(); - start
 2019-06-16 14:45:43 TRACE root:10 - WebServiceImpl - input = '0'
+2019-06-16 14:54:47 DEBUG root:14 - null Connection
+2019-06-16 14:54:47 DEBUG root:14 - NOT null connection
+2019-06-16 14:54:48 INFO  root:18 - successfully connected to DB
+2019-06-16 14:54:48 DEBUG root:14 - NOT null connection
+2019-06-16 14:54:48 INFO  root:18 - successfully connected to DB
+2019-06-16 14:54:48 DEBUG root:14 - NOT null connection
+2019-06-16 14:54:49 INFO  root:18 - successfully connected to DB
+2019-06-16 14:54:49 DEBUG root:14 - NOT null connection
+2019-06-16 14:54:49 INFO  root:18 - successfully connected to DB
+2019-06-16 14:54:49 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 14:54:49 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:02:09 DEBUG root:14 - null Connection
+2019-06-16 15:02:09 DEBUG root:14 - NOT null connection
+2019-06-16 15:02:10 INFO  root:18 - successfully connected to DB
+2019-06-16 15:02:10 DEBUG root:14 - NOT null connection
+2019-06-16 15:02:10 INFO  root:18 - successfully connected to DB
+2019-06-16 15:02:10 DEBUG root:14 - NOT null connection
+2019-06-16 15:02:11 INFO  root:18 - successfully connected to DB
+2019-06-16 15:02:11 DEBUG root:14 - NOT null connection
+2019-06-16 15:02:11 INFO  root:18 - successfully connected to DB
+2019-06-16 15:02:11 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 15:02:11 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:02:16 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-16 15:02:16 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-16 15:02:16 TRACE root:10 - Employee Screen - display(); - start
+2019-06-16 15:02:16 TRACE root:10 - employee loginVerification(); - start
+2019-06-16 15:02:17 TRACE root:10 - employee username correct
+2019-06-16 15:02:19 TRACE root:10 - employee password correct
+2019-06-16 15:02:19 TRACE root:10 - employee login failed
+2019-06-16 15:02:19 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:02:22 TRACE root:10 - do loop - employee menu - calling addCar();
+2019-06-16 15:02:22 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-16 15:02:22 TRACE root:10 - CarLotServiceImpl - createCar(); - start
+2019-06-16 15:02:32 DEBUG root:14 - New Car Created ->Car [boatID=null, ownerUsername=dealer, dealerPrice=5400, purchasedPrice=5400, boatType=ether1022, forSale=true]
+2019-06-16 15:02:32 DEBUG root:14 - car in add car method -> Car [boatID=null, ownerUsername=dealer, dealerPrice=5400, purchasedPrice=5400, boatType=ether1022, forSale=true]
+2019-06-16 15:02:32 DEBUG root:14 - In insertCar DAO
+2019-06-16 15:02:32 DEBUG root:14 - generated primary key/id was grabbed for car
+2019-06-16 15:02:32 DEBUG root:14 - 1 number of rows affected - insertCar
+2019-06-16 15:02:32 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:02:34 TRACE root:10 - do loop - employee menu  - calling removeCar();
+2019-06-16 15:02:34 TRACE root:10 - CarLotServiceImpl - removeCarMenu(); - start
+2019-06-16 15:02:34 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-16 15:02:40 TRACE root:10 - CarLotServiceImpl - getCarId(); - start
+2019-06-16 15:02:40 TRACE root:10 - CarLotServiceImpl - removeCar(); - start
+2019-06-16 15:02:41 DEBUG root:14 - 1 number of rows affected - updateCar
+2019-06-16 15:02:41 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-16 15:02:43 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:02:48 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-16 15:02:48 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-16 15:02:48 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-16 15:02:49 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-16 15:02:49 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-16 15:02:49 DEBUG root:14 - viewCarOfferList -> Boat Offer List is Empty
+2019-06-16 15:02:49 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-16 15:02:49 TRACE root:10 - do loop - accept/reject decision menu - exiting
+2019-06-16 15:02:49 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:02:50 TRACE root:10 - do loop - employee menu  - calling viewAllPayments();
+2019-06-16 15:02:50 TRACE root:10 - WebServiceImpl - viewAllPayments(); - start
+2019-06-16 15:02:51 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:02:54 TRACE root:10 - do loop - employee menu  - calling viewAllPayments();
+2019-06-16 15:02:54 TRACE root:10 - WebServiceImpl - viewAllPayments(); - start
+2019-06-16 15:02:54 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:02:55 TRACE root:10 - do loop - employee menu  - exiting
+2019-06-16 15:02:55 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-16 15:02:55 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 15:02:55 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:02:56 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-16 15:02:56 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-16 15:02:56 TRACE root:10 - CustomerScreen - display() - start
+2019-06-16 15:02:56 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-16 15:02:58 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-16 15:02:58 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-16 15:02:58 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-16 15:03:14 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-16 15:03:14 WARN  root:22 - failed login attempt
+2019-06-16 15:03:15 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-16 15:03:15 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-16 15:03:15 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-16 15:03:18 TRACE root:10 - customer username correct
+2019-06-16 15:03:22 TRACE root:10 - customer password correct
+2019-06-16 15:03:22 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-16 15:03:22 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:23 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-16 15:03:23 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-16 15:03:24 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:25 TRACE root:10 - CustomerScreen - display() - calling makeOffer(loggedInCustomer);
+2019-06-16 15:03:25 TRACE root:10 - CustomerServiceImpl - makeOffer(); - start
+2019-06-16 15:03:28 DEBUG root:14 - 1 number of rows affected - insertOffer
+2019-06-16 15:03:28 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:30 TRACE root:10 - CustomerScreen - display() - calling viewOwnedCars(loggedInCustomer);
+2019-06-16 15:03:30 TRACE root:10 - CustomerServiceImpl - viewOwnedCars(); - start
+2019-06-16 15:03:30 WARN  root:22 - No cars in com.donald.users.Customer@2e92d6de inventory
+2019-06-16 15:03:30 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:33 TRACE root:10 - CustomerScreen - display() - calling viewRemainingPayments(loggedInCustomer);
+2019-06-16 15:03:33 TRACE root:10 - CustomerServiceImpl - viewRemainingPayments(); - start
+2019-06-16 15:03:33 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:35 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-16 15:03:35 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-16 15:03:35 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 15:03:35 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:03:36 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-16 15:03:36 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-16 15:03:36 TRACE root:10 - CustomerScreen - display() - start
+2019-06-16 15:03:36 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-16 15:03:37 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling register()
+2019-06-16 15:03:37 TRACE root:10 - CustomerScreen - register() - start
+2019-06-16 15:03:37 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-16 15:03:45 DEBUG root:14 - 1 number of rows affected - insertCustomer
+2019-06-16 15:03:46 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-16 15:03:46 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-16 15:03:46 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-16 15:03:47 TRACE root:10 - customer username correct
+2019-06-16 15:03:49 TRACE root:10 - customer password correct
+2019-06-16 15:03:49 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-16 15:03:49 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:55 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-16 15:03:55 TRACE root:10 - CarLotServiceImpl - viewCarLot(); - start
+2019-06-16 15:03:56 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:03:58 TRACE root:10 - CustomerScreen - display() - calling makeOffer(loggedInCustomer);
+2019-06-16 15:03:58 TRACE root:10 - CustomerServiceImpl - makeOffer(); - start
+2019-06-16 15:04:01 DEBUG root:14 - 1 number of rows affected - insertOffer
+2019-06-16 15:04:01 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:04:03 TRACE root:10 - CustomerScreen - display() - calling viewOwnedCars(loggedInCustomer);
+2019-06-16 15:04:03 TRACE root:10 - CustomerServiceImpl - viewOwnedCars(); - start
+2019-06-16 15:04:03 WARN  root:22 - No cars in com.donald.users.Customer@bd5f389e inventory
+2019-06-16 15:04:03 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:04:06 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-16 15:04:06 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-16 15:04:06 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 15:04:06 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:04:07 TRACE root:10 - WebServiceImpl - input = 'employee'
+2019-06-16 15:04:07 TRACE root:10 - Do Loop in Main - if -> 'employee'
+2019-06-16 15:04:07 TRACE root:10 - Employee Screen - display(); - start
+2019-06-16 15:04:07 TRACE root:10 - employee loginVerification(); - start
+2019-06-16 15:04:08 TRACE root:10 - employee username correct
+2019-06-16 15:04:09 TRACE root:10 - employee password correct
+2019-06-16 15:04:09 TRACE root:10 - employee login failed
+2019-06-16 15:04:09 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:04:11 TRACE root:10 - do loop - employee menu  - calling addCar();
+2019-06-16 15:04:11 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-16 15:04:11 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-16 15:04:11 TRACE root:10 - do loop - accept/reject decision menu - calling viewCarOfferList();
+2019-06-16 15:04:11 TRACE root:10 - WebServiceImpl - viewCarOfferList(); - start
+2019-06-16 15:04:11 DEBUG root:14 - viewCarOfferList -> Boat Offer List is NOT Empty
+2019-06-16 15:04:12 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-16 15:04:14 TRACE root:10 - do loop - accept/reject decision menu - calling rejectOffer();
+2019-06-16 15:04:14 TRACE root:10 - EmployeeServiceImpl - rejectOffer() - start
+2019-06-16 15:04:18 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-16 15:04:18 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-16 15:04:19 TRACE root:10 - do loop - accept/reject decision menu - calling acceptOffer();
+2019-06-16 15:04:19 TRACE root:10 - EmployeeServiceImpl - acceptOffer() - start
+2019-06-16 15:04:22 TRACE root:10 - acceptOffer(); - found matching ID
+2019-06-16 15:04:23 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-16 15:04:23 DEBUG root:14 - 1 number of rows affected - updateCar
+2019-06-16 15:04:23 DEBUG root:14 - 0 number of rows affected - updateOffer
+2019-06-16 15:04:23 DEBUG root:14 - 1 number of rows affected
+2019-06-16 15:04:23 TRACE root:10 - CarLotServiceImpl - do loop - start
+2019-06-16 15:04:43 TRACE root:10 - do loop - accept/reject decision menu - exiting
+2019-06-16 15:04:43 TRACE root:10 - do loop - EmployeeScreen - start
+2019-06-16 15:05:53 TRACE root:10 - do loop - employee menu  - exiting
+2019-06-16 15:05:53 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-16 15:05:53 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 15:05:53 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:05:58 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-16 15:05:58 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-16 15:05:58 TRACE root:10 - CustomerScreen - display() - start
+2019-06-16 15:05:58 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-16 15:05:58 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-16 15:05:58 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-16 15:05:58 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-16 15:06:00 TRACE root:10 - customer username correct
+2019-06-16 15:06:03 TRACE root:10 - customer password correct
+2019-06-16 15:06:03 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-16 15:06:03 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:06:04 TRACE root:10 - CustomerScreen - display() - calling viewOwnedCars(loggedInCustomer);
+2019-06-16 15:06:04 TRACE root:10 - CustomerServiceImpl - viewOwnedCars(); - start
+2019-06-16 15:06:04 DEBUG root:14 - customer screen top of do loop
+2019-06-16 15:06:17 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-16 15:06:17 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-16 15:06:17 TRACE root:10 - Do Loop in Main - Start
+2019-06-16 15:06:17 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-16 15:06:18 TRACE root:10 - WebServiceImpl - input = '0'
