@@ -58,6 +58,9 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				// setting buyer new overall balance to past balance + offer balance
 				buyer.setBalance(buyer.getBalance() + offerDAO.getAllOffers().get(i).getOfferPrice());
 
+				//FIXING 
+				offerCar.setPurchasedPrice(offerDAO.getAllOffers().get(i).getOfferPrice().toString());
+				
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < buyer.getPendingOffers().size(); j++) {
 					if (buyer.getPendingOffers().get(j).getOfferID() == acceptId) {
@@ -74,8 +77,8 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				for (int j = offerDAO.getAllOffers().size() - 1; j >= 0; j--) {
 					if (offerDAO.getAllOffers().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
 
-						String purchasePrice = offerDAO.getAllOffers().get(j).getOfferPrice().toString();
-						offerCar.setPurchasedPrice(purchasePrice);
+						//String purchasePrice = offerDAO.getAllOffers().get(j).getOfferPrice().toString();
+						//offerCar.setPurchasedPrice(purchasePrice);
 
 						//MasterOfferList.getOfferlist().remove(j);
 						

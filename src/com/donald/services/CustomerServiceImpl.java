@@ -63,6 +63,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 		//boat id and price
 		offerDAO.makeOffer(loggedInCustomer, carId, offerPrice);
+		//TODO GIVE ID BACK
 		
 		//addOfferToMasterOfferList(offerCar, loggedInCustomer, offerPrice);
 				
@@ -94,7 +95,8 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 	}
 
-	//WORKING ON!!!!
+	
+	
 	@Override
 	public void viewOwnedCars(Customer loggedInCustomer) {
 		LoggingUtil.trace("CustomerServiceImpl - viewOwnedCars(); - start");
