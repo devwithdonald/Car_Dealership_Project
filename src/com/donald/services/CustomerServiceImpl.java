@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 		//boat id and price
 		offerDAO.makeOffer(loggedInCustomer, carId, offerPrice);
-		//TODO GIVE ID BACK
+		//TODO GIVE ID BACK!!!
 		
 		//addOfferToMasterOfferList(offerCar, loggedInCustomer, offerPrice);
 				

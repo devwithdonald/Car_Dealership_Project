@@ -83,11 +83,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		// Add car to lot locally
 		//CarLot.getCarlot().add(car);
 
-		
-		System.out.println("newid -> " + newId);
-		
 		//get car by id 
-		System.out.println(carDAO.getCarById(newId).getCarType() + " added!");
+		System.out.println(carDAO.getCarById(newId).getCarType() + " added!" + " Id Number: " + newId);
 		
 		// success message
 		//System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the boat lot!");

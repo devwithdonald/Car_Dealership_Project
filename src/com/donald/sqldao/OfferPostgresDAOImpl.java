@@ -1,5 +1,6 @@
 package com.donald.sqldao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.donald.users.Car;
 import com.donald.users.Customer;
 import com.donald.users.Offer;
 import com.donald.util.ConnectionFactory;
@@ -90,18 +90,37 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 		}
 	}
 	
+//	@Override
+//	public void updateOfferOnAcceptance(int offerId, Customer buyer) {
+//		String sql = "update offer " + 
+//				"set status_id = 3, employee_decision_maker = 1, customer_id = ? " + 
+//				"where offer_id = ?;";
+//
+//		PreparedStatement pstmt;
+//
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, buyer.getCustomerID());
+//			pstmt.setInt(2, offerId);
+//			int numberOfRows = pstmt.executeUpdate();
+//
+//			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
+//
+//		} catch (SQLException e) {
+//			LoggingUtil.error(e.getMessage());
+//		}
+//
+//	}
+	
+	@Override
 	public void updateOfferOnAcceptance(int offerId, Customer buyer) {
-		String sql = "update offer " + 
-				"set status_id = 3, employee_decision_maker = 1, customer_id = ? " + 
-				"where offer_id = ?;";
-
-		PreparedStatement pstmt;
+		String sql = "{call update_offer_on_acceptance_proc(?,?)}";
 
 		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, buyer.getCustomerID());
-			pstmt.setInt(2, offerId);
-			int numberOfRows = pstmt.executeUpdate();
+			CallableStatement call = conn.prepareCall(sql);
+			call.setInt(1, buyer.getCustomerID());
+			call.setInt(2, offerId);
+			int numberOfRows = call.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
 
@@ -110,6 +129,8 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 		}
 
 	}
+	
+	
 	
 	//ALL CALRS when employee is accepting or declining (should give 1 or 3 depending on rejected or accepted
 	@Override
