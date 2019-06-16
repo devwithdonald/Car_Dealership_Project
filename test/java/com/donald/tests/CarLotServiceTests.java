@@ -58,15 +58,15 @@ public class CarLotServiceTests {
 
 	
 	
-	@Test
-	public void testZeroInput() {
-		assertEquals(car, clsi.matchCarId(0));
-	}
-
-	@Test
-	public void testHighInput() {
-		assertEquals(car, clsi.matchCarId(38483947));
-	}
+//	@Test
+//	public void testZeroInput() {
+//		assertEquals(car, clsi.matchCarId(0));
+//	}
+//
+//	@Test
+//	public void testHighInput() {
+//		assertEquals(car, clsi.matchCarId(38483947));
+//	}
 
 	@Test
 	public void testOneCarRemoval() {
@@ -108,22 +108,22 @@ public class CarLotServiceTests {
 
 	}
 
-	@Test
-	public void offerListRemoval() {
-
-		clsi.removeCarFromOfferList(1);
-
-		assertEquals(2, MasterOfferList.getOfferlist().size());
-	}
-	
-	
-	@Test
-	public void offerListRemovalMult() {
-
-		clsi.removeCarFromOfferList(1);
-		clsi.removeCarFromOfferList(3);
-
-		assertEquals(1, MasterOfferList.getOfferlist().size());
-	}
+//	@Test
+//	public void offerListRemoval() {
+//
+//		clsi.removeCarFromOfferList(1);
+//
+//		assertEquals(2, MasterOfferList.getOfferlist().size());
+//	}
+//	
+//	
+//	@Test
+//	public void offerListRemovalMult() {
+//
+//		clsi.removeCarFromOfferList(1);
+//		clsi.removeCarFromOfferList(3);
+//
+//		assertEquals(1, MasterOfferList.getOfferlist().size());
+//	}
 
 }

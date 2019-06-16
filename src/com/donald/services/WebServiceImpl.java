@@ -25,7 +25,7 @@ public class WebServiceImpl implements WebServiceInt {
 		boolean validInput = false;
 		String input = "";
 
-		// checking for correct input
+
 		do {
 			Scanner scanner = new Scanner(System.in);
 
@@ -71,9 +71,6 @@ public class WebServiceImpl implements WebServiceInt {
 				System.out.println(payment);
 			}
 			
-//			for (int i = 0; i < MasterPaymentList.getMasterPaymentList().size(); i++) {
-//				System.out.println(MasterPaymentList.getMasterPaymentList().get(i));
-//			}
 		}
 
 	}
@@ -105,9 +102,6 @@ public class WebServiceImpl implements WebServiceInt {
 				System.out.println(offer);
 			}
 			
-//			for (int i = 0; i < MasterOfferList.getOfferlist().size(); i++) {
-//				System.out.println(MasterOfferList.getOfferlist().get(i));
-//			}
 		}
 
 	}

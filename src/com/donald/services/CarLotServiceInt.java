@@ -6,8 +6,6 @@ public interface CarLotServiceInt {
 
 	public void viewCarLot();
 	
-	public void viewCarLotLimited();
-	
 	public void addCar();
 	
 	public Car createCar();
@@ -15,10 +13,6 @@ public interface CarLotServiceInt {
 	public void removeCarMenu();
 	
 	public void removeCar(Integer carId);
-	
-	public Car matchCarId(Integer carId);
-	
-	public void removeCarFromOfferList(Integer carId);
 	
 	public Integer getCarId();
 }

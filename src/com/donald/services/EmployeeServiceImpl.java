@@ -16,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
 	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
 	private static CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
-	
+
 	@Override
 	public void acceptOffer() {
 		LoggingUtil.trace("EmployeeServiceImpl - acceptOffer() - start");
@@ -43,24 +43,15 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 				Car offerCar = offerDAO.getAllOffers().get(i).getOfferCar();
 				Customer buyer = offerDAO.getAllOffers().get(i).getOfferer();
-				
-//				Customer buyer = null;
-//
-//				for (Customer c : CustomerBase.getCustomerlist()) {
-//					if (c.getUsername().equals(MasterOfferList.getOfferlist().get(i).getOfferer().getUsername())) {
-//						buyer = c;
-//					}
-//				}
 
-				// adding car to customer car list ???
+				// adding car to customer car list
 				buyer.getCarsOwned().add(offerCar);
 
 				// setting buyer new overall balance to past balance + offer balance
 				buyer.setBalance(buyer.getBalance() + offerDAO.getAllOffers().get(i).getOfferPrice());
 
-				//FIXING 
 				offerCar.setPurchasedPrice(offerDAO.getAllOffers().get(i).getOfferPrice().toString());
-				
+
 				// remove pending offer from buyer where the unique id match
 				for (int j = 0; j < buyer.getPendingOffers().size(); j++) {
 					if (buyer.getPendingOffers().get(j).getOfferID() == acceptId) {
@@ -73,19 +64,13 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 					buyer.setMakingPayments(true);
 				}
 
-				//removing other offers from list
+				// removing other offers from list
 				for (int j = offerDAO.getAllOffers().size() - 1; j >= 0; j--) {
 					if (offerDAO.getAllOffers().get(j).getOfferCar().getCarID() == offerCar.getCarID()) {
 
-						//String purchasePrice = offerDAO.getAllOffers().get(j).getOfferPrice().toString();
-						//offerCar.setPurchasedPrice(purchasePrice);
-
-						//MasterOfferList.getOfferlist().remove(j);
-						
-						//accept offer -> change to db // 3 is accepted offer
+						// accept offer -> change to db // 3 is accepted offer
 						offerDAO.updateOffer(offerDAO.getAllOffers().get(j), 1);
-						
-						
+
 					}
 				}
 
@@ -94,27 +79,16 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 				offerCar.setCarOfferList(null);
 				offerCar.setOwnerUsername(buyer.getUsername());
 
-				// remove car from lot
-				//CarLotServiceImpl clsi = new CarLotServiceImpl();
-				//clsi.removeCar(offerCar.getCarID());
-
 				// calculate monthly payment
 				WebServiceImpl wsi = new WebServiceImpl();
 				wsi.calculateMonthlyPayment(buyer);
-				
-				//customer stuff
-				
-				
-				
-				
-				//update car changes to database
+
+				// update car changes to database
 				carDAO.updateCarOnAcceptOffer(offerCar, buyer);
-				//accept offer -> change to db // 3 is accepted offer
+				// accept offer -> change to db // 3 is accepted offer
 				offerDAO.updateOfferOnAcceptance(acceptId, buyer);
-				//update customer balances
+				// update customer balances
 				customerDAO.updateCustomerOnAcceptedOffer(buyer);
-				
-				
 
 			}
 
@@ -145,30 +119,13 @@ public class EmployeeServiceImpl implements EmployeeServiceInt {
 
 		for (int i = 0; i < offerDAO.getAllOffers().size(); i++) {
 			if (offerDAO.getAllOffers().get(i).getOfferID() == rejectId) {
-				
-				
+
 				offerDAO.updateOfferOnRejection(rejectId);
 				rejected = true;
-				// getting the customer (reject)
-				//Customer rejectCustomer = offerDAO.getAllOffers().get(i).getOfferer();
-
-				// remove pending offer from buyer where the unique id match
-//				for (int j = 0; j < rejectCustomer.getPendingOffers().size(); j++) {
-//					if (rejectCustomer.getPendingOffers().get(j).getOfferID() == rejectId) {
-//						rejectCustomer.getPendingOffers().remove(j);
-//					}
-//				}
-
-				// removing from the master list as well by ID, keep other offers
-				//MasterOfferList.getOfferlist().remove(i);
-				
-				//
-				
 
 			}
 		}
-		
-		
+
 		if (!rejected) {
 			System.out.println("ID Not Found. Please Try Again.");
 		}

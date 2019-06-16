@@ -12,17 +12,15 @@ import com.donald.users.MasterOfferList;
 import com.donald.util.LoggingUtil;
 
 public class CarLotServiceImpl implements CarLotServiceInt {
-	
+
 	private static CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
 	private static OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
-	
 
 	@Override
 	public void viewCarLot() {
 		LoggingUtil.trace("CarLotServiceImpl - viewCarLot(); - start");
 		System.out.println("-- In View Boat Lot --");
 
-		
 		if (carDAO.getAllCars().size() == 0) {
 			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
 			System.out.println("Boat Lot is Empty!");
@@ -32,39 +30,8 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 			}
 		}
 
-		
-		
-//		if (CarLot.getCarlot().size() == 0) {
-//			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
-//			System.out.println("Boat Lot is Empty!");
-//		} else {
-//			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
-//			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-//				System.out.println(CarLot.getCarlot().get(i));
-//			}
-//
-//		}
-
 	}
 
-	@Override
-	public void viewCarLotLimited() {
-		LoggingUtil.trace("CarLotServiceImpl - viewCarLotLimited(); - start");
-		System.out.println("-- In View Boat Lot --");
-
-		if (CarLot.getCarlot().size() == 0) {
-			LoggingUtil.warn("CarLotServiceImpl - car lot is empty");
-			System.out.println("Boat Lot is Empty!");
-		} else {
-			LoggingUtil.warn("CarLotServiceImpl - car lot is NOT empty");
-			for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-				System.out.println("ID -> " + CarLot.getCarlot().get(i).getCarID() + " Type -> "
-						+ CarLot.getCarlot().get(i).getCarType() + " Price -> " + CarLot.getCarlot().get(i).getPrice());
-			}
-
-		}
-
-	}
 
 	@Override
 	public void addCar() {
@@ -72,22 +39,15 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 		System.out.println("-- Add New Boat Screen --");
 
-		
-		//add car in local system
+		// add car in local system
 		Car car = createCar();
-		
+
 		LoggingUtil.debug("car in add car method -> " + car);
 		// Add car to db // returns newly generated car ID
 		int newId = carDAO.insertCar(car);
-		//car.setCarID(newId);
-		// Add car to lot locally
-		//CarLot.getCarlot().add(car);
 
-		//get car by id 
+		// get car by id
 		System.out.println(carDAO.getCarById(newId).getCarType() + " added!" + " Id Number: " + newId);
-		
-		// success message
-		//System.out.println("Added " + CarLot.getCarlot().get(CarLot.getCarlot().size() - 1) + " to the boat lot!");
 
 	}
 
@@ -110,12 +70,10 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 		CarId carId = new CarId(1);
 		CarIdCounter.getCaridcounter().add(carId);
 
-		//take id out?
-		//Car newCar = new Car("dealer", price, carType, true, CarIdCounter.getCaridcounter().size());
 		Car newCar = new Car("dealer", price, carType, true);
-		
+
 		LoggingUtil.debug("New Car Created ->" + newCar);
-		
+
 		return newCar;
 
 	}
@@ -190,59 +148,19 @@ public class CarLotServiceImpl implements CarLotServiceInt {
 
 			if (carDAO.getAllCars().get(i).getCarID() == carId) {
 
-				//System.out.println("Removing Boat: " + CarLot.getCarlot().get(i).toString());
-				
-				//update car in db
-				//carDAO.updateCarOnRemoval(CarLot.getCarlot().get(i));
-				
-				
-				//CarLot.getCarlot().remove(i);
-				
-				
-				//change status car for FOR SALE
+				// change status car for FOR SALE
 				carDAO.updateCarOnRemoval(carDAO.getCarById(carId));
-				//change status of car for OFFER
+				// change status of car for OFFER
 				offerDAO.updateOfferOnCarRemoval(carId);
-				
+
 				carRemoveCheck = true;
-				
+
 			}
 		}
-		
 
 		if (!carRemoveCheck) {
 			System.out.println("Boat ID Not Found. No Boat Removed.");
 		}
-		
-	}
-
-	@Override
-	public void removeCarFromOfferList(Integer carId) {
-
-		for (int i = MasterOfferList.getOfferlist().size() - 1; i >= 0; i--) {
-			if (MasterOfferList.getOfferlist().get(i).getOfferCar().getCarID() == carId) {
-				
-				//set offerlist to denied in db
-				offerDAO.updateOffer(MasterOfferList.getOfferlist().get(i), 1);
-				
-				MasterOfferList.getOfferlist().remove(i);
-			}
-		}
-
-	}
-
-	@Override
-	public Car matchCarId(Integer carId) {
-
-		Car car = null;
-
-		for (int i = 0; i < CarLot.getCarlot().size(); i++) {
-			if (CarLot.getCarlot().get(i).getCarID() == carId) {
-				car = CarLot.getCarlot().get(i);
-			}
-		}
-
-		return car;
 
 	}
 

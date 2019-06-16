@@ -1,6 +1,5 @@
 package com.donald.services;
 
-import com.donald.users.Car;
 import com.donald.users.Customer;
 
 public interface CustomerServiceInt {
@@ -12,9 +11,5 @@ public interface CustomerServiceInt {
 	public void viewRemainingPayments(Customer loggedInCustomer);
 	
 	public void viewLocalPaymentsMade(Customer loggedInCustomer);
-	
-	public Integer getUniqueOfferId(Integer num);
-	
-	public void addOfferToMasterOfferList(Car offerCar, Customer loggedInCustomer, Integer offerPrice);
 	
 }

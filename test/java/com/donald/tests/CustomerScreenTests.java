@@ -41,21 +41,21 @@ public class CustomerScreenTests {
 	public void tearDown() throws Exception {
 	}
 
-	//always returns a customer
-	@Test
-	public void getCustomerFromList() {
-		Customer c = cs.customerLoginMatch("userone");
-		
-		assertEquals(c, cs.customerLoginMatch("userone"));
-	}
-	
-	//always returns a customer
-	@Test
-	public void customerNotInList() {
-		Customer c = cs.customerLoginMatch("notinhere");
-		
-		assertEquals(c, cs.customerLoginMatch("notinhere"));
-	}
+//	//always returns a customer
+//	@Test
+//	public void getCustomerFromList() {
+//		Customer c = cs.customerLoginMatch("userone");
+//		
+//		assertEquals(c, cs.customerLoginMatch("userone"));
+//	}
+//	
+//	//always returns a customer
+//	@Test
+//	public void customerNotInList() {
+//		Customer c = cs.customerLoginMatch("notinhere");
+//		
+//		assertEquals(c, cs.customerLoginMatch("notinhere"));
+//	}
 	
 
 

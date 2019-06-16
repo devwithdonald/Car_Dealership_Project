@@ -8,8 +8,7 @@ import com.donald.services.WebServiceImpl;
 import com.donald.users.Employee;
 import com.donald.util.LoggingUtil;
 
-public class EmployeeScreen implements UserScreen{
-
+public class EmployeeScreen implements UserScreen {
 
 	@Override
 	public boolean display() {
@@ -27,15 +26,13 @@ public class EmployeeScreen implements UserScreen{
 		String input = "";
 
 		do {
-					
+
 			LoggingUtil.trace("do loop - EmployeeScreen - start");
-			
+
 			CarLotServiceImpl cls = new CarLotServiceImpl();
 			WebServiceImpl wsi = new WebServiceImpl();
 			EmployeeServiceImpl esi = new EmployeeServiceImpl();
-			
 
-			
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome! What would you like to do today?");
 
@@ -46,14 +43,14 @@ public class EmployeeScreen implements UserScreen{
 			System.out.println("Enter '0': Exit!");
 
 			input = scanner.nextLine();
-			
+
 			switch (input) {
 			case "1":
 				LoggingUtil.trace("do loop - employee menu - calling addCar();");
 				cls.addCar();
 				exitInput = false;
 				break;
-			case "2": 
+			case "2":
 				LoggingUtil.trace("do loop - employee menu  - calling addCar();");
 				esi.offerDecisionMenu();
 				exitInput = false;
@@ -79,13 +76,11 @@ public class EmployeeScreen implements UserScreen{
 
 		return false;
 	}
-	
-	
 
 	@Override
 	public boolean loginVerification() {
 		LoggingUtil.trace("employee loginVerification(); - start");
-		
+
 		int counter = 0;
 
 		String username = "";

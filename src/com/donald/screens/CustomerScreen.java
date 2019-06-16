@@ -6,16 +6,13 @@ import com.donald.services.CarLotServiceImpl;
 import com.donald.services.CustomerServiceImpl;
 import com.donald.sqldao.CustomerPostGresDAOImpl;
 import com.donald.users.Customer;
-import com.donald.users.CustomerBase;
-import com.donald.users.MasterCustomerLoginList;
 import com.donald.util.LoggingUtil;
 
 public class CustomerScreen implements UserScreen {
 
 	CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
-	
-	Customer loggedInCustomer;
 
+	Customer loggedInCustomer;
 
 	@Override
 	public boolean display() {
@@ -32,8 +29,7 @@ public class CustomerScreen implements UserScreen {
 		do {
 			LoggingUtil.debug("customer screen top of do loop");
 			Scanner scanner = new Scanner(System.in);
-			
-			
+
 			System.out.println("\nWelcome " + loggedInCustomer.getUsername() + "! What would you like to do today?");
 			System.out.println("Enter '1': View all boats on the lot");
 			System.out.println("Enter '2': To make an offer on a boat");
@@ -45,13 +41,11 @@ public class CustomerScreen implements UserScreen {
 			CarLotServiceImpl clsi = new CarLotServiceImpl();
 			CustomerServiceImpl csi = new CustomerServiceImpl();
 
-			
 			switch (input) {
 			case "1":
 				LoggingUtil.trace("CustomerScreen - display() - calling viewCarLot();");
-				
+
 				clsi.viewCarLot();
-				//clsi.viewCarLotLimited();
 				exitInput = false;
 				break;
 			case "2":
@@ -80,7 +74,6 @@ public class CustomerScreen implements UserScreen {
 		return false;
 	}
 
-
 	@Override
 	public boolean loginVerification() {
 		LoggingUtil.trace("CustomerScreen - loginVerification - start");
@@ -92,11 +85,10 @@ public class CustomerScreen implements UserScreen {
 		boolean verifiedUsername = false;
 		String password = "";
 		boolean verifiedPassword = true;
-		// boolean exitInput = false;
 
 		do {
 			Customer tempCustomer = null;
-			
+
 			LoggingUtil.trace("LoginVerification(); - do loop - start");
 
 			Scanner scanner = new Scanner(System.in);
@@ -111,40 +103,26 @@ public class CustomerScreen implements UserScreen {
 				LoggingUtil.debug("exiting from login verifcation");
 				break;
 			}
-			
-			//new code
+
 			if (customerDAO.getCustomerByUsername(username) != null) {
 				LoggingUtil.trace("customer username correct");
 				verifiedUsername = true;
 				counter++;
 				tempCustomer = customerDAO.getCustomerByUsername(username);
 			}
-			
-//			//old code
-//			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
-//				LoggingUtil.trace("customer username correct");
-//				verifiedUsername = true;
-//				counter++;
-//			}
-			
+
 			// password validation
 			System.out.println("enter password --> ");
 			password = scanner.nextLine();
 
 			if (counter == 1) {
-				
+
 				if (tempCustomer.getPassword().equals(password)) {
 					LoggingUtil.trace("customer password correct");
 					verifiedPassword = true;
 					counter++;
 				}
-				
-				
-//				if (MasterCustomerLoginList.getCustomerloginmap().get(username).equals(password)) {
-//					LoggingUtil.trace("customer password correct");
-//					verifiedPassword = true;
-//					counter++;
-//				}
+
 			} else {
 				LoggingUtil.debug("LoginVerification(); - do loop - username not found");
 				System.out.println("Username Not Found!");
@@ -159,31 +137,13 @@ public class CustomerScreen implements UserScreen {
 		if (counter == 2) {
 			// verified let them in!
 			LoggingUtil.trace("LoginVerification(); - do loop - login verified");
-			
-			//adding here
+
 			loggedInCustomer = customerDAO.getCustomerByUsername(username);
 			return true;
 		} else {
 			LoggingUtil.warn("failed login attempt");
 			return false;
 		}
-	}
-
-
-	//no need 
-	public Customer customerLoginMatch(String username) {
-		LoggingUtil.trace("customerLoginMatch(); - start");
-		
-		Customer customer = null;
-		
-		for (int i = 0; i < CustomerBase.getCustomerlist().size(); i++) {
-			if (CustomerBase.getCustomerlist().get(i).getUsername().equals(username)) {
-				LoggingUtil.debug("customerLoginMatch(); - getting logged in customer");
-				customer = CustomerBase.getCustomerlist().get(i);
-			}
-		}
-		
-		return customer;
 	}
 
 	public void register() {
@@ -207,34 +167,16 @@ public class CustomerScreen implements UserScreen {
 			} else {
 				System.out.println("Enter new password ->");
 				password = scanner.nextLine();
-				
+
 				System.out.println("Success! '" + username + "' is Now a Registered User!");
-				
+
 				customerDAO.registerCustomer(username, password);
 				exitInput = true;
 			}
-			
-			
-			
-//			if (MasterCustomerLoginList.getCustomerloginmap().containsKey(username)) {
-//				System.out.println("This Username is Already Taken");
-//			} else {
-//				System.out.println("Enter New Password-->");
-//				password = scanner.nextLine();
-//			
-//
-//				System.out.println("Success! '" + username + "' is Now a Registered User!");
-//
-//				CustomerBase.getCustomerlist().add(new Customer(username, password));
-//				MasterCustomerLoginList.getCustomerloginmap().put(username, password);
-//
-//				exitInput = true;
-//			}
 
 		} while (!exitInput);
 
 	}
-
 
 	public boolean customerAccessMenu() {
 		LoggingUtil.trace("CustomerScreen - customerAccessMenu(); - start");
