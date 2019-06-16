@@ -1,14 +1,11 @@
 package com.donald.services;
 
-import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
-import com.donald.dao.CustomerListSerializeDAO;
-import com.donald.dao.OfferSerializeDAO;
+import com.donald.sqldao.CarPostgresDAOImpl;
+import com.donald.sqldao.OfferPostgresDAOImpl;
 import com.donald.users.Car;
-import com.donald.users.CarLot;
 import com.donald.users.Customer;
-import com.donald.users.CustomerBase;
 import com.donald.users.MasterOfferList;
 import com.donald.users.Offer;
 import com.donald.users.UniqueOrderID;
@@ -17,13 +14,16 @@ import com.donald.util.LoggingUtil;
 
 public class CustomerServiceImpl implements CustomerServiceInt {
 
+	OfferPostgresDAOImpl offerDAO = new OfferPostgresDAOImpl();
+	CarPostgresDAOImpl carDAO = new CarPostgresDAOImpl();
+	
 	CarLotServiceImpl cls = new CarLotServiceImpl();
 	
 	@Override
 	public void makeOffer(Customer loggedInCustomer) {		
 		LoggingUtil.trace("CustomerServiceImpl - makeOffer(); - start");
 	
-		Integer carIDInput;
+		Integer carId;
 		Integer offerPrice;
 		
 		Scanner scanner = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 			System.out.println("Please Enter a Valid Number.");
 		    scanner.next();
 		}
-		carIDInput = scanner.nextInt();
+		carId = scanner.nextInt();
 		scanner.nextLine();
 		
 		System.out.println("Please enter your offer price -->");
@@ -44,15 +44,27 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		offerPrice = scanner.nextInt();
 		scanner.nextLine();
 
-		Car offerCar = null;
-		offerCar = cls.matchCarId(carIDInput);
-		if(offerCar == null) {
+		
+		
+		
+		if(carDAO.getCarById(carId) == null) {
 			System.out.println("Invalid Choice. Boat is Not In The System.");
 			return;
 		}
-
 		
-		addOfferToMasterOfferList(offerCar, loggedInCustomer, offerPrice);
+		//Car offerCar = null;
+		//offerCar = cls.matchCarId(carIDInput);
+			
+		//if(offerCar == null) {
+		//	System.out.println("Invalid Choice. Boat is Not In The System.");
+		//	return;
+		//}
+		
+		
+		//boat id and price
+		offerDAO.makeOffer(loggedInCustomer, carId, offerPrice);
+		
+		//addOfferToMasterOfferList(offerCar, loggedInCustomer, offerPrice);
 				
 	}
 	

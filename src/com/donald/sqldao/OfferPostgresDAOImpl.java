@@ -69,6 +69,27 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 
 	}
 	
+	public void makeOffer(Customer customer, int carId, int offerPrice) {
+		String sql = "insert into offer(customer_id, car_id, status_id, offer_price) " + 
+				" values (?,?,?,?);";
+
+		PreparedStatement pstmt;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, customer.getCustomerID());
+			pstmt.setInt(2, carId);
+			pstmt.setInt(3, 2); // 2 = pending offer in status table
+			pstmt.setInt(4, offerPrice);
+			int numberOfRows = pstmt.executeUpdate();
+
+			LoggingUtil.debug(numberOfRows + " number of rows affected - insertOffer");
+
+		} catch (SQLException e) {
+			LoggingUtil.error(e.getMessage());
+		}
+	}
+	
 	public void updateOfferOnAcceptance(int offerId, Customer buyer) {
 		String sql = "update offer " + 
 				"set status_id = 3, employee_decision_maker = 1, customer_id = ? " + 

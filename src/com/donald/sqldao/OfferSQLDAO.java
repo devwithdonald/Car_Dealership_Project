@@ -9,6 +9,8 @@ public interface OfferSQLDAO {
 	
 	public void insertOffer(Offer offer);
 	
+	public void makeOffer(Customer customer, int carId, int offerPrice);
+	
 	public void updateOffer(Offer offer, int statusId);
 	
 	public void updateOfferOnAcceptance(int offerId, Customer buyer);
