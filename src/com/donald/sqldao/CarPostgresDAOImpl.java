@@ -36,11 +36,11 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 			pstmt.setString(2, car.getPrice());
 			int numberOfRows = pstmt.executeUpdate();
 
-			//wrong!
+			
 			ResultSet rs = pstmt.getGeneratedKeys();
 			
 			
-			//wrong!
+			
 			if (rs.next()) {
 				LoggingUtil.debug("generated primary key/id was grabbed for car");
 				newId = rs.getInt(1);

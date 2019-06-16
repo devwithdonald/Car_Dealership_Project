@@ -94,19 +94,28 @@ public class CustomerServiceImpl implements CustomerServiceInt {
 		
 	}
 
+	//WORKING ON!!!!
 	@Override
 	public void viewOwnedCars(Customer loggedInCustomer) {
 		LoggingUtil.trace("CustomerServiceImpl - viewOwnedCars(); - start");
 
-		
-		if (loggedInCustomer.getCarsOwned().size() == 0) {
+		if(carDAO.getCarsByCustomerId(loggedInCustomer.getCustomerID()).size() == 0) {
 			LoggingUtil.warn("No cars in " + loggedInCustomer + " inventory");
 			System.out.println("You Have No Boats In Your Inventory!");
 		} else {
-			for (int i = 0; i < loggedInCustomer.getCarsOwned().size(); i++) {
-				System.out.println(loggedInCustomer.getCarsOwned().get(i));
+			for (Car car : carDAO.getCarsByCustomerId(loggedInCustomer.getCustomerID())) {
+				System.out.println(car);
 			}
 		}
+		
+//		if (loggedInCustomer.getCarsOwned().size() == 0) {
+//			LoggingUtil.warn("No cars in " + loggedInCustomer + " inventory");
+//			System.out.println("You Have No Boats In Your Inventory!");
+//		} else {
+//			for (int i = 0; i < loggedInCustomer.getCarsOwned().size(); i++) {
+//				System.out.println(loggedInCustomer.getCarsOwned().get(i));
+//			}
+//		}
 
 	}
 
