@@ -6225,3 +6225,613 @@
 2019-06-17 18:08:18 TRACE root:10 - false employee login verification
 2019-06-17 18:08:18 TRACE root:10 - employee loginVerification(); - start
 2019-06-17 18:08:19 TRACE root:10 - employee login passed
+2019-06-17 18:35:26 DEBUG root:14 - null Connection
+2019-06-17 18:35:26 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:28 INFO  root:18 - successfully connected to DB
+2019-06-17 18:35:28 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:28 INFO  root:18 - successfully connected to DB
+2019-06-17 18:35:28 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:29 INFO  root:18 - successfully connected to DB
+2019-06-17 18:35:29 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:29 INFO  root:18 - successfully connected to DB
+2019-06-17 18:35:30 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:35:30 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:35:33 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:35:33 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:35:33 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:35:46 DEBUG root:14 - null Connection
+2019-06-17 18:35:46 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:57 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:35:57 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:57 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:35:57 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:57 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:35:57 DEBUG root:14 - NOT null connection
+2019-06-17 18:35:57 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:35:58 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:35:58 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:36:09 DEBUG root:14 - null Connection
+2019-06-17 18:36:09 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:10 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:10 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:10 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:10 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:11 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:11 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:11 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:11 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:36:11 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:36:13 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:36:13 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:36:13 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:36:14 TRACE root:10 - customer username correct
+2019-06-17 18:36:16 TRACE root:10 - customer password correct
+2019-06-17 18:36:16 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:36:17 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:36:20 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:36:20 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:36:21 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:36:21 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:36:21 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:36:23 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:36:23 WARN  root:22 - failed customer access
+2019-06-17 18:36:36 DEBUG root:14 - null Connection
+2019-06-17 18:36:36 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:37 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:37 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:37 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:37 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:38 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:38 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:38 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:39 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:36:39 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:36:40 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:36:40 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:36:40 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:36:41 TRACE root:10 - customer username correct
+2019-06-17 18:36:42 TRACE root:10 - customer password correct
+2019-06-17 18:36:42 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:36:42 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:36:44 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:36:44 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:36:45 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:36:45 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:36:45 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:36:46 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:36:46 WARN  root:22 - failed customer access
+2019-06-17 18:36:52 DEBUG root:14 - null Connection
+2019-06-17 18:36:52 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:53 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:53 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:54 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:54 DEBUG root:14 - NOT null connection
+2019-06-17 18:36:54 INFO  root:18 - successfully connected to DB
+2019-06-17 18:36:55 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:36:55 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:36:56 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:36:56 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:36:56 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:37:00 TRACE root:10 - customer username correct
+2019-06-17 18:37:01 TRACE root:10 - customer password correct
+2019-06-17 18:37:01 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:37:01 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:37:02 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:37:02 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:37:03 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:37:03 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:37:03 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:37:04 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:37:04 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:37:04 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:37:05 TRACE root:10 - customer username correct
+2019-06-17 18:37:06 TRACE root:10 - customer password correct
+2019-06-17 18:37:06 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:37:06 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:37:07 TRACE root:10 - CustomerScreen - display() - calling makeOffer(loggedInCustomer);
+2019-06-17 18:37:07 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:37:07 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:38:38 DEBUG root:14 - null Connection
+2019-06-17 18:38:38 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:39 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:39 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:39 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:39 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:40 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:40 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:40 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:40 TRACE root:10 - Do Loop in Main - Start
+2019-06-17 18:38:40 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-17 18:38:42 TRACE root:10 - WebServiceImpl - input = 'customer'
+2019-06-17 18:38:42 TRACE root:10 - Do Loop in Main - if -> 'customer'
+2019-06-17 18:38:42 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:38:42 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:38:42 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling register()
+2019-06-17 18:38:42 TRACE root:10 - CustomerScreen - register() - start
+2019-06-17 18:38:42 TRACE root:10 - CustomerScreen - do loop - start
+2019-06-17 18:38:46 DEBUG root:14 - 1 number of rows affected - insertCustomer
+2019-06-17 18:38:48 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:38:48 WARN  root:22 - failed customer access
+2019-06-17 18:38:48 TRACE root:10 - Do Loop in Main - saving files - employee
+2019-06-17 18:38:48 TRACE root:10 - Do Loop in Main - Start
+2019-06-17 18:38:48 TRACE root:10 - WebServiceImpl - initialScreen(); - start
+2019-06-17 18:38:48 TRACE root:10 - WebServiceImpl - input = '0'
+2019-06-17 18:38:53 DEBUG root:14 - null Connection
+2019-06-17 18:38:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:54 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:54 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:55 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:55 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:55 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:55 DEBUG root:14 - NOT null connection
+2019-06-17 18:38:55 INFO  root:18 - successfully connected to DB
+2019-06-17 18:38:56 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:38:56 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:39:04 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:39:04 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:39:04 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:39:05 TRACE root:10 - customer username correct
+2019-06-17 18:39:07 TRACE root:10 - customer password correct
+2019-06-17 18:39:07 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:39:07 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:39:08 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:39:08 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:39:08 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:39:09 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:39:09 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:39:09 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:39:09 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:39:09 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:39:11 TRACE root:10 - customer username correct
+2019-06-17 18:39:13 TRACE root:10 - customer password correct
+2019-06-17 18:39:13 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:39:13 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:39:14 TRACE root:10 - CustomerScreen - display() - calling makeOffer(loggedInCustomer);
+2019-06-17 18:39:14 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:39:15 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:42:48 DEBUG root:14 - null Connection
+2019-06-17 18:42:48 DEBUG root:14 - NOT null connection
+2019-06-17 18:42:49 INFO  root:18 - successfully connected to DB
+2019-06-17 18:42:49 DEBUG root:14 - NOT null connection
+2019-06-17 18:42:49 INFO  root:18 - successfully connected to DB
+2019-06-17 18:42:49 DEBUG root:14 - NOT null connection
+2019-06-17 18:42:49 INFO  root:18 - successfully connected to DB
+2019-06-17 18:42:49 DEBUG root:14 - NOT null connection
+2019-06-17 18:42:50 INFO  root:18 - successfully connected to DB
+2019-06-17 18:42:50 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:42:50 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:42:51 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:42:51 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:42:51 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:42:53 TRACE root:10 - customer username correct
+2019-06-17 18:42:55 TRACE root:10 - customer password correct
+2019-06-17 18:42:55 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:42:55 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:42:55 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:42:55 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:42:55 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:42:55 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:42:55 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:42:56 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:42:56 WARN  root:22 - failed customer access
+2019-06-17 18:43:01 DEBUG root:14 - null Connection
+2019-06-17 18:43:01 DEBUG root:14 - NOT null connection
+2019-06-17 18:43:02 INFO  root:18 - successfully connected to DB
+2019-06-17 18:43:02 DEBUG root:14 - NOT null connection
+2019-06-17 18:43:03 INFO  root:18 - successfully connected to DB
+2019-06-17 18:43:03 DEBUG root:14 - NOT null connection
+2019-06-17 18:43:03 INFO  root:18 - successfully connected to DB
+2019-06-17 18:43:03 DEBUG root:14 - NOT null connection
+2019-06-17 18:43:04 INFO  root:18 - successfully connected to DB
+2019-06-17 18:43:04 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:43:04 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:43:05 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:43:05 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:43:05 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:43:09 TRACE root:10 - customer username correct
+2019-06-17 18:43:10 TRACE root:10 - customer password correct
+2019-06-17 18:43:10 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:43:10 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:43:12 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:43:12 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:43:12 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:43:12 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:43:12 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:43:13 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:43:13 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:43:13 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:43:15 TRACE root:10 - customer username correct
+2019-06-17 18:43:17 TRACE root:10 - customer password correct
+2019-06-17 18:43:17 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:43:17 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:43:20 TRACE root:10 - CustomerScreen - display() - calling makeOffer(loggedInCustomer);
+2019-06-17 18:43:20 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:43:21 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:47:04 DEBUG root:14 - null Connection
+2019-06-17 18:47:04 DEBUG root:14 - NOT null connection
+2019-06-17 18:47:05 INFO  root:18 - successfully connected to DB
+2019-06-17 18:47:05 DEBUG root:14 - NOT null connection
+2019-06-17 18:47:06 INFO  root:18 - successfully connected to DB
+2019-06-17 18:47:06 DEBUG root:14 - NOT null connection
+2019-06-17 18:47:06 INFO  root:18 - successfully connected to DB
+2019-06-17 18:47:06 DEBUG root:14 - NOT null connection
+2019-06-17 18:47:06 INFO  root:18 - successfully connected to DB
+2019-06-17 18:47:07 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:47:07 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:47:08 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:47:08 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:47:08 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:47:10 TRACE root:10 - customer username correct
+2019-06-17 18:47:11 DEBUG root:14 - LoginVerification(); - do loop - password wrong
+2019-06-17 18:47:11 WARN  root:22 - failed login attempt
+2019-06-17 18:47:12 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:47:12 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:47:12 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:47:14 TRACE root:10 - customer username correct
+2019-06-17 18:47:17 TRACE root:10 - customer password correct
+2019-06-17 18:47:17 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:47:18 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:47:18 TRACE root:10 - CustomerScreen - display() - calling viewCarLot();
+2019-06-17 18:47:18 DEBUG root:14 - customer screen top of do loop
+2019-06-17 18:47:19 TRACE root:10 - CustomerScreen - display() - exiting
+2019-06-17 18:47:19 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:47:19 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:47:20 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:47:20 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:47:20 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:47:21 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-17 18:47:21 WARN  root:22 - failed login attempt
+2019-06-17 18:47:23 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:47:23 WARN  root:22 - failed customer access
+2019-06-17 18:47:23 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:47:23 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:47:24 DEBUG root:14 - exiting from login verifcation
+2019-06-17 18:47:24 WARN  root:22 - failed login attempt
+2019-06-17 18:48:46 DEBUG root:14 - null Connection
+2019-06-17 18:48:46 DEBUG root:14 - NOT null connection
+2019-06-17 18:48:47 INFO  root:18 - successfully connected to DB
+2019-06-17 18:48:47 DEBUG root:14 - NOT null connection
+2019-06-17 18:48:47 INFO  root:18 - successfully connected to DB
+2019-06-17 18:48:47 DEBUG root:14 - NOT null connection
+2019-06-17 18:48:47 INFO  root:18 - successfully connected to DB
+2019-06-17 18:48:47 DEBUG root:14 - NOT null connection
+2019-06-17 18:48:48 INFO  root:18 - successfully connected to DB
+2019-06-17 18:48:48 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:48:48 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:48:49 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-17 18:48:49 WARN  root:22 - failed login attempt
+2019-06-17 18:49:09 DEBUG root:14 - null Connection
+2019-06-17 18:49:09 DEBUG root:14 - NOT null connection
+2019-06-17 18:49:09 INFO  root:18 - successfully connected to DB
+2019-06-17 18:49:09 DEBUG root:14 - NOT null connection
+2019-06-17 18:49:10 INFO  root:18 - successfully connected to DB
+2019-06-17 18:49:10 DEBUG root:14 - NOT null connection
+2019-06-17 18:49:10 INFO  root:18 - successfully connected to DB
+2019-06-17 18:49:10 DEBUG root:14 - NOT null connection
+2019-06-17 18:49:11 INFO  root:18 - successfully connected to DB
+2019-06-17 18:49:11 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:49:11 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:49:14 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-17 18:49:14 WARN  root:22 - failed login attempt
+2019-06-17 18:50:42 DEBUG root:14 - null Connection
+2019-06-17 18:50:42 DEBUG root:14 - NOT null connection
+2019-06-17 18:50:53 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:50:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:50:53 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:50:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:50:53 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:50:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:50:53 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:50:53 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:50:53 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:50:59 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:50:59 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:51:05 DEBUG root:14 - null Connection
+2019-06-17 18:51:05 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:06 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:06 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:06 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:06 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:07 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:07 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:07 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:07 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:51:07 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:51:27 DEBUG root:14 - null Connection
+2019-06-17 18:51:27 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:28 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:28 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:28 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:28 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:28 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:28 DEBUG root:14 - NOT null connection
+2019-06-17 18:51:29 INFO  root:18 - successfully connected to DB
+2019-06-17 18:51:29 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:51:29 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:51:30 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-17 18:51:30 WARN  root:22 - failed login attempt
+2019-06-17 18:51:30 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:51:30 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:51:33 TRACE root:10 - customer username correct
+2019-06-17 18:51:34 TRACE root:10 - customer password correct
+2019-06-17 18:51:34 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:52:29 DEBUG root:14 - null Connection
+2019-06-17 18:52:29 DEBUG root:14 - NOT null connection
+2019-06-17 18:52:40 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:52:40 DEBUG root:14 - NOT null connection
+2019-06-17 18:52:40 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:52:40 DEBUG root:14 - NOT null connection
+2019-06-17 18:52:40 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:52:40 DEBUG root:14 - NOT null connection
+2019-06-17 18:52:40 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:52:40 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:52:40 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:52:45 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:52:45 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:52:45 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:52:45 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:53:02 DEBUG root:14 - null Connection
+2019-06-17 18:53:02 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:03 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:03 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:03 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:03 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:03 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:03 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:04 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:04 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:53:04 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:53:06 TRACE root:10 - customer username correct
+2019-06-17 18:53:07 DEBUG root:14 - LoginVerification(); - do loop - password wrong
+2019-06-17 18:53:07 WARN  root:22 - failed login attempt
+2019-06-17 18:53:07 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:53:07 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:53:11 TRACE root:10 - customer username correct
+2019-06-17 18:53:13 TRACE root:10 - customer password correct
+2019-06-17 18:53:13 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:53:13 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:53:13 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:53:15 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:53:15 WARN  root:22 - failed customer access
+2019-06-17 18:53:55 DEBUG root:14 - null Connection
+2019-06-17 18:53:55 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:56 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:56 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:56 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:56 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:56 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:56 DEBUG root:14 - NOT null connection
+2019-06-17 18:53:57 INFO  root:18 - successfully connected to DB
+2019-06-17 18:53:57 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:53:57 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:54:01 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-17 18:54:01 WARN  root:22 - failed login attempt
+2019-06-17 18:54:01 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:54:01 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:54:02 TRACE root:10 - customer username correct
+2019-06-17 18:54:03 DEBUG root:14 - LoginVerification(); - do loop - password wrong
+2019-06-17 18:54:03 WARN  root:22 - failed login attempt
+2019-06-17 18:54:03 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:54:03 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:54:07 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:54:07 WARN  root:22 - failed customer access
+2019-06-17 18:54:07 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:54:07 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:54:08 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:54:08 WARN  root:22 - failed customer access
+2019-06-17 18:58:27 DEBUG root:14 - null Connection
+2019-06-17 18:58:27 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:58:38 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:58:38 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:58:38 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 18:58:38 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:58:38 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:58:48 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:58:48 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:58:48 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:58:48 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:58:52 DEBUG root:14 - null Connection
+2019-06-17 18:58:52 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:53 INFO  root:18 - successfully connected to DB
+2019-06-17 18:58:53 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:54 INFO  root:18 - successfully connected to DB
+2019-06-17 18:58:54 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:54 INFO  root:18 - successfully connected to DB
+2019-06-17 18:58:54 DEBUG root:14 - NOT null connection
+2019-06-17 18:58:54 INFO  root:18 - successfully connected to DB
+2019-06-17 18:58:54 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:58:54 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:58:57 DEBUG root:14 - LoginVerification(); - do loop - username not found
+2019-06-17 18:58:57 WARN  root:22 - failed login attempt
+2019-06-17 18:58:57 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:58:57 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:58:59 TRACE root:10 - customer username correct
+2019-06-17 18:59:01 TRACE root:10 - customer password correct
+2019-06-17 18:59:01 TRACE root:10 - LoginVerification(); - do loop - login verified
+2019-06-17 18:59:01 TRACE root:10 - CustomerScreen - display() - start
+2019-06-17 18:59:01 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:59:03 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:59:03 WARN  root:22 - failed customer access
+2019-06-17 18:59:03 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:59:10 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 18:59:10 TRACE root:10 - CustomerScreen - customerAccessMenu(); - start
+2019-06-17 18:59:12 TRACE root:10 - CustomerScreen - customerAccessMenu(); - calling loginVerification()
+2019-06-17 18:59:12 TRACE root:10 - CustomerScreen - loginVerification - start
+2019-06-17 18:59:12 TRACE root:10 - LoginVerification(); - do loop - start
+2019-06-17 18:59:15 DEBUG root:14 - exiting from login verifcation
+2019-06-17 18:59:15 WARN  root:22 - failed login attempt
+2019-06-17 18:59:16 TRACE root:10 - CustomerScreen - customerAccessMenu(); - exiting
+2019-06-17 19:01:21 DEBUG root:14 - null Connection
+2019-06-17 19:01:21 DEBUG root:14 - NOT null connection
+2019-06-17 19:01:22 INFO  root:18 - successfully connected to DB
+2019-06-17 19:01:22 DEBUG root:14 - NOT null connection
+2019-06-17 19:01:22 INFO  root:18 - successfully connected to DB
+2019-06-17 19:01:22 DEBUG root:14 - NOT null connection
+2019-06-17 19:01:22 INFO  root:18 - successfully connected to DB
+2019-06-17 19:01:22 DEBUG root:14 - NOT null connection
+2019-06-17 19:01:23 INFO  root:18 - successfully connected to DB
+2019-06-17 19:01:23 TRACE root:10 - CarLotServiceImpl - removeCar(); - start
+2019-06-17 19:01:26 TRACE root:10 - CarLotServiceImpl - removeCar(); - start
+2019-06-17 19:01:28 TRACE root:10 - CarLotServiceImpl - removeCar(); - start
+2019-06-17 19:01:31 TRACE root:10 - CarLotServiceImpl - removeCar(); - start
+2019-06-17 19:06:18 DEBUG root:14 - null Connection
+2019-06-17 19:06:18 DEBUG root:14 - NOT null connection
+2019-06-17 19:06:19 INFO  root:18 - successfully connected to DB
+2019-06-17 19:06:19 DEBUG root:14 - NOT null connection
+2019-06-17 19:06:19 INFO  root:18 - successfully connected to DB
+2019-06-17 19:06:19 DEBUG root:14 - NOT null connection
+2019-06-17 19:06:20 INFO  root:18 - successfully connected to DB
+2019-06-17 19:06:20 DEBUG root:14 - NOT null connection
+2019-06-17 19:06:20 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:02 DEBUG root:14 - null Connection
+2019-06-17 19:07:02 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:03 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:03 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:04 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:04 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:04 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:04 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:04 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:04 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-17 19:07:04 TRACE root:10 - CarLotServiceImpl - createCar(); - start
+2019-06-17 19:07:37 DEBUG root:14 - null Connection
+2019-06-17 19:07:37 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:38 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:38 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:38 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:38 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:39 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:39 DEBUG root:14 - NOT null connection
+2019-06-17 19:07:39 INFO  root:18 - successfully connected to DB
+2019-06-17 19:07:39 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-17 19:07:39 TRACE root:10 - CarLotServiceImpl - createCar(); - start
+2019-06-17 19:08:20 DEBUG root:14 - null Connection
+2019-06-17 19:08:20 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:21 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:21 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:21 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:21 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:21 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:21 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:22 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:50 DEBUG root:14 - null Connection
+2019-06-17 19:08:50 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:51 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:51 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:52 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:52 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:52 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:52 DEBUG root:14 - NOT null connection
+2019-06-17 19:08:52 INFO  root:18 - successfully connected to DB
+2019-06-17 19:08:52 TRACE root:10 - CarLotServiceImpl - addCar(); - start
+2019-06-17 19:08:52 TRACE root:10 - CarLotServiceImpl - createCar(); - start
+2019-06-17 19:08:58 DEBUG root:14 - New Car Created ->Car [boatID=null, ownerUsername=dealer, dealerPrice=90888, purchasedPrice=90888, boatType=car, forSale=true]
+2019-06-17 19:08:58 DEBUG root:14 - car in add car method -> Car [boatID=null, ownerUsername=dealer, dealerPrice=90888, purchasedPrice=90888, boatType=car, forSale=true]
+2019-06-17 19:08:58 DEBUG root:14 - In insertCar DAO
+2019-06-17 19:08:58 DEBUG root:14 - generated primary key/id was grabbed for car
+2019-06-17 19:08:58 DEBUG root:14 - 1 number of rows affected - insertCar
+2019-06-17 19:16:35 DEBUG root:14 - null Connection
+2019-06-17 19:16:35 DEBUG root:14 - NOT null connection
+2019-06-17 19:16:36 INFO  root:18 - successfully connected to DB
+2019-06-17 19:16:36 DEBUG root:14 - NOT null connection
+2019-06-17 19:16:36 INFO  root:18 - successfully connected to DB
+2019-06-17 19:16:36 DEBUG root:14 - NOT null connection
+2019-06-17 19:16:36 INFO  root:18 - successfully connected to DB
+2019-06-17 19:16:36 DEBUG root:14 - NOT null connection
+2019-06-17 19:16:37 INFO  root:18 - successfully connected to DB
+2019-06-17 19:16:37 DEBUG root:14 - In insertCar DAO
+2019-06-17 19:16:37 DEBUG root:14 - generated primary key/id was grabbed for car
+2019-06-17 19:16:37 DEBUG root:14 - 1 number of rows affected - insertCar
+2019-06-17 19:17:09 DEBUG root:14 - null Connection
+2019-06-17 19:17:09 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:10 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:10 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:10 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:10 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:11 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:11 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:11 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:11 DEBUG root:14 - In insertCar DAO
+2019-06-17 19:17:11 DEBUG root:14 - generated primary key/id was grabbed for car
+2019-06-17 19:17:11 DEBUG root:14 - 1 number of rows affected - insertCar
+2019-06-17 19:17:50 DEBUG root:14 - null Connection
+2019-06-17 19:17:50 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:51 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:51 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:51 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:51 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:52 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:52 DEBUG root:14 - NOT null connection
+2019-06-17 19:17:52 INFO  root:18 - successfully connected to DB
+2019-06-17 19:17:52 DEBUG root:14 - In insertCar DAO
+2019-06-17 19:17:52 DEBUG root:14 - generated primary key/id was grabbed for car
+2019-06-17 19:17:52 DEBUG root:14 - 1 number of rows affected - insertCar
+2019-06-17 19:19:36 DEBUG root:14 - null Connection
+2019-06-17 19:19:36 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:36 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:36 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:37 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:37 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:37 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:37 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:37 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:53 DEBUG root:14 - null Connection
+2019-06-17 19:19:53 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:54 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:54 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:54 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:54 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:54 INFO  root:18 - successfully connected to DB
+2019-06-17 19:19:54 DEBUG root:14 - NOT null connection
+2019-06-17 19:19:55 INFO  root:18 - successfully connected to DB
+2019-06-17 19:21:30 DEBUG root:14 - null Connection
+2019-06-17 19:21:30 DEBUG root:14 - NOT null connection
+2019-06-17 19:21:31 INFO  root:18 - successfully connected to DB
+2019-06-17 19:21:31 DEBUG root:14 - NOT null connection
+2019-06-17 19:21:32 INFO  root:18 - successfully connected to DB
+2019-06-17 19:21:32 DEBUG root:14 - NOT null connection
+2019-06-17 19:21:32 INFO  root:18 - successfully connected to DB
+2019-06-17 19:21:32 DEBUG root:14 - NOT null connection
+2019-06-17 19:21:32 INFO  root:18 - successfully connected to DB
+2019-06-17 19:22:50 DEBUG root:14 - null Connection
+2019-06-17 19:22:50 DEBUG root:14 - NOT null connection
+2019-06-17 19:22:51 INFO  root:18 - successfully connected to DB
+2019-06-17 19:22:51 DEBUG root:14 - NOT null connection
+2019-06-17 19:22:51 INFO  root:18 - successfully connected to DB
+2019-06-17 19:22:51 DEBUG root:14 - NOT null connection
+2019-06-17 19:22:51 INFO  root:18 - successfully connected to DB
+2019-06-17 19:22:51 DEBUG root:14 - NOT null connection
+2019-06-17 19:22:52 INFO  root:18 - successfully connected to DB
+2019-06-17 19:23:30 DEBUG root:14 - null Connection
+2019-06-17 19:23:30 DEBUG root:14 - NOT null connection
+2019-06-17 19:23:31 INFO  root:18 - successfully connected to DB
+2019-06-17 19:23:31 DEBUG root:14 - NOT null connection
+2019-06-17 19:23:31 INFO  root:18 - successfully connected to DB
+2019-06-17 19:23:31 DEBUG root:14 - NOT null connection
+2019-06-17 19:23:31 INFO  root:18 - successfully connected to DB
+2019-06-17 19:23:31 DEBUG root:14 - NOT null connection
+2019-06-17 19:23:32 INFO  root:18 - successfully connected to DB
+2019-06-17 19:25:24 DEBUG root:14 - null Connection
+2019-06-17 19:25:24 DEBUG root:14 - NOT null connection
+2019-06-17 19:25:25 INFO  root:18 - successfully connected to DB
+2019-06-17 19:25:25 DEBUG root:14 - NOT null connection
+2019-06-17 19:25:26 INFO  root:18 - successfully connected to DB
+2019-06-17 19:25:26 DEBUG root:14 - NOT null connection
+2019-06-17 19:25:26 INFO  root:18 - successfully connected to DB
+2019-06-17 19:25:26 DEBUG root:14 - NOT null connection
+2019-06-17 19:25:26 INFO  root:18 - successfully connected to DB
+2019-06-17 19:31:05 DEBUG root:14 - null Connection
+2019-06-17 19:31:05 DEBUG root:14 - NOT null connection
+2019-06-17 19:31:06 INFO  root:18 - successfully connected to DB
+2019-06-17 19:31:06 DEBUG root:14 - NOT null connection
+2019-06-17 19:31:07 INFO  root:18 - successfully connected to DB
+2019-06-17 19:31:07 DEBUG root:14 - NOT null connection
+2019-06-17 19:31:07 INFO  root:18 - successfully connected to DB
+2019-06-17 19:31:07 DEBUG root:14 - NOT null connection
+2019-06-17 19:31:07 INFO  root:18 - successfully connected to DB

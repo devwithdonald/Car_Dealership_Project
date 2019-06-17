@@ -10,9 +10,11 @@ import com.donald.util.LoggingUtil;
 
 public class CustomerScreen implements UserScreen {
 
-	CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
+	private CustomerPostGresDAOImpl customerDAO = new CustomerPostGresDAOImpl();
+	private CarLotServiceImpl clsi = new CarLotServiceImpl();
+	private CustomerServiceImpl csi = new CustomerServiceImpl();
 
-	Customer loggedInCustomer;
+	private Customer loggedInCustomer;
 
 	@Override
 	public boolean display() {
@@ -38,13 +40,12 @@ public class CustomerScreen implements UserScreen {
 			System.out.println("Enter '0': Exit!");
 			input = scanner.nextLine();
 
-			CarLotServiceImpl clsi = new CarLotServiceImpl();
-			CustomerServiceImpl csi = new CustomerServiceImpl();
+//			CarLotServiceImpl clsi = new CarLotServiceImpl();
+//			CustomerServiceImpl csi = new CustomerServiceImpl();
 
 			switch (input) {
 			case "1":
 				LoggingUtil.trace("CustomerScreen - display() - calling viewCarLot();");
-
 				clsi.viewCarLot();
 				exitInput = false;
 				break;
