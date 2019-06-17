@@ -9,6 +9,11 @@ import com.donald.users.Employee;
 import com.donald.util.LoggingUtil;
 
 public class EmployeeScreen implements UserScreen {
+	
+	private CarLotServiceImpl cls = new CarLotServiceImpl();
+	private WebServiceImpl wsi = new WebServiceImpl();
+	private EmployeeServiceImpl esi = new EmployeeServiceImpl();
+	
 
 	@Override
 	public boolean display() {
@@ -29,9 +34,9 @@ public class EmployeeScreen implements UserScreen {
 
 			LoggingUtil.trace("do loop - EmployeeScreen - start");
 
-			CarLotServiceImpl cls = new CarLotServiceImpl();
-			WebServiceImpl wsi = new WebServiceImpl();
-			EmployeeServiceImpl esi = new EmployeeServiceImpl();
+//			CarLotServiceImpl cls = new CarLotServiceImpl();
+//			WebServiceImpl wsi = new WebServiceImpl();
+//			EmployeeServiceImpl esi = new EmployeeServiceImpl();
 
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome! What would you like to do today?");

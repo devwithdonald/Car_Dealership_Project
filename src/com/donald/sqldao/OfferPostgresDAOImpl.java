@@ -104,7 +104,7 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 
 	}
 
-	// ALL CALRS when employee is accepting or declining (should give 1 or 3
+	// ALL CARS when employee is accepting or declining (should give 1 or 3
 	// depending on rejected or accepted
 	@Override
 	public void updateOfferOnCarRemoval(int carId) {
