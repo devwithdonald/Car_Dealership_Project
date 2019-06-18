@@ -24,7 +24,6 @@ public class CarDealerDriver {
 
 				if (!es.display()) {
 					LoggingUtil.trace("Do Loop in Main - saving files - employee");
-
 					continue;
 				}
 
