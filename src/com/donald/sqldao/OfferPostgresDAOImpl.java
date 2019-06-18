@@ -45,31 +45,37 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 	// when employee is accepting or declining (should give 1 or 3 depending on
 	// rejected or accepted
 	@Override
-	public void updateOffer(Offer offer, int statusId) {
+	public int updateOffer(Offer offer, int statusId) {
 		String sql = "update offer " + "set status_id = ?, employee_decision_maker = ? " + "where offer_id = ?;";
 
 		PreparedStatement pstmt;
 
+		int numberOfRows = 0;
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, statusId);
 			pstmt.setInt(2, 1); // default for employee
 			pstmt.setInt(3, offer.getOfferID());
-			int numberOfRows = pstmt.executeUpdate();
+			numberOfRows = pstmt.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
 
 		} catch (SQLException e) {
 			LoggingUtil.error(e.getMessage());
 		}
+		
+		return numberOfRows;
 
 	}
 
 	@Override
-	public void makeOffer(Customer customer, int carId, int offerPrice) {
+	public int makeOffer(Customer customer, int carId, int offerPrice) {
 		String sql = "insert into offer(customer_id, car_id, status_id, offer_price) " + " values (?,?,?,?);";
 
 		PreparedStatement pstmt;
+		
+		int numberOfRows = 0;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -77,74 +83,87 @@ public class OfferPostgresDAOImpl implements OfferSQLDAO {
 			pstmt.setInt(2, carId);
 			pstmt.setInt(3, 2); // 2 = pending offer in status table
 			pstmt.setInt(4, offerPrice);
-			int numberOfRows = pstmt.executeUpdate();
+			numberOfRows = pstmt.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - insertOffer");
 
 		} catch (SQLException e) {
 			LoggingUtil.error(e.getMessage());
 		}
+		
+		return numberOfRows;
 	}
 
 	@Override
-	public void updateOfferOnAcceptance(int offerId, Customer buyer) {
+	public int updateOfferOnAcceptance(int offerId, Customer buyer) {
 		String sql = "{call update_offer_on_acceptance_proc(?,?)}";
 
+		int numberOfRows = 0;
+		
 		try {
 			CallableStatement call = conn.prepareCall(sql);
 			call.setInt(1, buyer.getCustomerID());
 			call.setInt(2, offerId);
-			int numberOfRows = call.executeUpdate();
+			numberOfRows = call.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
 
 		} catch (SQLException e) {
 			LoggingUtil.error(e.getMessage());
 		}
+		
+		return numberOfRows;
 
 	}
 
 	// ALL CARS when employee is accepting or declining (should give 1 or 3
 	// depending on rejected or accepted
 	@Override
-	public void updateOfferOnCarRemoval(int carId) {
+	public int updateOfferOnCarRemoval(int carId) {
 		String sql = "update offer " + "set status_id = ?, employee_decision_maker = ? " + "where car_id = ?;";
 
 		PreparedStatement pstmt;
-
+		int numberOfRows = 0;
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, 1);
 			pstmt.setInt(2, 1); // default for employee
 			pstmt.setInt(3, carId);
-			int numberOfRows = pstmt.executeUpdate();
+			numberOfRows = pstmt.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
 
 		} catch (SQLException e) {
 			LoggingUtil.error(e.getMessage());
 		}
+		
+		return numberOfRows;
 
 	}
 
 	@Override
-	public void updateOfferOnRejection(int offerId) {
+	public int updateOfferOnRejection(int offerId) {
 		String sql = "update offer " + "set status_id = ?, employee_decision_maker = ? " + "where offer_id = ?;";
 
 		PreparedStatement pstmt;
 
+		int numberOfRows = 0;
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, 1);
 			pstmt.setInt(2, 1); // default for employee
 			pstmt.setInt(3, offerId);
-			int numberOfRows = pstmt.executeUpdate();
+			numberOfRows = pstmt.executeUpdate();
 
 			LoggingUtil.debug(numberOfRows + " number of rows affected - updateOffer");
 
 		} catch (SQLException e) {
 			LoggingUtil.error(e.getMessage());
 		}
+		
+		return numberOfRows;
 	}
 
 	@Override

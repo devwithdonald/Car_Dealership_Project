@@ -6901,3 +6901,234 @@
 2019-06-17 19:53:03 INFO  root:18 - successfully connected to DB
 2019-06-17 19:53:03 DEBUG root:14 - NOT null connection
 2019-06-17 19:53:04 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:21 DEBUG root:14 - null Connection
+2019-06-17 20:05:21 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:22 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:22 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:22 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:22 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:22 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:22 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:42 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:05:46 DEBUG root:14 - null Connection
+2019-06-17 20:05:46 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:49 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:49 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:49 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:49 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:50 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:50 DEBUG root:14 - NOT null connection
+2019-06-17 20:05:50 INFO  root:18 - successfully connected to DB
+2019-06-17 20:05:50 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:05:52 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:07:54 DEBUG root:14 - null Connection
+2019-06-17 20:07:54 DEBUG root:14 - NOT null connection
+2019-06-17 20:07:54 INFO  root:18 - successfully connected to DB
+2019-06-17 20:07:54 DEBUG root:14 - NOT null connection
+2019-06-17 20:07:55 INFO  root:18 - successfully connected to DB
+2019-06-17 20:07:55 DEBUG root:14 - NOT null connection
+2019-06-17 20:07:55 INFO  root:18 - successfully connected to DB
+2019-06-17 20:07:55 DEBUG root:14 - NOT null connection
+2019-06-17 20:07:55 INFO  root:18 - successfully connected to DB
+2019-06-17 20:07:56 ERROR root:26 - ERROR: insert or update on table "offer" violates foreign key constraint "offer_customer_id_fkey"
+  Detail: Key (customer_id)=(0) is not present in table "customer".
+2019-06-17 20:11:22 DEBUG root:14 - null Connection
+2019-06-17 20:11:22 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:23 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:23 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:24 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:24 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:24 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:24 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:24 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:33 DEBUG root:14 - null Connection
+2019-06-17 20:11:33 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:34 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:34 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:34 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:34 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:34 INFO  root:18 - successfully connected to DB
+2019-06-17 20:11:34 DEBUG root:14 - NOT null connection
+2019-06-17 20:11:35 INFO  root:18 - successfully connected to DB
+2019-06-17 20:14:04 DEBUG root:14 - null Connection
+2019-06-17 20:14:04 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:15 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:15 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:15 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:15 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:15 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:15 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:15 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:19 DEBUG root:14 - null Connection
+2019-06-17 20:14:19 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:30 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:30 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:30 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:30 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:30 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:30 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:30 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:35 DEBUG root:14 - null Connection
+2019-06-17 20:14:35 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:46 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:46 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:46 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:46 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:46 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:46 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:46 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:14:51 DEBUG root:14 - null Connection
+2019-06-17 20:14:51 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:52 INFO  root:18 - successfully connected to DB
+2019-06-17 20:14:52 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:52 INFO  root:18 - successfully connected to DB
+2019-06-17 20:14:52 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:53 INFO  root:18 - successfully connected to DB
+2019-06-17 20:14:53 DEBUG root:14 - NOT null connection
+2019-06-17 20:14:53 INFO  root:18 - successfully connected to DB
+2019-06-17 20:17:53 DEBUG root:14 - null Connection
+2019-06-17 20:17:53 DEBUG root:14 - NOT null connection
+2019-06-17 20:17:54 INFO  root:18 - successfully connected to DB
+2019-06-17 20:17:54 DEBUG root:14 - NOT null connection
+2019-06-17 20:17:54 INFO  root:18 - successfully connected to DB
+2019-06-17 20:17:54 DEBUG root:14 - NOT null connection
+2019-06-17 20:17:55 INFO  root:18 - successfully connected to DB
+2019-06-17 20:17:55 DEBUG root:14 - NOT null connection
+2019-06-17 20:17:55 INFO  root:18 - successfully connected to DB
+2019-06-17 20:17:55 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:17:55 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:29:00 DEBUG root:14 - null Connection
+2019-06-17 20:29:00 DEBUG root:14 - NOT null connection
+2019-06-17 20:29:01 INFO  root:18 - successfully connected to DB
+2019-06-17 20:29:01 DEBUG root:14 - NOT null connection
+2019-06-17 20:29:01 INFO  root:18 - successfully connected to DB
+2019-06-17 20:29:01 DEBUG root:14 - NOT null connection
+2019-06-17 20:29:02 INFO  root:18 - successfully connected to DB
+2019-06-17 20:29:02 DEBUG root:14 - NOT null connection
+2019-06-17 20:29:02 INFO  root:18 - successfully connected to DB
+2019-06-17 20:29:02 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:29:02 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:29:02 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:31:44 DEBUG root:14 - null Connection
+2019-06-17 20:31:44 DEBUG root:14 - NOT null connection
+2019-06-17 20:31:45 INFO  root:18 - successfully connected to DB
+2019-06-17 20:31:45 DEBUG root:14 - NOT null connection
+2019-06-17 20:31:45 INFO  root:18 - successfully connected to DB
+2019-06-17 20:31:45 DEBUG root:14 - NOT null connection
+2019-06-17 20:31:46 INFO  root:18 - successfully connected to DB
+2019-06-17 20:31:46 DEBUG root:14 - NOT null connection
+2019-06-17 20:31:46 INFO  root:18 - successfully connected to DB
+2019-06-17 20:31:46 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:31:46 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:31:46 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:32:11 DEBUG root:14 - null Connection
+2019-06-17 20:32:11 DEBUG root:14 - NOT null connection
+2019-06-17 20:32:12 INFO  root:18 - successfully connected to DB
+2019-06-17 20:32:12 DEBUG root:14 - NOT null connection
+2019-06-17 20:32:13 INFO  root:18 - successfully connected to DB
+2019-06-17 20:32:13 DEBUG root:14 - NOT null connection
+2019-06-17 20:32:13 INFO  root:18 - successfully connected to DB
+2019-06-17 20:32:13 DEBUG root:14 - NOT null connection
+2019-06-17 20:32:13 INFO  root:18 - successfully connected to DB
+2019-06-17 20:32:14 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:32:14 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:32:14 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:33:15 DEBUG root:14 - null Connection
+2019-06-17 20:33:15 DEBUG root:14 - NOT null connection
+2019-06-17 20:33:16 INFO  root:18 - successfully connected to DB
+2019-06-17 20:33:16 DEBUG root:14 - NOT null connection
+2019-06-17 20:33:16 INFO  root:18 - successfully connected to DB
+2019-06-17 20:33:16 DEBUG root:14 - NOT null connection
+2019-06-17 20:33:17 INFO  root:18 - successfully connected to DB
+2019-06-17 20:33:17 DEBUG root:14 - NOT null connection
+2019-06-17 20:33:17 INFO  root:18 - successfully connected to DB
+2019-06-17 20:33:18 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:33:18 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:33:18 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:33:59 DEBUG root:14 - null Connection
+2019-06-17 20:33:59 DEBUG root:14 - NOT null connection
+2019-06-17 20:34:00 INFO  root:18 - successfully connected to DB
+2019-06-17 20:34:00 DEBUG root:14 - NOT null connection
+2019-06-17 20:34:00 INFO  root:18 - successfully connected to DB
+2019-06-17 20:34:00 DEBUG root:14 - NOT null connection
+2019-06-17 20:34:01 INFO  root:18 - successfully connected to DB
+2019-06-17 20:34:01 DEBUG root:14 - NOT null connection
+2019-06-17 20:34:01 INFO  root:18 - successfully connected to DB
+2019-06-17 20:34:01 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:34:02 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:34:02 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:35:39 DEBUG root:14 - null Connection
+2019-06-17 20:35:39 DEBUG root:14 - NOT null connection
+2019-06-17 20:35:50 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:35:50 DEBUG root:14 - NOT null connection
+2019-06-17 20:35:50 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:35:50 DEBUG root:14 - NOT null connection
+2019-06-17 20:35:50 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:35:50 DEBUG root:14 - NOT null connection
+2019-06-17 20:35:50 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:25 DEBUG root:14 - null Connection
+2019-06-17 20:40:25 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:36 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:36 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:36 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:36 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:36 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:36 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:36 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:44 DEBUG root:14 - null Connection
+2019-06-17 20:40:44 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:55 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:55 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:55 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:55 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:55 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:40:55 DEBUG root:14 - NOT null connection
+2019-06-17 20:40:55 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:01 DEBUG root:14 - null Connection
+2019-06-17 20:41:01 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:12 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:12 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:12 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:12 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:12 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:12 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:12 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:27 DEBUG root:14 - null Connection
+2019-06-17 20:41:27 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:38 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:38 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:38 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:38 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:43 DEBUG root:14 - null Connection
+2019-06-17 20:41:43 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:43 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:43 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:43 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:43 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:43 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:43 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:43 ERROR root:26 - Failed to make DB connection
+2019-06-17 20:41:50 DEBUG root:14 - null Connection
+2019-06-17 20:41:50 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:51 INFO  root:18 - successfully connected to DB
+2019-06-17 20:41:51 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:51 INFO  root:18 - successfully connected to DB
+2019-06-17 20:41:51 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:51 INFO  root:18 - successfully connected to DB
+2019-06-17 20:41:51 DEBUG root:14 - NOT null connection
+2019-06-17 20:41:52 INFO  root:18 - successfully connected to DB
+2019-06-17 20:41:52 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:41:53 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:41:53 DEBUG root:14 - 1 number of rows affected - updateOffer
+2019-06-17 20:48:47 DEBUG root:14 - null Connection
+2019-06-17 20:48:47 DEBUG root:14 - NOT null connection
+2019-06-17 20:48:48 INFO  root:18 - successfully connected to DB
+2019-06-17 20:48:48 DEBUG root:14 - NOT null connection
+2019-06-17 20:48:49 INFO  root:18 - successfully connected to DB
+2019-06-17 20:48:49 DEBUG root:14 - NOT null connection
+2019-06-17 20:48:49 INFO  root:18 - successfully connected to DB
+2019-06-17 20:48:49 DEBUG root:14 - NOT null connection
+2019-06-17 20:48:49 INFO  root:18 - successfully connected to DB

@@ -9,11 +9,11 @@ public interface OfferSQLDAO {
 	
 	public void insertOffer(Offer offer);
 	
-	public void makeOffer(Customer customer, int carId, int offerPrice);
+	public int makeOffer(Customer customer, int carId, int offerPrice);
 	
-	public void updateOffer(Offer offer, int statusId);
+	public int updateOffer(Offer offer, int statusId);
 	
-	public void updateOfferOnAcceptance(int offerId, Customer buyer);
+	public int updateOfferOnAcceptance(int offerId, Customer buyer);
 	
 	public List<Offer> getAllOffers();
 	
@@ -23,7 +23,7 @@ public interface OfferSQLDAO {
 	
 	public Offer getOfferById(int id);
 	
-	public void updateOfferOnCarRemoval(int carId);
+	public int updateOfferOnCarRemoval(int carId);
 	
-	public void updateOfferOnRejection(int offerId);
+	public int updateOfferOnRejection(int offerId);
 }
