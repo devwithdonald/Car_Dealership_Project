@@ -34,9 +34,6 @@ public class EmployeeScreen implements UserScreen {
 
 			LoggingUtil.trace("do loop - EmployeeScreen - start");
 
-//			CarLotServiceImpl cls = new CarLotServiceImpl();
-//			WebServiceImpl wsi = new WebServiceImpl();
-//			EmployeeServiceImpl esi = new EmployeeServiceImpl();
 
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("\nWelcome! What would you like to do today?");

@@ -19,10 +19,9 @@ public class ConnectionFactory {
 	public static synchronized Connection getConnection() {
 
 		if (cf == null) {
-			LoggingUtil.debug("null Connection");
 			cf = new ConnectionFactory();
 		}
-		LoggingUtil.debug("NOT null connection");
+
 		return cf.createConnection();
 
 	}
@@ -50,12 +49,12 @@ public class ConnectionFactory {
 
 		try {
 			conn = DriverManager.getConnection(url, user, password);
-			LoggingUtil.info("successfully connected to DB");
-			System.out.println("successfully connected!!!");
+			LoggingUtil.debug("successfully connected to DB");
+//			System.out.println("successfully connected!!!");
 		} catch (SQLException e) {
 			// log
 			LoggingUtil.error("Failed to make DB connection");
-			System.out.println("Failed to make DB Connection");
+//			System.out.println("Failed to make DB Connection");
 		}
 
 		return conn;

@@ -36,12 +36,9 @@ public class CustomerScreen implements UserScreen {
 			System.out.println("Enter '1': View all boats on the lot");
 			System.out.println("Enter '2': To make an offer on a boat");
 			System.out.println("Enter '3': View boats that you own");
-			System.out.println("Enter '4': View remaining payments on an owned boats");
+			System.out.println("Enter '4': View remaining payments on owned boats");
 			System.out.println("Enter '0': Exit!");
 			input = scanner.nextLine();
-
-//			CarLotServiceImpl clsi = new CarLotServiceImpl();
-//			CustomerServiceImpl csi = new CustomerServiceImpl();
 
 			switch (input) {
 			case "1":

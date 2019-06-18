@@ -173,7 +173,7 @@ public class CarPostgresDAOImpl implements CarSQLDAO {
 	public Car getCarById(int id) {
 		Car car = null;
 
-		String sql = "select * from car " + "where car_id = ?;";
+		String sql = "select * from car " + "where car_id = ? and for_sale = true;";
 
 		PreparedStatement pstmt;
 
