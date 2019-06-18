@@ -50,11 +50,11 @@ public class ConnectionFactory {
 		try {
 			conn = DriverManager.getConnection(url, user, password);
 			LoggingUtil.debug("successfully connected to DB");
-//			System.out.println("successfully connected!!!");
+
 		} catch (SQLException e) {
 			// log
 			LoggingUtil.error("Failed to make DB connection");
-//			System.out.println("Failed to make DB Connection");
+
 		}
 
 		return conn;
